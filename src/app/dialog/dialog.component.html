@@ -1,0 +1,140 @@
+<mat-stepper orientation="vertical" [linear]="true" #stepper>
+
+    <mat-step [stepControl]="genralFormGroup">
+      <form [formGroup]="genralFormGroup">
+        <ng-template matStepLabel class="stepLabel" class="stepComp">Angaben zur Meldung</ng-template>
+
+        <span class="stepHead">Art der Meldung</span>
+        <mat-chip-listbox aria-label="typeSelection" formControlName="type" class="stepComp">
+          <mat-chip-option color="primary">Fehler</mat-chip-option>
+          <mat-chip-option color="primary">Verbesserungsvorschlag</mat-chip-option>
+          <mat-chip-option color="primary">Inhaltsergänzung</mat-chip-option>
+        </mat-chip-listbox>
+
+        <span class="stepHead">Art des Mediums</span>
+        <mat-chip-listbox aria-label="typeSelection" formControlName="learningElement" class="stepComp">
+          <mat-chip-option color="primary">Skript</mat-chip-option>
+          <mat-chip-option color="primary">Video</mat-chip-option>
+        </mat-chip-listbox>
+
+        <mat-form-field appearance="fill" class="stepComp">
+          <mat-label>Modul</mat-label>
+          <mat-select formControlName="modul" required>
+            <mat-option *ngFor="let modul of moduls" [value]="modul.value">
+              {{modul.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button matStepperNext color="primary" [disabled]="!genralFormGroup.valid" (click)="genrateForm(genralFormGroup.value.type, genralFormGroup.value.learningElement, genralFormGroup.value.modul)">Weiter  <mat-icon>arrow_forward_ios</mat-icon></button>
+        </div>
+      </form>
+    </mat-step>
+
+    <ng-container *ngIf="element == ''">
+      <mat-step>
+        <ng-template matStepLabel class="stepLabel">Angaben zum Element</ng-template>
+      </mat-step>
+    </ng-container>
+
+    <ng-container *ngIf="element == 'Skript'">
+     <mat-step [stepControl]="elementFormGroup">
+        <form [formGroup]="elementFormGroup">
+          <ng-template matStepLabel class="stepLabel">Angaben zum Skript</ng-template>
+          
+          <div>
+            <mat-form-field appearance="fill" floatLabel="always">
+              <mat-label>Seitennummer</mat-label>
+              <input matInput type="number" formControlName="pageNumber" min="1" max="400" required>
+              <span matTextPrefix>S.</span>
+              <mat-hint *ngIf="!elementFormGroup.controls['pageNumber'].valid && (elementFormGroup.controls['pageNumber'].touched || elementFormGroup.controls['pageNumber'].dirty)" class="error" align="end">Wert zwischen 1 - 400!</mat-hint>
+            </mat-form-field>
+            <span class="spacer"></span>
+            <mat-form-field appearance="fill" floatLabel="always">
+              <mat-label>Kapitelnummer</mat-label>
+              <input matInput type="number" formControlName="chapter" min="1" max="20" required>
+              <span matTextPrefix>Ch. </span>
+              <mat-hint *ngIf="!elementFormGroup.controls['chapter'].valid && (elementFormGroup.controls['chapter'].touched || elementFormGroup.controls['chapter'].dirty)" class="error" align="end">Wert zwischen 1 - 20!</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <span class="stepComp" *ngIf="report.type == 'Fehler' || report.type == 'Verbesserungsvorschlag'">Bitte beschreiben sie uns den gefundenen {{report.type}}:</span>
+          <span class="stepComp" *ngIf="report.type == 'Inhaltsergänzung'">Bitte beschreiben sie uns die gefundene {{report.type}}:</span>
+          <div>
+            <mat-form-field appearance="fill" class="textarea">
+              <mat-label>Beschreibung</mat-label>
+              <textarea matInput #textarea class="textarea" formControlName="description" maxlength="500" required></textarea>
+              <mat-hint align="end">{{textarea.value.length}}/500</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <span class="stepComp">Optionale Auswahl einer Tabelle oder Abbildung</span>
+          <div class="stepComp">
+            <mat-button-toggle-group name="illTab" aria-label="Optional">
+              <mat-button-toggle color="primary" (click)="inputTab()">Tabelle</mat-button-toggle>
+              <mat-button-toggle color="primary" (click)="inputIll()">Abbildung</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+
+          <div>
+            <ng-container *ngIf="illOrTab == 1">
+              <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Tabellennummer</mat-label>
+                <input matInput type="number" formControlName="tabOrIllNumber" min="1" max="100">
+                <span matTextPrefix>Tab.</span>
+                <mat-hint *ngIf="!elementFormGroup.controls['tabOrIllNumber'].valid && (elementFormGroup.controls['tabOrIllNumber'].touched || elementFormGroup.controls['tabOrIllNumber'].dirty)" class="error" align="end">Wert zwischen 1 - 100!</mat-hint>
+              </mat-form-field>
+            </ng-container>
+          
+            <ng-container *ngIf="illOrTab == 2">
+              <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Abbildungsnummer</mat-label>
+                <input matInput type="number" formControlName="tabOrIllNumber" min="1" max="100">
+                <span matTextPrefix>Abb.</span>
+                <mat-hint *ngIf="!elementFormGroup.controls['tabOrIllNumber'].valid && (elementFormGroup.controls['tabOrIllNumber'].touched || elementFormGroup.controls['tabOrIllNumber'].dirty)" class="error" align="end">Wert zwischen 1 - 100!</mat-hint>
+              </mat-form-field>
+            </ng-container>
+          </div>
+
+          <div>
+            <button mat-raised-button matStepperPrevious color="primary">Zurück <mat-icon>arrow_back_ios</mat-icon></button>
+            <span class="spacer"></span>
+            <button mat-raised-button matStepperNext color="primary" [disabled]="!elementFormGroup.valid" (click)="addSkript(elementFormGroup.value.pageNumber, elementFormGroup.value.chapter, elementFormGroup.value.tabOrIllNumber, elementFormGroup.value.description)">Weiter <mat-icon>arrow_forward_ios</mat-icon></button>
+          </div>
+       </form>
+      </mat-step>
+    </ng-container>
+
+    <ng-container *ngIf="element == 'Video'">
+      <mat-step [stepControl]="elementFormGroup">
+         <form [formGroup]="elementFormGroup">
+           <ng-template matStepLabel class="stepLabel">Angaben zum Video</ng-template>
+           <mat-form-field appearance="fill">
+             <mat-label>Adresse</mat-label>
+             <input matInput formControlName="title" placeholder="Ex. 1 Main St, New York, NY"
+                    required>
+           </mat-form-field>           
+           
+           <div>
+             <button mat-button matStepperPrevious>Back</button>
+             <button mat-button matStepperNext>Next</button>
+           </div>
+
+        </form>
+       </mat-step>
+     </ng-container>
+
+    <mat-step>
+      <ng-template matStepLabel class="stepLabel">Eingabe Kontrollieren</ng-template>
+      <p>Hier das fertiger Objekt wie es dann über die API geschickt wird.</p>
+
+      <div class="dummy">{{report | json}}</div>
+      
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+
+  </mat-stepper>

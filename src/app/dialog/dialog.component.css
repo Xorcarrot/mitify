@@ -1,0 +1,25 @@
+.stepComp {
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+}
+
+.spacer {
+    flex: 1 1 auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.textarea {
+    width: 100%;
+}
+
+.error {
+    color: red;
+}
+
+.dummy {
+    max-width: 400px;
+}
