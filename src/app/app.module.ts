@@ -19,12 +19,14 @@ import {MatSliderModule} from '@angular/material/slider';
 
 import { HeaderComponent } from './header/header.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { LoginComponent } from './login/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
