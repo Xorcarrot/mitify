@@ -1,5 +1,6 @@
-export class Modul {
 
+export class Modul {
+    
     value: String;
     name: String;
 
