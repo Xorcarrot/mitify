@@ -1,5 +1,6 @@
 <mat-stepper orientation="vertical" [linear]="true" #stepper>
 
+  <!--Generelles Formular für alle Medien-->
     <mat-step [stepControl]="genralFormGroup">
       <form [formGroup]="genralFormGroup">
         <ng-template matStepLabel class="stepLabel" class="stepComp">Angaben zur Meldung</ng-template>
@@ -32,12 +33,14 @@
       </form>
     </mat-step>
 
+  <!--Formularname für spezifisiches Medium-->
     <ng-container *ngIf="element == ''">
       <mat-step>
         <ng-template matStepLabel class="stepLabel">Angaben zum Element</ng-template>
       </mat-step>
     </ng-container>
 
+    <!--Formular für Skript-->
     <ng-container *ngIf="element == 'Skript'">
      <mat-step [stepControl]="elementFormGroup">
         <form [formGroup]="elementFormGroup">
@@ -106,24 +109,54 @@
       </mat-step>
     </ng-container>
 
+    <!--Formular für das Medium Video-->
     <ng-container *ngIf="element == 'Video'">
       <mat-step [stepControl]="elementFormGroup">
-         <form [formGroup]="elementFormGroup">
-           <ng-template matStepLabel class="stepLabel">Angaben zum Video</ng-template>
-           <mat-form-field appearance="fill">
-             <mat-label>Adresse</mat-label>
-             <input matInput formControlName="title" placeholder="Ex. 1 Main St, New York, NY"
-                    required>
-           </mat-form-field>           
+        <form [formGroup]="elementFormGroup">
+          <ng-template matStepLabel class="stepLabel">Angaben zum Video</ng-template>
+
+          <div class="stepComp">
+            <mat-form-field appearance="fill">
+              <mat-label>Videotitel</mat-label>
+              <input matInput #titleInput formControlName="title" maxlength="20" minlength="1" placeholder="Titel des Video" required>
+              <mat-hint align="end">{{titleInput.value.length}}/20</mat-hint>
+            </mat-form-field> 
+          </div>
+
+          <span class="stepComp" *ngIf="report.type == 'Fehler' || report.type == 'Verbesserungsvorschlag'">In welchem Zeitrahmen befindet sich ungefähr der {{report.type}}:</span>
+          <span class="stepComp" *ngIf="report.type == 'Inhaltsergänzung'">In welchem Zeitrahmen befindet sich ungefähr die {{report.type}}:</span>
+          <mat-slider class="slider" min="0" max="3600">
+            <input #timeStart matSliderStartThumb formControlName="timestampStart">
+            <input #timeEnd value="1800" matSliderEndThumb formControlName="timestampEnd">
+          </mat-slider>
+          <br/>
+          <span class="bold stepComp">von {{calcTime(timeStart.valueAsNumber)}} bis {{calcTime(timeEnd.valueAsNumber)}}</span>
+
+          <div class="stepComp spaceTop">
+            <mat-form-field appearance="fill">
+              <mat-label>URL optional:</mat-label>
+              <input matInput #urlInput formControlName="videoUrl" maxlength="50" minlength="1" placeholder="https://mycampus.iubh.de/...">
+              <mat-hint align="end">{{urlInput.value.length}}/50</mat-hint>
+            </mat-form-field> 
+          </div>
+
+          <div>
+            <mat-form-field appearance="fill" class="textarea">
+              <mat-label>Beschreibung</mat-label>
+              <textarea matInput #textarea class="textarea" formControlName="description" maxlength="500" required></textarea>
+              <mat-hint align="end">{{textarea.value.length}}/500</mat-hint>
+            </mat-form-field>
+          </div>
            
-           <div>
-             <button mat-button matStepperPrevious>Back</button>
-             <button mat-button matStepperNext>Next</button>
-           </div>
+          <div>
+            <button mat-raised-button matStepperPrevious color="primary">Zurück <mat-icon>arrow_back_ios</mat-icon></button>
+            <span class="spacer"></span>
+            <button mat-raised-button matStepperNext color="primary" [disabled]="!elementFormGroup.valid" (click)="addVideo(elementFormGroup.value.title, elementFormGroup.value.timestampStart, elementFormGroup.value.timestampEnd, elementFormGroup.value.videoUrl, elementFormGroup.value.description)">Weiter <mat-icon>arrow_forward_ios</mat-icon></button>
+          </div>
 
         </form>
-       </mat-step>
-     </ng-container>
+      </mat-step>
+    </ng-container>
 
     <mat-step>
       <ng-template matStepLabel class="stepLabel">Eingabe Kontrollieren</ng-template>

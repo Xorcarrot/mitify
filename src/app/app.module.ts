@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper'; 
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { HeaderComponent } from './header/header.component';
 import { DialogComponent } from './dialog/dialog.component';
@@ -39,7 +40,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatDialogModule,
     MatStepperModule,
     MatChipsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

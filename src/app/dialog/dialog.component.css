@@ -23,3 +23,15 @@
 .dummy {
     max-width: 400px;
 }
+
+.slider {
+    width: 80%;
+}
+
+.spaceTop {
+    margin-top: 30px;
+}
+
+.bold {
+    font-size: 120%;
+}

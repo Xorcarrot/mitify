@@ -68,11 +68,28 @@ export class DialogComponent {
       this.report = new ReportVideo(type, learningElement, modul);
 
       this.elementFormGroup = this._formBuilder.group({
-        title: ['', Validators.required],
-        timestampStart: ['', Validators.required],
-        timestampEnd: ['', Validators.required],
-        videoUrl: ['', Validators.required],
-        description: ['', Validators.required]
+        title: ['', [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(20)
+        ]],
+        timestampStart: ['', [
+          Validators.required,
+          Validators.min(0),
+          Validators.max(3599)
+        ]],
+        timestampEnd: ['', [
+          Validators.required,
+          Validators.min(1),
+          Validators.max(3600)
+        ]],
+        videoUrl: ['', [
+          Validators.maxLength(50)
+        ]],
+        description: ['', [
+          Validators.required,
+          Validators.maxLength(500)
+        ]]
       })
     }
 
@@ -110,6 +127,24 @@ export class DialogComponent {
       this.report.tableNumber = 0
       this.report.illustrationNumber = 0;
     }
+  }
+
+  addVideo(title: any, timestampStart: any, timestampEnd: any,videoUrl: any, description: any) {
+
+    this.report.title = title;
+    this.report.timestampStart = timestampStart;
+    this.report.timestampEnd = timestampEnd;
+    this.report.videoUrl = videoUrl;
+    this.report.description = description;
+  }
+
+  calcTime(seconds: number): String {
+    var time = new Date(seconds * 1000);
+
+    var minutes = time.getUTCMinutes();
+    var seconds = time.getUTCSeconds();
+
+    return minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
   }
 
 }
