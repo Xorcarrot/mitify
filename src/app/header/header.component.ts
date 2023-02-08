@@ -15,7 +15,9 @@ export class HeaderComponent {
   constructor (public dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(DialogComponent);
+    this.dialog.open(DialogComponent, {
+      disableClose: true
+    });
   }
 
 }

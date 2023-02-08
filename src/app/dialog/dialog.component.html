@@ -1,9 +1,14 @@
 <mat-stepper orientation="vertical" [linear]="true" #stepper>
-
+  
   <!--Generelles Formular für alle Medien-->
     <mat-step [stepControl]="genralFormGroup">
       <form [formGroup]="genralFormGroup">
-        <ng-template matStepLabel class="stepLabel" class="stepComp">Angaben zur Meldung</ng-template>
+        <ng-template matStepLabel class="stepLabel" class="stepComp">
+          <span>Angaben zur Meldung</span>
+          <button class="buttonClose" mat-dialog-close mat-icon-button color="primary" aria-label="Dialog schließen">
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-template>
 
         <span class="stepHead">Art der Meldung</span>
         <mat-chip-listbox aria-label="typeSelection" formControlName="type" class="stepComp">
@@ -125,12 +130,16 @@
 
           <span class="stepComp" *ngIf="report.type == 'Fehler' || report.type == 'Verbesserungsvorschlag'">In welchem Zeitrahmen befindet sich ungefähr der {{report.type}}:</span>
           <span class="stepComp" *ngIf="report.type == 'Inhaltsergänzung'">In welchem Zeitrahmen befindet sich ungefähr die {{report.type}}:</span>
-          <mat-slider class="slider" min="0" max="3600">
+          <mat-slider class="slider" min="0" max="3599">
             <input #timeStart matSliderStartThumb formControlName="timestampStart">
-            <input #timeEnd value="1800" matSliderEndThumb formControlName="timestampEnd">
+            <input #timeEnd matSliderEndThumb formControlName="timestampEnd">
           </mat-slider>
           <br/>
-          <span class="bold stepComp">von {{calcTime(timeStart.valueAsNumber)}} bis {{calcTime(timeEnd.valueAsNumber)}}</span>
+          <span>
+            <mat-form-field appearance="fill">
+            </mat-form-field>
+          </span>
+          <br/>
 
           <div class="stepComp spaceTop">
             <mat-form-field appearance="fill">

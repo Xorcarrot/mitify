@@ -15,6 +15,12 @@ export class DialogComponent {
   element: String = "";
   illOrTab: Number = 0;
 
+  minutesStart = 0;
+  secondsStart = 0;
+
+  minutesEnd = 10;
+  secondsEnd = 0;
+
   report!: any;
 
   genralFormGroup = this._formBuilder.group({
@@ -145,6 +151,24 @@ export class DialogComponent {
     var seconds = time.getUTCSeconds();
 
     return minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+  }
+
+  updateTimeStart(event: any, minutes: boolean) {
+    if(minutes == true) {
+      this.minutesStart = event.value * 60;
+    }
+    if(minutes == false) {
+      this.secondsStart = event.value;
+    }
+    var time = this.minutesStart + this.secondsStart;
+    if(time > this.report.timestampEnd) {
+      this.report.timestampEnd = time + 1;
+    }
+    this.report.timestampStart = time;
+  }
+
+  updateInput(event: any) {
+    var time = new Date(event.value)
   }
 
 }

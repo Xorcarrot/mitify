@@ -20,6 +20,8 @@ import {MatSliderModule} from '@angular/material/slider';
 import { HeaderComponent } from './header/header.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { LoginComponent } from './login/login/login.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { LoginComponent } from './login/login/login.component';
     MatChipsModule,
     MatButtonToggleModule,
     MatSliderModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

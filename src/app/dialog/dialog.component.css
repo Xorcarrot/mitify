@@ -35,3 +35,13 @@
 .bold {
     font-size: 120%;
 }
+
+.buttonClose {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+.timeInput {
+    width: 70px;
+}
