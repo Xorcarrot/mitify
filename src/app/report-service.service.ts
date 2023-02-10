@@ -15,10 +15,16 @@ export class ReportServiceService {
   skriptReportUrl: string = 'https://fathomless-eyrie-95662.herokuapp.com/api/v1/skript_reports';
   videoReportUrl: string = 'https://fathomless-eyrie-95662.herokuapp.com/api/v1/video_reports';
 
-  //adds a new Report to the Database
+  //adds a new Skriptreport to the Database
   addSkript(report: ReportSkript): Observable<any> {
-    return this.http.post<any>(this.errorReportUrl, report);
+    return this.http.post<any>(this.skriptReportUrl, report, {responseType: 'json'});
+  }
+
+  //adds a new Videoreport to the Database
+  addVideo(report: ReportVideo): Observable<any> {
+    return this.http.post<any>(this.videoReportUrl, report, {responseType: 'json'});
   }
 
   constructor(private http: HttpClient) { }
+
 }

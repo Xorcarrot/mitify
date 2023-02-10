@@ -174,7 +174,12 @@ export class DialogComponent {
 
 
   postSkript(report: ReportSkript): void {
+    console.log(JSON.stringify(report));
     this.httpService.addSkript(report).subscribe();
+  }
+
+  postVideo(report: ReportVideo): void {
+    this.httpService.addVideo(report).subscribe();
   }
 
 }

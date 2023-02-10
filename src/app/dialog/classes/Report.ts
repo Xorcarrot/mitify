@@ -4,10 +4,9 @@ export abstract class Report {
 
     id?: Number;                    //ID zum Unterscheiden der Objekte
     status?: String;                //Aktueller Status der Meldung (NEU|IN BEARBEITUNG|ABGESCHLOSSEN|ABGELEHNT)
-    type?: String;                  //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
+    reportType?: String;                  //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
     priority?: Number;              //Priorität der Meldung(1 = niedrig|2 = mittel|3 = hoch)
-    modul?: String;                 //Angabe zum Modul
-    learningElement?: String;       //Angabe zum Lehrnelement
+    module?: String;                 //Angabe zum Modul
     author?: String;                //Ersteller der Meldung
     eMail?: String;                 //Email des Erstellers
     reportDate?: Number;            //Datum in Millisekunden an dem der Fehler erstellt wurde
@@ -20,9 +19,8 @@ export abstract class Report {
     constructor(type: String, modul: String, learningElement: String, description?: String, id?: Number, status?: String, 
         priority?: Number, author?: String, eMail?: String, reportDate?: Number, grantedDate?: Number, completedDate?: Number) {
 
-        this.type = type;
-        this.modul = modul;
-        this.learningElement = learningElement;
+        this.reportType = type;
+        this.module = modul;
         this.description = description;
 
         //Wenn der String Status leer ist wird der If block aktiv und ein neues Objekt kann generiert werden
