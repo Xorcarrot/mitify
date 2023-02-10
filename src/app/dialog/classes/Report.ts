@@ -4,7 +4,7 @@ export abstract class Report {
 
     id?: Number;                    //ID zum Unterscheiden der Objekte
     status?: String;                //Aktueller Status der Meldung (NEU|IN BEARBEITUNG|ABGESCHLOSSEN|ABGELEHNT)
-    reportType?: String;                  //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
+    reportType?: string;                  //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
     priority?: Number;              //Priorität der Meldung(1 = niedrig|2 = mittel|3 = hoch)
     module?: String;                 //Angabe zum Modul
     author?: String;                //Ersteller der Meldung
@@ -16,7 +16,7 @@ export abstract class Report {
 
 
     //Constructor der für die Erstellung einer neuen Meldung verwendet wird
-    constructor(type: String, modul: String, learningElement: String, description?: String, id?: Number, status?: String, 
+    constructor(type: string, modul: String, learningElement: String, description?: String, id?: Number, status?: String, 
         priority?: Number, author?: String, eMail?: String, reportDate?: Number, grantedDate?: Number, completedDate?: Number) {
 
         this.reportType = type;
@@ -44,4 +44,5 @@ export abstract class Report {
             this.completedDate = completedDate;
         }
     }
+
 }

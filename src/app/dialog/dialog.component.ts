@@ -23,6 +23,8 @@ export class DialogComponent {
   secondsEnd = 0;
 
   report!: any;
+  skriptAdded: boolean = false;
+  videoAdded: boolean = false;
 
   genralFormGroup = this._formBuilder.group({
     type: ['', Validators.required],
@@ -72,7 +74,7 @@ export class DialogComponent {
 
     } else if(learningElement == "Video") {
 
-      this.report = new ReportVideo(type, learningElement, modul);
+      this.report = new ReportVideo(type, modul, learningElement);
 
       this.elementFormGroup = this._formBuilder.group({
         title: ['', [
@@ -120,7 +122,7 @@ export class DialogComponent {
 
   addSkript(pageNumber: any, chapter: any, tabOrIllNumber: any, description: any) {
 
-    this.report.pageNumber = pageNumber;
+    this.report.page = pageNumber;
     this.report.chapter = chapter;
     this.report.description = description;
 
@@ -134,6 +136,9 @@ export class DialogComponent {
       this.report.tableNumber = 0
       this.report.illustrationNumber = 0;
     }
+
+    this.videoAdded = false;
+    this.skriptAdded = true;
   }
 
   addVideo(title: any, timestampStart: any, timestampEnd: any,videoUrl: any, description: any) {
@@ -143,6 +148,9 @@ export class DialogComponent {
     this.report.timestampEnd = timestampEnd;
     this.report.videoUrl = videoUrl;
     this.report.description = description;
+
+    this.skriptAdded = false;
+    this.videoAdded = true;
   }
 
   calcTime(seconds: number): String {
@@ -174,7 +182,6 @@ export class DialogComponent {
 
 
   postSkript(report: ReportSkript): void {
-    console.log(JSON.stringify(report));
     this.httpService.addSkript(report).subscribe();
   }
 

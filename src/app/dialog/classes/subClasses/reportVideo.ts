@@ -10,7 +10,7 @@ export class ReportVideo extends Report {
 
     
     //Constructor zum erstellen eines neuen Srikpt Meldung Objekts
-    constructor (type: String, modul: String, learningElement: String, description?: String, title?: String, timestampStart?: number, timestampEnd?: number, videoUrl?: String,
+    constructor (type: string, modul: String, learningElement: String, description?: String, title?: String, timestampStart?: number, timestampEnd?: number, videoUrl?: String,
         id?: Number, status?: String, priority?: Number, author?: String, eMail?: String, reportDate?: Number, grantedDate?: Number, completedDate?: Number) {
 
             super(type, modul, learningElement, description, id, status, 
