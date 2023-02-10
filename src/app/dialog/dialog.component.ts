@@ -1,3 +1,4 @@
+import { ReportServiceService } from './../report-service.service';
 import { ReportVideo } from './classes/subClasses/reportVideo';
 import { ReportSkript } from './classes/subClasses/reportSkript';
 import { Modul } from './classes/modul';
@@ -31,7 +32,7 @@ export class DialogComponent {
 
   elementFormGroup: any;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private httpService: ReportServiceService) {}
 
   moduls: Modul[] = [
     {value: 'Big Data', name: 'Big Data'},
@@ -169,6 +170,11 @@ export class DialogComponent {
 
   updateInput(event: any) {
     var time = new Date(event.value)
+  }
+
+
+  postSkript(report: ReportSkript): void {
+    this.httpService.addSkript(report).subscribe();
   }
 
 }

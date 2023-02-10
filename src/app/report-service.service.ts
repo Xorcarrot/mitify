@@ -20,6 +20,5 @@ export class ReportServiceService {
     return this.http.post<any>(this.errorReportUrl, report);
   }
 
-
   constructor(private http: HttpClient) { }
 }

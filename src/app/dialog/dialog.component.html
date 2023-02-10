@@ -168,6 +168,10 @@
       <p>Hier das fertiger Objekt wie es dann über die API geschickt wird.</p>
 
       <div class="dummy">{{report | json}}</div>
+
+      <div>
+        <button mat-raised-button color="primary" (click)="postSkript(report)">Speichern</button>
+      </div>
       
       <div>
         <button mat-button matStepperPrevious>Back</button>
