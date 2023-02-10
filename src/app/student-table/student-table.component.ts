@@ -1,3 +1,5 @@
+import { REPORTS } from './../../assets/REPORTS';
+import { Report } from 'src/app/dialog/classes/Report';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./student-table.component.css']
 })
 export class StudentTableComponent {
+
+  reports: Report[] = new REPORTS().getReports();
+
+  constructor() {
+  
+  }
 
 }

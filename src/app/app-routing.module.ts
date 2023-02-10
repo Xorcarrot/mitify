@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  {path: 'student/joeplatzhalter', component: StudentTableComponent}
+  {path: 'student', component: StudentTableComponent}
 ]
 
 @NgModule({

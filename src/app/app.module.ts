@@ -1,3 +1,4 @@
+import { StudentTableComponent } from './student-table/student-table.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,19 +17,23 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CdkAccordionModule} from '@angular/cdk/accordion'; 
 
 import { HeaderComponent } from './header/header.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { LoginComponent } from './login/login/login.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DialogComponent,
-    LoginComponent
+    LoginComponent,
+    StudentTableComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,10 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonToggleModule,
     MatSliderModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatExpansionModule,
+    CdkAccordionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
