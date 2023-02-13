@@ -21,4 +21,8 @@ export class ReportVideo extends Report {
             this.timestampEnd = timestampEnd;
             this.videoURL = videoUrl;
         }
+
+    getType(): number {
+        return 2;
+    }
 }

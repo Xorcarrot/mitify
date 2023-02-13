@@ -21,4 +21,8 @@ export class ReportSkript extends Report {
             this.illustrationNumber = illustrationNumber;       //wenn keine Abbildung angeben ist, wird hier eine 0 eingefügt
             this.tableNumber = tableNumber;                     //wenn keine Tabelle angegeben ist, wird hier eine 0 eingefügt
         }
+
+    getType(): number {
+        return 1;
+    }
 }
