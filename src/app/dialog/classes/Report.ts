@@ -4,7 +4,7 @@ export abstract class Report {
 
     id?: Number;                    //ID zum Unterscheiden der Objekte
     status?: String;                //Aktueller Status der Meldung (NEU|IN BEARBEITUNG|ABGESCHLOSSEN|ABGELEHNT)
-    reportType?: string;                  //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
+    reportType?: string;            //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
     priority?: Number;              //Priorität der Meldung(1 = niedrig|2 = mittel|3 = hoch)
     module?: String;                 //Angabe zum Modul
     author?: String;                //Ersteller der Meldung

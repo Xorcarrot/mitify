@@ -1,16 +1,45 @@
-<h1>Reports:</h1>
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
 
-<mat-accordion>
-    <mat-expansion-panel hideToggle *ngFor="let report of reports">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          This is the expansion title
-        </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
-  </mat-accordion>
-  
+  <!-- id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">
+      ID
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- reportType Column -->
+  <ng-container matColumnDef="reportType">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by reportType">
+      Art
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.reportType}} </td>
+  </ng-container>
+
+  <!-- status Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
+      Satus
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <!-- priority Column -->
+  <ng-container matColumnDef="priority">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by priority">
+      Priorität
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.priority}} </td>
+  </ng-container>
+
+  <!-- module Column -->
+  <ng-container matColumnDef="module">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by module">
+      Modul
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.module}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -18,6 +18,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table'; 
 import {CdkAccordionModule} from '@angular/cdk/accordion'; 
 
 import { HeaderComponent } from './header/header.component';
@@ -26,6 +27,7 @@ import { LoginComponent } from './login/login/login.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatExpansionModule,
     CdkAccordionModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

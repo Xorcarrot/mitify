@@ -3,10 +3,10 @@ import { Report } from "../Report";
 //Klasse die Reports um weitere Attribute erweitert
 export class ReportVideo extends Report {
 
-    title?: String;                     //Titel des Videos
+    videoTitle?: String;                     //Titel des Videos
     timestampStart?: number;            //Zeitstempel in Sekunden
     timestampEnd?: number;              //Zeitstempel in Sekunden
-    videoUrl?: String;                  //URL des Videos
+    videoURL?: String;                  //URL des Videos
 
     
     //Constructor zum erstellen eines neuen Srikpt Meldung Objekts
@@ -16,9 +16,9 @@ export class ReportVideo extends Report {
             super(type, modul, learningElement, description, id, status, 
                 priority, author, eMail, reportDate, grantedDate, completedDate);
 
-            this.title = title;
+            this.videoTitle = title;
             this.timestampStart = timestampStart;
             this.timestampEnd = timestampEnd;
-            this.videoUrl = videoUrl;
+            this.videoURL = videoUrl;
         }
 }
