@@ -8,15 +8,15 @@ export class REPORTS {
 
     constructor() {
         this.reports.push(new ReportVideo('Fehler', 'Bigdata', 'Video', 'Irgendwo da gab es unstimmigkeiten, wo sie sich selbsts widersprochen haben!', 'Die Aufzucht von Fischen', 2300, 2350, 'https://irgendwas.de/sepp',
-            1, 'New', 1, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
-        this.reports.push(new ReportSkript('Alarm', 'Turnen', 'Skript', 'Ich weiß nicht genau wo ich hinspringen soll!', 10, 2, 1, 0, 2, 'in Bearbeitung',
-            2, 'Fred Fredderick', 'fred@fredn.fr', 3223445, 3223455, 3223666));
+            14, 'New', 2, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
+        this.reports.push(new ReportSkript('Alarm', 'Turnen', 'Skript', 'Ich weiß nicht genau wo ich hinspringen soll!', 10, 2, 1, 0, 10, 'in Bearbeitung',
+            3, 'Fred Fredderick', 'fred@fredn.fr', 3223445, 3223455, 3223666));
         this.reports.push(new ReportVideo('Fehler', 'Bigdata', 'Video', 'Irgendwo da gab es unstimmigkeiten, wo sie sich selbsts widersprochen haben!', 'Die Aufzucht von Fischen', 2300, 2350, 'https://irgendwas.de/sepp',
-            1, 'New', 1, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
+            2, 'New', 1, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
         this.reports.push(new ReportVideo('Fehler', 'Bigdata', 'Video', 'Irgendwo da gab es unstimmigkeiten, wo sie sich selbsts widersprochen haben!', 'Die Aufzucht von Fischen', 2300, 2350, 'https://irgendwas.de/sepp',
-            1, 'New', 1, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
+            6, 'New', 2, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
         this.reports.push(new ReportVideo('Fehler', 'Bigdata', 'Video', 'Irgendwo da gab es unstimmigkeiten, wo sie sich selbsts widersprochen haben!', 'Die Aufzucht von Fischen', 2300, 2350, 'https://irgendwas.de/sepp',
-            1, 'New', 1, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
+            100, 'New', 1, 'Werner Beinhart', 'werner@hart.all', 3223445, 3223455, 3223666));
     }
 
     getReports(): Report[] {
