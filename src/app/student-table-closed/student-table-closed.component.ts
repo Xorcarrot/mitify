@@ -8,9 +8,9 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
-  selector: 'app-student-table',
-  templateUrl: './student-table.component.html',
-  styleUrls: ['./student-table.component.css'],
+  selector: 'app-student-table-closed',
+  templateUrl: './student-table-closed.component.html',
+  styleUrls: ['./student-table-closed.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
@@ -19,7 +19,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]),
   ],
 })
-export class StudentTableComponent implements AfterViewInit, OnInit {
+export class StudentTableClosedComponent implements AfterViewInit, OnInit {
 
   reports: Report[] = new REPORTS().getReports();
 
@@ -78,3 +78,4 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
   }
 
 }
+

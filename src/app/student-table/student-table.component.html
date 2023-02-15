@@ -1,5 +1,16 @@
-<div class="tableContainer">
-<table mat-table multiTemplateDataRows [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+
+<div color="primary" class="header">
+ <h2>Offene Meldungen</h2>
+</div>
+
+<div class="mat-elevation-z8 tableContainer">
+
+  <mat-form-field class="inputField">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="z.B.: Big Data" #input>
+  </mat-form-field>
+
+<table mat-table multiTemplateDataRows [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
 
   <!-- id Column -->
   <ng-container matColumnDef="id">
@@ -72,5 +83,12 @@
     (click)="expandedElement = expandedElement === element ? null : element">
   </tr>
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">Kein Eintrag passt zum gesuchten Filter "{{input.value}}"</td>
+  </tr>
 </table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25]" aria-label="Wähle eine Seite mit Meldungen"></mat-paginator>
+
 </div>

@@ -17,8 +17,6 @@ export class AppComponent implements OnInit {
     this.openDialog();
   }
 
-  
-
   openDialog(): void {
     this.dialog.open(LoginComponent, {
       disableClose: true

@@ -19,6 +19,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table'; 
+import {MatPaginatorModule} from '@angular/material/paginator';
 import {CdkAccordionModule} from '@angular/cdk/accordion'; 
 
 import { HeaderComponent } from './header/header.component';
@@ -28,6 +29,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
+import { StudentContainerComponent } from './student-container/student-container.component';
+import { StudentTableClosedComponent } from './student-table-closed/student-table-closed.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { MatSortModule } from '@angular/material/sort';
     HeaderComponent,
     DialogComponent,
     LoginComponent,
-    StudentTableComponent
+    StudentTableComponent,
+    StudentContainerComponent,
+    StudentTableClosedComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +65,7 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,9 @@
-import { StudentTableComponent } from './student-table/student-table.component';
+import { StudentContainerComponent } from './student-container/student-container.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  {path: 'student', component: StudentTableComponent}
+  {path: 'student', component: StudentContainerComponent}
 ]
 
 @NgModule({
