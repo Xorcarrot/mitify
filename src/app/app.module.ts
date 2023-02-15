@@ -31,6 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { StudentContainerComponent } from './student-container/student-container.component';
 import { StudentTableClosedComponent } from './student-table-closed/student-table-closed.component';
+import { ModuleManagerContainerComponent } from './module-manager-container/module-manager-container.component';
+import { ModuleManagerTableComponent } from './module-manager-table/module-manager-table.component';
+import { ModuleManagerTableClosedComponent } from './module-manager-table-closed/module-manager-table-closed.component';
+import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no-user.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { StudentTableClosedComponent } from './student-table-closed/student-tabl
     LoginComponent,
     StudentTableComponent,
     StudentContainerComponent,
-    StudentTableClosedComponent
+    StudentTableClosedComponent,
+    ModuleManagerContainerComponent,
+    ModuleManagerTableComponent,
+    ModuleManagerTableClosedComponent,
+    PlaceholderNoUserComponent
   ],
   imports: [
     BrowserModule,
