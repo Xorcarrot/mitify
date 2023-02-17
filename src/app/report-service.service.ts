@@ -24,7 +24,6 @@ export class ReportServiceService {
   //adds a new Videoreport to the Database
   addVideo(report: ReportVideo): Observable<any> {
     console.log("Videoreport sent to backend!");
-    console.log(JSON.stringify(report))
     return this.http.post<any>(this.videoReportUrl, report, {responseType: 'json'});
   }
 
