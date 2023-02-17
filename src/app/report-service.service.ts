@@ -17,11 +17,14 @@ export class ReportServiceService {
 
   //adds a new Skriptreport to the Database
   addSkript(report: ReportSkript): Observable<any> {
+    console.log("Skriptreport sent to backend!");
     return this.http.post<any>(this.skriptReportUrl, report, {responseType: 'json'});
   }
 
   //adds a new Videoreport to the Database
   addVideo(report: ReportVideo): Observable<any> {
+    console.log("Videoreport sent to backend!");
+    console.log(JSON.stringify(report))
     return this.http.post<any>(this.videoReportUrl, report, {responseType: 'json'});
   }
 

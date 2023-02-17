@@ -143,10 +143,10 @@ export class DialogComponent {
 
   addVideo(title: any, timestampStart: any, timestampEnd: any,videoUrl: any, description: any) {
 
-    this.report.title = title;
+    this.report.videoTitle = title;
     this.report.timestampStart = timestampStart;
     this.report.timestampEnd = timestampEnd;
-    this.report.videoUrl = videoUrl;
+    this.report.videoURL = videoUrl;
     this.report.description = description;
 
     this.skriptAdded = false;
