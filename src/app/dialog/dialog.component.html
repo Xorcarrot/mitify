@@ -190,8 +190,8 @@
       <div>
         <button mat-raised-button color="primary" matStepperPrevious>Zurück <mat-icon>arrow_back_ios</mat-icon></button>
         <span class="spacer"></span>
-        <button *ngIf="skriptAdded" mat-raised-button color="primary" (click)="postSkript(report)" mat-dialog-close>Speichern <mat-icon>save</mat-icon></button>
-        <button *ngIf="videoAdded" mat-raised-button color="primary" (click)="postVideo(report)" mat-dialog-close>Speichern <mat-icon>save</mat-icon></button>
+        <button *ngIf="skriptAdded" mat-raised-button color="primary" (click)="postSkript(report)" mat-dialog-close matTooltip="Nach dem Speichern können die Daten nicht mehr verändert werden.">Speichern <mat-icon>save</mat-icon></button>
+        <button *ngIf="videoAdded" mat-raised-button color="primary" (click)="postVideo(report)" mat-dialog-close matTooltip="Nach dem Speichern können die Daten nicht mehr verändert werden.">Speichern <mat-icon>save</mat-icon></button>
       </div>
     </mat-step>
 

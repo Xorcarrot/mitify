@@ -20,6 +20,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table'; 
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {CdkAccordionModule} from '@angular/cdk/accordion'; 
 
 import { HeaderComponent } from './header/header.component';
@@ -73,7 +74,8 @@ import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no
     HttpClientModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
