@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Skript:</h2>
+    <div class="wrapper">
+        <h4>Lokalisierung:</h4>
+        <p>
+            Seite: {{report.page}}<span class="spacer"></span>Kapitel: {{report.chapter}}<span class="spacer"></span>
+            <ng-container *ngIf="report.illustrationNumber != 0">Abbildung: {{report.illustrationNumber}}</ng-container>
+            <ng-container *ngIf="report.tableNumber != 0">Tabelle: {{report.tableNumber}}</ng-container>
+        </p>
+    </div>
+    <div class="wrapper">
+        <h4>Beschreibung:</h4>
+        <p>
+            <span class="topSpacer"></span>
+            {{report.description}}
+        </p>
+    </div>
+    <div class="wrapper lastWrapper">
+        <h4>Historie:</h4>
+        <p>
+            Erstellungsdatum: {{report.calcDateAndTime(report.reportDate)}}<span class="spacer"></span>
+            <ng-container *ngIf="report.grantedDate != null">In Bearbeitungsdatum: {{report.calcDateAndTime(report.grantedDate)}}</ng-container><span class="spacer"></span>
+            <ng-container *ngIf="report.completedDate != null && report.grantedDate != null">Fertigstellungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
+            <ng-container *ngIf="report.completedDate != null && report.grantedDate == null">Ablehnungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
+        </p>
+    </div>
+</div>

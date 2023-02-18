@@ -36,6 +36,8 @@ import { ModuleManagerContainerComponent } from './module-manager-container/modu
 import { ModuleManagerTableComponent } from './module-manager-table/module-manager-table.component';
 import { ModuleManagerTableClosedComponent } from './module-manager-table-closed/module-manager-table-closed.component';
 import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no-user.component';
+import { SkriptDetailStudentComponent } from './skript-detail-student/skript-detail-student.component';
+import { VideoDetailStudentComponent } from './video-detail-student/video-detail-student.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no
     ModuleManagerContainerComponent,
     ModuleManagerTableComponent,
     ModuleManagerTableClosedComponent,
-    PlaceholderNoUserComponent
+    PlaceholderNoUserComponent,
+    SkriptDetailStudentComponent,
+    VideoDetailStudentComponent
   ],
   imports: [
     BrowserModule,

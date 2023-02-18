@@ -9,15 +9,15 @@ export abstract class Report {
     module?: String;                 //Angabe zum Modul
     author?: String;                //Ersteller der Meldung
     eMail?: String;                 //Email des Erstellers
-    reportDate?: Number;            //Datum in Millisekunden an dem der Fehler erstellt wurde
-    grantedDate?: Number;           //Datum in Millisekunden an dem der Fehler zu Bearbeitung freigegeben wurde
-    completedDate?: Number;         //Datum in Millisekunden an dem die Fehlerbehebung abgeschlossen und abgelehnt wurde
+    reportDate?: number;            //Datum in Millisekunden an dem der Fehler erstellt wurde
+    grantedDate?: number;           //Datum in Millisekunden an dem der Fehler zu Bearbeitung freigegeben wurde
+    completedDate?: number;         //Datum in Millisekunden an dem die Fehlerbehebung abgeschlossen und abgelehnt wurde
     description?: String;           //Beschreibung zum Fehler
 
 
     //Constructor der für die Erstellung einer neuen Meldung verwendet wird
     constructor(type: string, modul: String, learningElement: String, description?: String, id?: Number, status?: String, 
-        priority?: Number, author?: String, eMail?: String, reportDate?: Number, grantedDate?: Number, completedDate?: Number) {
+        priority?: Number, author?: String, eMail?: String, reportDate?: number, grantedDate?: number, completedDate?: number) {
 
         this.reportType = type;
         this.module = modul;
@@ -43,6 +43,11 @@ export abstract class Report {
             this.grantedDate = grantedDate;
             this.completedDate = completedDate;
         }
+    }
+
+    calcDateAndTime(time: any): string {
+        var date = new Date(time);
+        return date.toLocaleDateString() + " " + date.toLocaleTimeString();
     }
 
 }

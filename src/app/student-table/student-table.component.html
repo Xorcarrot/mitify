@@ -68,11 +68,11 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumnsWithExpand.length">
 
       <div *ngIf="element.getType() == 1" class="example-element-detail"[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-        Ist ein Skript.
+        <app-skript-detail-student [report]="element"></app-skript-detail-student>
       </div>
 
       <div *ngIf="element.getType() == 2" class="example-element-detail"[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-        Ist ein Video.
+        <app-video-detail-student [report]="element"></app-video-detail-student>
       </div>
 
     </td>

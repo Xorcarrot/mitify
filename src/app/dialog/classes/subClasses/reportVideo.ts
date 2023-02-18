@@ -11,7 +11,7 @@ export class ReportVideo extends Report {
     
     //Constructor zum erstellen eines neuen Srikpt Meldung Objekts
     constructor (type: string, modul: String, learningElement: String, description?: String, title?: String, timestampStart?: number, timestampEnd?: number, videoUrl?: String,
-        id?: Number, status?: String, priority?: Number, author?: String, eMail?: String, reportDate?: Number, grantedDate?: Number, completedDate?: Number) {
+        id?: Number, status?: String, priority?: Number, author?: String, eMail?: String, reportDate?: number, grantedDate?: number, completedDate?: number) {
 
             super(type, modul, learningElement, description, id, status, 
                 priority, author, eMail, reportDate, grantedDate, completedDate);
@@ -25,4 +25,13 @@ export class ReportVideo extends Report {
     getType(): number {
         return 2;
     }
+
+    calcTimeToString(time: any): String {
+        var timeC = new Date(time * 1000);
+    
+        var minutes = timeC.getUTCMinutes();
+        var seconds = timeC.getUTCSeconds();
+    
+        return minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+      }
 }
