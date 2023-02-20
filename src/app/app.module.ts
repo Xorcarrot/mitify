@@ -38,6 +38,8 @@ import { ModuleManagerTableClosedComponent } from './module-manager-table-closed
 import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no-user.component';
 import { SkriptDetailStudentComponent } from './skript-detail-student/skript-detail-student.component';
 import { VideoDetailStudentComponent } from './video-detail-student/video-detail-student.component';
+import { SkriptDetailManagerComponent } from './skript-detail-manager/skript-detail-manager.component';
+import { VideoDetailManagerComponent } from './video-detail-manager/video-detail-manager.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { VideoDetailStudentComponent } from './video-detail-student/video-detail
     ModuleManagerTableClosedComponent,
     PlaceholderNoUserComponent,
     SkriptDetailStudentComponent,
-    VideoDetailStudentComponent
+    VideoDetailStudentComponent,
+    SkriptDetailManagerComponent,
+    VideoDetailManagerComponent
   ],
   imports: [
     BrowserModule,
