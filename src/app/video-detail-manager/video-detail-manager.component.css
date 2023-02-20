@@ -18,3 +18,14 @@
 .lastWrapper {
     border-bottom: 1px black solid;
 }
+
+.editingContainer {
+    padding-left: 200px;
+    margin: 5px 15px;
+    padding-bottom: 15px;
+}
+
+.tabu {
+    display: inline-block;
+    width: 100px;
+}

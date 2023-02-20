@@ -29,4 +29,24 @@
             <ng-container *ngIf="report.completedDate != null && report.grantedDate == null">Ablehnungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
         </p>
     </div>
+    <div class="editingContainer lastWrapper" *ngIf="editingMode">
+        Priorität erhöhen
+        <button mat-icon-button color="primary" aria-label="Erhöhe die Priorität">
+            <mat-icon>arrow_upward</mat-icon>
+          </button>
+        oder senken
+          <button mat-icon-button color="warn" aria-label="Senke die Priorität">
+            <mat-icon>arrow_downward</mat-icon>
+        </button>
+        .
+        <span class="tabu"></span>
+        <span class="spacer"></span>
+        <button mat-raised-button color="primary">in Bearbeitung</button>
+        <span class="tabu"></span>
+        <button mat-raised-button color="accent">Verwerfen</button>
+        <span class="tabu"></span>
+        <button mat-icon-button class="delete" color="warn" aria-label="Dauerhaft löschen">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
 </div>
