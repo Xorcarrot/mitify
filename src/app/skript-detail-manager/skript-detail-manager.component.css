@@ -20,12 +20,12 @@
 }
 
 .editingContainer {
-    padding-left: 200px;
     margin: 5px 15px;
     padding-bottom: 15px;
+    text-align: right;
 }
 
 .tabu {
     display: inline-block;
-    width: 100px;
+    width: 50px;
 }
