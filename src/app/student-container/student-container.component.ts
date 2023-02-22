@@ -1,5 +1,5 @@
 import { REPORTS } from './../../assets/REPORTS';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Report } from '../dialog/classes/Report';
 
 @Component({
@@ -11,6 +11,8 @@ export class StudentContainerComponent {
 
   openReports: number = 1;
   closedReports: number = 2;
+
+  @Input() token: any;
 
   constructor() {
     

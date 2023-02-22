@@ -1,6 +1,6 @@
 import { DatasourceService } from '../module-manager-table/services/datasource.service';
 import { ReportService } from '../module-manager-table/services/report.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-module-manager-container',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./module-manager-container.component.css']
 })
 export class ModuleManagerContainerComponent implements OnInit {
+
+  @Input() token: any;
 
   constructor() {
     
