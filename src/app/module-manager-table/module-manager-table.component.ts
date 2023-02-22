@@ -1,4 +1,7 @@
-import { REPORTS } from './../../assets/REPORTS';
+import { DatasourceService } from './services/datasource.service';
+import { ReportResponse } from './../interfaces/ReportResponse';
+import { ReportSkript } from './../dialog/classes/subClasses/reportSkript';
+import { ReportService } from './services/report.service';
 import { Report } from 'src/app/dialog/classes/Report';
 import {MatPaginator} from '@angular/material/paginator';
 import { AfterViewInit, Component, ViewChild, Input, OnInit } from '@angular/core';
@@ -21,10 +24,11 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
 
-  reports: Report[] = new REPORTS().getReports();
+  report = new DatasourceService(this.reportService);
+  reports!: ReportResponse[];
 
    displayedColumns: string[] = ['id', 'reportType', 'status', 'priority', 'module'];
-   dataSource = new MatTableDataSource(this.reports);
+   dataSource!: MatTableDataSource<ReportResponse>;
    displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
    expandedElement!: Report | null;
 
@@ -32,16 +36,22 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
    @ViewChild(MatPaginator) paginator!: MatPaginator;
 
    ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
+    
    }
 
    ngOnInit(): void {
-     
+    this.report.loadReports();
+    this.report.reports$.subscribe(data => {
+      this.reports = data;
+      this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
    }
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {
-  
+  constructor(private _liveAnnouncer: LiveAnnouncer, private reportService: ReportService) {
+    
   }
 
   announceSortChange(sortState: Sort) {
@@ -70,6 +80,7 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
+    
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {

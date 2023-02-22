@@ -16,7 +16,7 @@ export abstract class Report {
 
 
     //Constructor der für die Erstellung einer neuen Meldung verwendet wird
-    constructor(type: string, modul: String, learningElement: String, description?: String, id?: Number, status?: String, 
+    constructor(type: string, modul: String, description?: String, id?: Number, status?: String, 
         priority?: Number, author?: String, eMail?: String, reportDate?: number, grantedDate?: number, completedDate?: number) {
 
         this.reportType = type;
@@ -25,7 +25,7 @@ export abstract class Report {
 
         //Wenn der String Status leer ist wird der If block aktiv und ein neues Objekt kann generiert werden
         if(!status) {
-            this.status = "NEW";
+            this.status = "neu";
             this.priority = 1;
             this.author = "Platzhalter Joe";                    //in Arbeit: benötigt LOGIN + BENUTZERVERWALTUNG
             this.eMail = "joe.platzhalter@iu.de",               //in Arbeit: benötigt LOGIN + BENUTZERVERWALTUNG

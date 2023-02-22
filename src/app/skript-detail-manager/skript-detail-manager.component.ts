@@ -1,3 +1,4 @@
+import { ReportResponse } from './../interfaces/ReportResponse';
 import { Component, Input } from '@angular/core';
 import { ReportSkript } from '../dialog/classes/subClasses/reportSkript';
 

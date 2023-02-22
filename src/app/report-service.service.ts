@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 import { Report } from './dialog/classes/Report';
 import { ReportSkript } from './dialog/classes/subClasses/reportSkript';
 import { ReportVideo } from './dialog/classes/subClasses/reportVideo';
