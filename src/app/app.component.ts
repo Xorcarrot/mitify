@@ -1,5 +1,5 @@
 import { LoginComponent } from './login/login/login.component';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,18 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'mitify';
+  dialogRef!: MatDialogRef<LoginComponent>;
+
+  userEmail: string = '';
+  userToken: any = null;
 
   constructor(public dialog: MatDialog) {
 
   }
+  
   ngOnInit(): void {
     this.openDialog();
   }
 
   openDialog(): void {
-    this.dialog.open(LoginComponent, {
+    this.dialogRef = this.dialog.open(LoginComponent, {
       disableClose: true
     });
+    this.dialogRef.componentInstance.userToken.subscribe(data => {
+      this.userToken = data;
+      console.log(data);
+    });
+    this.dialogRef.componentInstance.userName.subscribe(email => {
+      this.userEmail = email;
+      console.log(email);
+      this.closeDialog();
+    })
+  }
+
+  closeDialog(): void {
+    this.dialogRef.close();
   }
 
 }
