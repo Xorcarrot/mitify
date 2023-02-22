@@ -1,5 +1,5 @@
 import { DialogComponent } from './../dialog/dialog.component';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -9,8 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HeaderComponent {
 
-  name = "Joe";
-  familyname = "Platzhalter";
+  @Input() author!: string;
 
   constructor (public dialog: MatDialog) { }
 

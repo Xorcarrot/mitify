@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-placeholder-no-user',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./placeholder-no-user.component.css']
 })
 export class PlaceholderNoUserComponent {
+
+  @Input() token!: any;
 
 }

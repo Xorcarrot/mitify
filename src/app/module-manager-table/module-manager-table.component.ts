@@ -27,6 +27,8 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
   report = new DatasourceService(this.reportService);
   reports!: ReportResponse[];
 
+  loaded = false;
+
    displayedColumns: string[] = ['id', 'reportType', 'status', 'priority', 'module'];
    dataSource!: MatTableDataSource<ReportResponse>;
    displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
@@ -47,7 +49,8 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
       this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-    })
+    });
+    this.loaded = true;
    }
 
   constructor(private _liveAnnouncer: LiveAnnouncer, private reportService: ReportService) {

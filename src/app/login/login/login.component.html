@@ -26,7 +26,7 @@
         <!--Nach spezifikation weiterarbeiten-->
         <mat-dialog-actions>
             <button mat-flat-button color="accent" [mat-dialog-close]="true">ohne Anmelden weiter</button>
-            <button mat-flat-button color="primary">Anmelden</button>
+            <button mat-flat-button color="primary" (click)="logIn(loginFormGroup.value.email, loginFormGroup.value.password)">Anmelden</button>
         </mat-dialog-actions>
 
     </div>
