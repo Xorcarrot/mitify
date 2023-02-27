@@ -1,9 +1,9 @@
 <mat-toolbar class="header" color="primary">
     <span class="middle">IU Mitify Login</span>
 </mat-toolbar>
-<form [formGroup]="loginFormGroup">
+<form [formGroup]="loginFormGroup" >
     
-    <div class="loginForm footer">
+    <div class="loginForm footer" *ngIf="!loading$">
         <mat-form-field appearance="outline" class="stretch">
             <mat-label>Email</mat-label>
             <input matInput placeholder="pat@example.com" formControlName="email" required>
@@ -23,10 +23,11 @@
             </button>
         </mat-form-field>
 
+        <mat-error *ngIf="error != ''">{{error}}</mat-error>
+
         <!--Nach spezifikation weiterarbeiten-->
         <mat-dialog-actions>
-            <button mat-flat-button color="accent" [mat-dialog-close]="true">ohne Anmelden weiter</button>
-            <button mat-flat-button color="primary" (click)="logIn(loginFormGroup.value.email, loginFormGroup.value.password)">Anmelden</button>
+            <button mat-flat-button color="primary" class="button" (click)="logIn(loginFormGroup.value.email, loginFormGroup.value.password)">Anmelden</button>
         </mat-dialog-actions>
 
     </div>

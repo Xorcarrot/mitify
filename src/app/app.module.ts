@@ -21,6 +21,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {CdkAccordionModule} from '@angular/cdk/accordion'; 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 
 import { HeaderComponent } from './header/header.component';
 import { DialogComponent } from './dialog/dialog.component';
@@ -75,6 +76,7 @@ import { VideoDetailManagerComponent } from './video-detail-manager/video-detail
     MatSortModule,
     MatPaginatorModule,
     MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

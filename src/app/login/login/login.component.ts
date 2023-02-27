@@ -14,6 +14,8 @@ import { HttpResponse } from '@angular/common/http';
 export class LoginComponent {
 
   hide: boolean = true;
+  loading$: boolean = false;
+  error: string = '';
 
   @Output() userName = new EventEmitter<string>();
   @Output() userRole = new EventEmitter<string>();
@@ -51,13 +53,17 @@ export class LoginComponent {
   }
 
   logIn(email: any, password: any): void {
+    this.loading$ = true;
     let userTry = new MitifyUser(email, password);
     this.userManagement.userSignIn(userTry).subscribe((res: HttpResponse<any>) => {
       this.userName.emit(userTry.mitify_user.email);
       this.userData.setToken(res.headers.get('Authorization'));
       this.userData.setUserData('Max Mustermann', 'Student', userTry.mitify_user.email);
       this.userRole.emit(this.userData.role);
+    }, error => {
+      this.error = "Ihre Benutzer Passwort Kombination ist Falsch!";
     });
+    this.loading$ = false;
   }
 
 }
