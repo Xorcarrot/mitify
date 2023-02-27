@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { UserDataService } from './user/userData.service';
 import { LoginComponent } from './login/login/login.component';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
@@ -12,33 +15,42 @@ export class AppComponent implements OnInit {
   dialogRef!: MatDialogRef<LoginComponent>;
 
   userEmail: string = '';
-  userToken: any = null;
+  userRole: string = '';
 
-  constructor(public dialog: MatDialog) {
+  logedIn: boolean = false;
+
+  constructor(public dialog: MatDialog, public userData: UserDataService,private router: Router) {
 
   }
   
   ngOnInit(): void {
-    this.openDialog();
+    if(this.userRole == '') {
+      this.openDialog();
+    }
+    
   }
 
   openDialog(): void {
     this.dialogRef = this.dialog.open(LoginComponent, {
       disableClose: true
     });
-    this.dialogRef.componentInstance.userToken.subscribe(data => {
-      this.userToken = data;
-      console.log(data);
+    this.dialogRef.componentInstance.userRole.subscribe(data => {
+      this.userRole = data;
+      if (this.userRole == 'Student') {
+        this.router.navigate(['/', 'user']);
+      } else if (this.userRole == "Manager") {
+        this.router.navigate(['/', 'manager']);
+      }
     });
     this.dialogRef.componentInstance.userName.subscribe(email => {
       this.userEmail = email;
-      console.log(email);
       this.closeDialog();
     })
   }
 
   closeDialog(): void {
     this.dialogRef.close();
+    this.logedIn = true;
   }
 
 }

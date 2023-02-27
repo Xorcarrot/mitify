@@ -1,20 +1,20 @@
-import { REPORTS } from './../../assets/REPORTS';
 import { Component, Input, OnInit } from '@angular/core';
-import { Report } from '../dialog/classes/Report';
 
 @Component({
   selector: 'app-student-container',
   templateUrl: './student-container.component.html',
   styleUrls: ['./student-container.component.css']
 })
-export class StudentContainerComponent {
+export class StudentContainerComponent implements OnInit {
 
   openReports: number = 1;
   closedReports: number = 2;
 
-  @Input() token: any;
-
   constructor() {
+    
+  }
+
+  ngOnInit(): void {
     
   }
 

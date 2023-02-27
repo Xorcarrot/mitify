@@ -1,3 +1,4 @@
+import { UserDataService } from 'src/app/user/userData.service';
 import { UserManagementService } from './../../user/userManagement.service';
 import { Observable } from 'rxjs';
 import { MitifyUser } from './../../user/mitify_user';
@@ -15,7 +16,7 @@ export class LoginComponent {
   hide: boolean = true;
 
   @Output() userName = new EventEmitter<string>();
-  @Output() userToken = new EventEmitter<any>();
+  @Output() userRole = new EventEmitter<string>();
 
   /**Passwort vorraussetzung um als korrekt ausgewertet zu werden:
    * 
@@ -37,7 +38,7 @@ export class LoginComponent {
     ]]
   })
 
-  constructor(private _formBuilder: FormBuilder, private userManagement: UserManagementService) {
+  constructor(private _formBuilder: FormBuilder, private userManagement: UserManagementService, public userData: UserDataService) {
     
   }
 
@@ -53,7 +54,9 @@ export class LoginComponent {
     let userTry = new MitifyUser(email, password);
     this.userManagement.userSignIn(userTry).subscribe((res: HttpResponse<any>) => {
       this.userName.emit(userTry.mitify_user.email);
-      this.userToken.emit(res.headers.get('Authorization'));
+      this.userData.setToken(res.headers.get('Authorization'));
+      this.userData.setUserData('Max Mustermann', 'Student', userTry.mitify_user.email);
+      this.userRole.emit(this.userData.role);
     });
   }
 

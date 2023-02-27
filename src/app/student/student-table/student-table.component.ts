@@ -1,4 +1,5 @@
-import { REPORTS } from './../../assets/REPORTS';
+import { UserDataService } from '../../user/userData.service';
+import { REPORTS } from '../../../assets/REPORTS';
 import { Report } from 'src/app/dialog/classes/Report';
 import {MatPaginator} from '@angular/material/paginator';
 import { AfterViewInit, Component, ViewChild, Input, OnInit } from '@angular/core';
@@ -40,7 +41,7 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
      
    }
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {
+  constructor(private _liveAnnouncer: LiveAnnouncer, public userData: UserDataService) {
   
   }
 

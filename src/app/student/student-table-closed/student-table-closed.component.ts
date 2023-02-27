@@ -1,4 +1,4 @@
-import { REPORTS } from './../../assets/REPORTS';
+import { REPORTS } from '../../../assets/REPORTS';
 import { Report } from 'src/app/dialog/classes/Report';
 import {MatPaginator} from '@angular/material/paginator';
 import { AfterViewInit, Component, ViewChild, Input, OnInit } from '@angular/core';

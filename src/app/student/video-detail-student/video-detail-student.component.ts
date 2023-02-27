@@ -1,6 +1,6 @@
-import { ReportVideo } from './../dialog/classes/subClasses/reportVideo';
+import { ReportVideo } from '../../dialog/classes/subClasses/reportVideo';
 import { Component, Input } from '@angular/core';
-import { Report } from '../dialog/classes/Report';
+import { Report } from '../../dialog/classes/Report';
 
 @Component({
   selector: 'app-video-detail-student',

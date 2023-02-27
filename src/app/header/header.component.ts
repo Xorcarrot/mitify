@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class HeaderComponent {
 
   @Input() author!: string;
+  @Input() logedIn!: boolean;
 
   constructor (public dialog: MatDialog) { }
 

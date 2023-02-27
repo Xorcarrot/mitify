@@ -1,4 +1,4 @@
-import { ReportSkript } from './../dialog/classes/subClasses/reportSkript';
+import { ReportSkript } from '../../dialog/classes/subClasses/reportSkript';
 import { Report } from 'src/app/dialog/classes/Report';
 import { Component, Input } from '@angular/core';
 
