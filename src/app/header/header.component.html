@@ -2,6 +2,8 @@
     <span>IU Mitify</span>
     <span class="spacer"></span>
     <span class="welcome">Willkommen, {{author}} </span>
-    <mat-icon>login</mat-icon>
+    <button mat-mini-fab color="accent" (click)="logOut()" aria-label="logout from server">
+        <mat-icon>login</mat-icon>
+    </button>
 </mat-toolbar>
 <button *ngIf="logedIn" mat-raised-button color="primary" class="reportButton" (click)="openDialog()">Meldung erstellen  <mat-icon>flag</mat-icon></button>

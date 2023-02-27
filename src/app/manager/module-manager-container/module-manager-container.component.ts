@@ -1,5 +1,5 @@
-import { DatasourceService } from '../module-manager-table/services/datasource.service';
-import { ReportService } from '../module-manager-table/services/report.service';
+import { DatasourceService } from '../../module-manager-table/services/datasource.service';
+import { ReportService } from '../../module-manager-table/services/report.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

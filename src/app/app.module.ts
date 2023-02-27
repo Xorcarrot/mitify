@@ -30,12 +30,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
-import { ModuleManagerContainerComponent } from './module-manager-container/module-manager-container.component';
-import { ModuleManagerTableComponent } from './module-manager-table/module-manager-table.component';
-import { ModuleManagerTableClosedComponent } from './module-manager-table-closed/module-manager-table-closed.component';
 import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no-user.component';
-import { SkriptDetailManagerComponent } from './skript-detail-manager/skript-detail-manager.component';
-import { VideoDetailManagerComponent } from './video-detail-manager/video-detail-manager.component';
 
 
 @NgModule({
@@ -44,12 +39,7 @@ import { VideoDetailManagerComponent } from './video-detail-manager/video-detail
     HeaderComponent,
     DialogComponent,
     LoginComponent,
-    ModuleManagerContainerComponent,
-    ModuleManagerTableComponent,
-    ModuleManagerTableClosedComponent,
     PlaceholderNoUserComponent,
-    SkriptDetailManagerComponent,
-    VideoDetailManagerComponent
   ],
   imports: [
     BrowserModule,

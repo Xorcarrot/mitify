@@ -58,7 +58,7 @@ export class LoginComponent {
     this.userManagement.userSignIn(userTry).subscribe((res: HttpResponse<any>) => {
       this.userName.emit(userTry.mitify_user.email);
       this.userData.setToken(res.headers.get('Authorization'));
-      this.userData.setUserData('Max Mustermann', 'Student', userTry.mitify_user.email);
+      this.userData.setUserData('Max Mustermann', 'Manager', userTry.mitify_user.email);
       this.userRole.emit(this.userData.role);
     }, error => {
       this.error = "Ihre Benutzer Passwort Kombination ist Falsch!";

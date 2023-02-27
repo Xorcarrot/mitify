@@ -1,6 +1,6 @@
-import { ReportResponse } from './../interfaces/ReportResponse';
+import { ReportResponse } from '../../interfaces/ReportResponse';
 import { Component, Input } from '@angular/core';
-import { ReportSkript } from '../dialog/classes/subClasses/reportSkript';
+import { ReportSkript } from '../../dialog/classes/subClasses/reportSkript';
 
 @Component({
   selector: 'app-skript-detail-manager',
