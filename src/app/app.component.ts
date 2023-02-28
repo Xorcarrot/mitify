@@ -1,8 +1,7 @@
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserDataService } from './user/userData.service';
 import { LoginComponent } from './login/login/login.component';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
