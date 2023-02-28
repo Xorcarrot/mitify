@@ -4,7 +4,6 @@ import { ReportSkript } from './classes/subClasses/reportSkript';
 import { Modul } from './classes/modul';
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Report } from 'src/app/dialog/classes/Report';
 
 @Component({
   selector: 'app-dialog',
