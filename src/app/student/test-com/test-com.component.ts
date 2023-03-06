@@ -21,7 +21,7 @@ export class TestComComponent implements OnInit {
 
   getData(): void {
     this.userManagement.getData(this.userData.getToken()).subscribe(data => {
-      console.log("User " + this.userData.author + " requested data.");
+      console.log("User " + this.userData.getAuthor() + " requested data.");
       console.log(data);
     });
   }

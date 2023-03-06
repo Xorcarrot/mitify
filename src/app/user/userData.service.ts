@@ -6,25 +6,31 @@ import { Injectable } from '@angular/core';
 })
 export class UserDataService {
 
-  author!: string;
-  role!: string;
-  eMail!: string;
+  id!: any;
+  eMail!: any;
+  name!: any;
+  first_name!: any;
+  role_id!: any;
+  
   token!: any;
+
 
 constructor() { }
 
-setUserData(author: string, role: string, eMail: string): void {
-  this.author = author;
-  this.role = role;
+setUserData(id: any, eMail: any, name: any, first_name: any, role_id: any): void {
+  this.id = id;
   this.eMail = eMail;
+  this.name = name;
+  this.first_name = first_name;
+  this.role_id = role_id;
 }
 
 getAuthor(): string {
-  return this.author;
+  return this.first_name + ' ' + this.name;
 }
 
-getRole(): string {
-  return this.role;
+getRole(): number {
+  return this.role_id;
 }
 
 getEmail(): string {

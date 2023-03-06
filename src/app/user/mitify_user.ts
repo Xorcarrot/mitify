@@ -1,7 +1,7 @@
 export class MitifyUser {
     mitify_user = {
         'email': '',
-        'password': ''
+        'password': '',
     };
 
     constructor(email: string, password: string) {

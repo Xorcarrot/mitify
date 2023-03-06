@@ -1,3 +1,4 @@
+import { UserDataService } from 'src/app/user/userData.service';
 import { ReportServiceService } from './../report-service.service';
 import { ReportVideo } from './classes/subClasses/reportVideo';
 import { ReportSkript } from './classes/subClasses/reportSkript';
@@ -33,7 +34,7 @@ export class DialogComponent {
 
   elementFormGroup: any;
 
-  constructor(private _formBuilder: FormBuilder, private httpService: ReportServiceService) {}
+  constructor(private _formBuilder: FormBuilder, private httpService: ReportServiceService, private userData: UserDataService) {}
 
   moduls: Modul[] = [
     {value: 'Big Data', name: 'Big Data'},
@@ -49,6 +50,7 @@ export class DialogComponent {
     if(learningElement == "Skript") {
 
       this.report = new ReportSkript(type, modul, learningElement);
+      this.report.setUser(this.userData.name, this.userData.first_name, this.userData.eMail);
 
       this.elementFormGroup = this._formBuilder.group({
         pageNumber: ['', [

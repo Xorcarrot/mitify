@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   dialogRef!: MatDialogRef<LoginComponent>;
 
   userEmail: string = '';
-  userRole: string = '';
+  userRole: number = 0;
 
   logedIn: boolean = false;
 
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    if(this.userRole == '') {
+    if(this.userRole == 0) {
       this.openDialog();
     }
     
@@ -35,9 +35,9 @@ export class AppComponent implements OnInit {
     });
     this.dialogRef.componentInstance.userRole.subscribe(data => {
       this.userRole = data;
-      if (this.userRole == 'Student') {
+      if (this.userRole == 1) {
         this.router.navigate(['/', 'user']);
-      } else if (this.userRole == "Manager") {
+      } else if (this.userRole == 2) {
         this.router.navigate(['/', 'manager']);
       }
     });

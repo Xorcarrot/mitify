@@ -1,3 +1,4 @@
+import { UserResponse } from './../../user/userResponse';
 import { UserDataService } from 'src/app/user/userData.service';
 import { UserManagementService } from './../../user/userManagement.service';
 import { Observable } from 'rxjs';
@@ -18,7 +19,7 @@ export class LoginComponent {
   error: string = '';
 
   @Output() userName = new EventEmitter<string>();
-  @Output() userRole = new EventEmitter<string>();
+  @Output() userRole = new EventEmitter<number>();
 
   /**Passwort vorraussetzung um als korrekt ausgewertet zu werden:
    * 
@@ -55,11 +56,13 @@ export class LoginComponent {
   logIn(email: any, password: any): void {
     this.loading$ = true;
     let userTry = new MitifyUser(email, password);
-    this.userManagement.userSignIn(userTry).subscribe((res: HttpResponse<any>) => {
-      this.userName.emit(userTry.mitify_user.email);
+    this.userManagement.userSignIn(userTry).subscribe((res: HttpResponse<UserResponse>) => {
+      console.log(res);
       this.userData.setToken(res.headers.get('Authorization'));
-      this.userData.setUserData('Max Mustermann', 'Manager', userTry.mitify_user.email);
-      this.userRole.emit(this.userData.role);
+      this.userData.setUserData(res.body?.user.id, res.body?.user.email, res.body?.user.name, res.body?.user.first_name, res.body?.user.role_id);
+      console.log(this.userData)
+      this.userName.emit(this.userData.getAuthor());
+      this.userRole.emit(this.userData.role_id);
     }, error => {
       this.error = "Ihre Benutzer Passwort Kombination ist Falsch!";
     });

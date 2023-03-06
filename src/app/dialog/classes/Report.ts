@@ -26,9 +26,7 @@ export abstract class Report {
         //Wenn der String Status leer ist wird der If block aktiv und ein neues Objekt kann generiert werden
         if(!status) {
             this.status = "neu";
-            this.priority = 1;
-            this.author = "Platzhalter Joe";                    //in Arbeit: benötigt LOGIN + BENUTZERVERWALTUNG
-            this.eMail = "joe.platzhalter@iu.de",               //in Arbeit: benötigt LOGIN + BENUTZERVERWALTUNG
+            this.priority = 1;      
             this.reportDate = new Date().getTime();
         }
 
@@ -48,6 +46,11 @@ export abstract class Report {
     calcDateAndTime(time: any): string {
         var date = new Date(time);
         return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+    }
+
+    setUser(name: string, first_name: string, email: string): void {
+        this.author = first_name + ' ' + name;
+        this.eMail = email;
     }
 
 }
