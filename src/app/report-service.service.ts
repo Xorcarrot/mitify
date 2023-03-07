@@ -1,3 +1,5 @@
+import { SkriptContainer } from './interfaces/skriptContainer';
+import { SkriptPost } from './interfaces/skriptPost';
 import { UserDataService } from './user/userData.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
@@ -18,10 +20,15 @@ export class ReportServiceService {
 
   //adds a new Skriptreport to the Database
   addSkript(report: ReportSkript): Observable<any> {
+    let skript = new SkriptPost(report.reportType, report.module, report.description, report.status, report.priority, report.page, report.chapter, report.illustrationNumber, report.tableNumber, report.reportDate, this.userData.id);
+    let skriptCont = new SkriptContainer(skript);
+
     let token = this.userData.token;
+
+    console.log(skriptCont);
     let headers = new HttpHeaders().set('Authorization', token);
     console.log("Skriptreport sent to backend!");
-    return this.http.post<any>(this.skriptReportUrl, report, {responseType: 'json',
+    return this.http.post<any>(this.skriptReportUrl, skriptCont, {responseType: 'json',
                                                               headers: headers});
   }
 
