@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
     if(this.userRole == 0) {
       this.openDialog();
     }
-    
   }
 
   openDialog(): void {

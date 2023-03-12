@@ -57,12 +57,11 @@ export class LoginComponent {
     this.loading$ = true;
     let userTry = new MitifyUser(email, password);
     this.userManagement.userSignIn(userTry).subscribe((res: HttpResponse<UserResponse>) => {
-      console.log(res);
       this.userData.setToken(res.headers.get('Authorization'));
       this.userData.setUserData(res.body?.user.id, res.body?.user.email, res.body?.user.name, res.body?.user.first_name, res.body?.user.role_id);
-      console.log(this.userData)
       this.userName.emit(this.userData.getAuthor());
       this.userRole.emit(this.userData.role_id);
+      console.log('Hallo ' + res.body?.user.name + ', du bist jetzt eingeloggt!');
     }, error => {
       this.error = "Ihre Benutzer Passwort Kombination ist Falsch!";
     });
