@@ -1,8 +1,8 @@
-import { UserResponse } from './../../user/userResponse';
+import { UserResponse } from '../user/userResponse';
 import { UserDataService } from 'src/app/user/userData.service';
-import { UserManagementService } from './../../user/userManagement.service';
+import { UserManagementService } from '../user/userManagement.service';
 import { Observable } from 'rxjs';
-import { MitifyUser } from './../../user/mitify_user';
+import { MitifyUser } from '../user/mitify_user';
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { HttpResponse } from '@angular/common/http';

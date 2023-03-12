@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { UserDataService } from './user/userData.service';
-import { LoginComponent } from './login/login/login.component';
+import { LoginComponent } from './login/login.component';
 import {
   MatDialog,
   MatDialogRef,
