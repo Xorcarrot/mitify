@@ -1,3 +1,5 @@
+import { VideoContainer } from './interfaces/videoContainer';
+import { VideoPost } from './interfaces/videoPost';
 import { SkriptContainer } from './interfaces/skriptContainer';
 import { SkriptPost } from './interfaces/skriptPost';
 import { UserDataService } from './user/userData.service';
@@ -25,7 +27,6 @@ export class ReportServiceService {
 
     let token = this.userData.token;
 
-    console.log(skriptCont);
     let headers = new HttpHeaders().set('Authorization', token);
     console.log("Skriptreport sent to backend!");
     return this.http.post<any>(this.skriptReportUrl, skriptCont, {responseType: 'json',
@@ -34,10 +35,14 @@ export class ReportServiceService {
 
   //adds a new Videoreport to the Database
   addVideo(report: ReportVideo): Observable<any> {
+    let video = new VideoPost(report.reportType, report.module, report.description, report.status, report.priority, report.videoTitle, report.timestampStart, report.timestampEnd, report.videoURL, report.reportDate, this.userData.id, this.userData.getAuthor(), this.userData.eMail);
+    let videoCont = new VideoContainer(video);
+
     let token = this.userData.token;
+
     let headers = new HttpHeaders().set('Authorization', token);
     console.log("Videoreport sent to backend!");
-    return this.http.post<any>(this.videoReportUrl, report, {responseType: 'json',
+    return this.http.post<any>(this.videoReportUrl, videoCont, {responseType: 'json',
                                                             headers: headers});
   }
 
