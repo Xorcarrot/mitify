@@ -1,7 +1,7 @@
-import { ReportVideo } from './../../dialog/classes/subClasses/reportVideo';
-import { ReportResponse } from './../../interfaces/ReportResponse';
+import { ReportVideo } from './../dialog/classes/subClasses/reportVideo';
+import { ReportResponse } from './../interfaces/ReportResponse';
 import { ReportService } from './report.service';
-import { CollectionViewer, DataSource } from '@angular/cdk/collections';
+import { DataSource } from '@angular/cdk/collections';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Report } from 'src/app/dialog/classes/Report';

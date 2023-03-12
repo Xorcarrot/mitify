@@ -1,16 +1,16 @@
-import { VideoContainer } from './interfaces/videoContainer';
-import { VideoPost } from './interfaces/videoPost';
-import { SkriptContainer } from './interfaces/skriptContainer';
-import { SkriptPost } from './interfaces/skriptPost';
-import { UserDataService } from './user/userData.service';
+import { VideoContainer } from './../interfaces/videoContainer';
+import { VideoPost } from './../interfaces/videoPost';
+import { SkriptContainer } from './../interfaces/skriptContainer';
+import { SkriptPost } from './../interfaces/skriptPost';
+import { UserDataService } from './../user/userData.service';
 import { Injectable } from '@angular/core';
 import {
   HttpClient,
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ReportSkript } from './dialog/classes/subClasses/reportSkript';
-import { ReportVideo } from './dialog/classes/subClasses/reportVideo';
+import { ReportSkript } from './../dialog/classes/subClasses/reportSkript';
+import { ReportVideo } from './../dialog/classes/subClasses/reportVideo';
 
 @Injectable({
   providedIn: 'root',

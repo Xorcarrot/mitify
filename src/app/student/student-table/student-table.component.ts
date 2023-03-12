@@ -1,6 +1,6 @@
 import { ReportResponse } from './../../interfaces/ReportResponse';
-import { DatasourceService } from './../../module-manager-table/services/datasource.service';
-import { ReportService } from './../../module-manager-table/services/report.service';
+import { DatasourceService } from '../../services/datasource.service';
+import { ReportService } from '../../services/report.service';
 import { UserDataService } from '../../user/userData.service';
 import { Report } from 'src/app/dialog/classes/Report';
 import { MatPaginator } from '@angular/material/paginator';

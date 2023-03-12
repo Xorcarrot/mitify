@@ -1,5 +1,5 @@
 import { UserDataService } from 'src/app/user/userData.service';
-import { ReportServiceService } from './../report-service.service';
+import { ReportServiceService } from './../services/report-service.service';
 import { ReportVideo } from './classes/subClasses/reportVideo';
 import { ReportSkript } from './classes/subClasses/reportSkript';
 import { Modul } from './classes/modul';

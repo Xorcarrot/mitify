@@ -1,10 +1,8 @@
-import { UserDataService } from './../../user/userData.service';
-import { ReportResponse } from './../../interfaces/ReportResponse';
-import { ReportSkript } from '../../dialog/classes/subClasses/reportSkript';
+import { UserDataService } from './../user/userData.service';
+import { ReportResponse } from './../interfaces/ReportResponse';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Report } from 'src/app/dialog/classes/Report';
 
 @Injectable({
   providedIn: 'root',

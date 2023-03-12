@@ -1,13 +1,12 @@
-import { DatasourceService } from './services/datasource.service';
-import { ReportResponse } from './../interfaces/ReportResponse';
-import { ReportService } from './services/report.service';
+import { DatasourceService } from './../../services/datasource.service';
+import { ReportResponse } from '../../interfaces/ReportResponse';
+import { ReportService } from './../../services/report.service';
 import { Report } from 'src/app/dialog/classes/Report';
 import { MatPaginator } from '@angular/material/paginator';
 import {
   AfterViewInit,
   Component,
   ViewChild,
-  Input,
   OnInit,
 } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';

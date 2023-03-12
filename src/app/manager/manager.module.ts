@@ -1,6 +1,6 @@
 import { VideoDetailManagerComponent } from './video-detail-manager/video-detail-manager.component';
 import { SkriptDetailManagerComponent } from './skript-detail-manager/skript-detail-manager.component';
-import { ModuleManagerTableComponent } from './../module-manager-table/module-manager-table.component';
+import { ModuleManagerTableComponent } from './module-manager-table/module-manager-table.component';
 import { ModuleManagerTableClosedComponent } from './module-manager-table-closed/module-manager-table-closed.component';
 import { ModuleManagerContainerComponent } from './module-manager-container/module-manager-container.component';
 import { NgModule } from '@angular/core';
