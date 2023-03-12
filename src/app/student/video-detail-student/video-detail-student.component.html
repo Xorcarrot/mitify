@@ -4,7 +4,7 @@
         <h4>Lokalisierung:</h4>
         <p>
             Videotitel: {{report.videoTitle}}<span class="spacer"></span>Video URL: {{report.videoURL}}<span class="spacer"></span>
-            Zeitstempel Beginn: {{report.calcTimeToString(report.timestampStart)}}<span class="spacer"></span>Zeitstempel Ende: {{report.calcTimeToString(report.timestampEnd)}}
+            <!-- Zeitstempel Beginn: {{report.calcTimeToString(report.timestampStart)}}<span class="spacer"></span>Zeitstempel Ende: {{report.calcTimeToString(report.timestampEnd)}} -->
         </p>
     </div>
     <div class="wrapper">
@@ -16,11 +16,11 @@
     </div>
     <div class="wrapper lastWrapper">
         <h4>Historie:</h4>
-        <p>
+        <!-- <p>
             Erstellungsdatum: {{report.calcDateAndTime(report.reportDate)}}<span class="spacer"></span>
             <ng-container *ngIf="report.grantedDate != null">In Bearbeitungsdatum: {{report.calcDateAndTime(report.grantedDate)}}</ng-container><span class="spacer"></span>
             <ng-container *ngIf="report.completedDate != null && report.grantedDate != null">Fertigstellungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
             <ng-container *ngIf="report.completedDate != null && report.grantedDate == null">Ablehnungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
-        </p>
+        </p> -->
     </div>
 </div>

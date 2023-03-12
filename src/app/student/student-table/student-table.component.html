@@ -67,11 +67,11 @@
   <ng-container matColumnDef="expandedDetail">
     <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumnsWithExpand.length">
 
-      <div *ngIf="element.getType() == 1" class="example-element-detail"[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+      <div *ngIf="element.page > 0" class="example-element-detail"[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
         <app-skript-detail-student [report]="element"></app-skript-detail-student>
       </div>
 
-      <div *ngIf="element.getType() == 2" class="example-element-detail"[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+      <div *ngIf="element.page == null" class="example-element-detail"[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
         <app-video-detail-student [report]="element"></app-video-detail-student>
       </div>
 

@@ -1,3 +1,6 @@
+import { ReportResponse } from './../../interfaces/ReportResponse';
+import { DatasourceService } from './../../module-manager-table/services/datasource.service';
+import { ReportService } from './../../module-manager-table/services/report.service';
 import { UserDataService } from '../../user/userData.service';
 import { REPORTS } from '../../../assets/REPORTS';
 import { Report } from 'src/app/dialog/classes/Report';
@@ -22,7 +25,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class StudentTableComponent implements AfterViewInit, OnInit {
 
-  reports: Report[] = new REPORTS().getReports();
+  report = new DatasourceService(this.reportService);
+  reports!: ReportResponse[];
 
    displayedColumns: string[] = ['id', 'reportType', 'status', 'priority', 'module'];
    dataSource = new MatTableDataSource(this.reports);
@@ -33,15 +37,20 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
    @ViewChild(MatPaginator) paginator!: MatPaginator;
 
    ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
    }
 
    ngOnInit(): void {
-     
+     this.report.loadReports();
+     this.report.reports$.subscribe(data => {
+      this.reports = data;
+      this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+     });
    }
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, public userData: UserDataService) {
+  constructor(private _liveAnnouncer: LiveAnnouncer, public userData: UserDataService, private reportService: ReportService) {
   
   }
 
