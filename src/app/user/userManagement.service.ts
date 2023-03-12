@@ -4,30 +4,32 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserManagementService {
+  signInURL: string =
+    'https://fathomless-eyrie-95662.herokuapp.com/mitify_users/sign_in';
+  dataURL: string =
+    'https://fathomless-eyrie-95662.herokuapp.com/api/v1/member-data';
+  signOutURL: string =
+    'https://fathomless-eyrie-95662.herokuapp.com/mitify_users/sign_out';
 
-  signInURL: string = "https://fathomless-eyrie-95662.herokuapp.com/mitify_users/sign_in";
-  dataURL: string = "https://fathomless-eyrie-95662.herokuapp.com/api/v1/member-data";
-  signOutURL: string = "https://fathomless-eyrie-95662.herokuapp.com/mitify_users/sign_out"
-
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   userSignIn(user: MitifyUser): Observable<any> {
     return this.http.post<any>(this.signInURL, user, {
       responseType: 'json',
-      observe: 'response'});
+      observe: 'response',
+    });
   }
 
   getData(token: any): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', token);
-    return this.http.get<any>(this.dataURL, {headers: headers});
+    return this.http.get<any>(this.dataURL, { headers: headers });
   }
 
   userSignOut(token: any): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', token);
-    return this.http.delete(this.signOutURL, {headers: headers});
+    return this.http.delete(this.signOutURL, { headers: headers });
   }
-
 }

@@ -2,14 +2,25 @@ import { ReportResponse } from './../../interfaces/ReportResponse';
 import { DatasourceService } from './../../module-manager-table/services/datasource.service';
 import { ReportService } from './../../module-manager-table/services/report.service';
 import { UserDataService } from '../../user/userData.service';
-import { REPORTS } from '../../../assets/REPORTS';
 import { Report } from 'src/app/dialog/classes/Report';
-import {MatPaginator} from '@angular/material/paginator';
-import { AfterViewInit, Component, ViewChild, Input, OnInit } from '@angular/core';
-import {MatSort, Sort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { MatPaginator } from '@angular/material/paginator';
+import {
+  AfterViewInit,
+  Component,
+  ViewChild,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-student-table',
@@ -17,42 +28,50 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   styleUrls: ['./student-table.component.css'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
     ]),
   ],
 })
 export class StudentTableComponent implements AfterViewInit, OnInit {
-
   report = new DatasourceService(this.reportService);
   reports!: ReportResponse[];
 
-   displayedColumns: string[] = ['id', 'reportType', 'status', 'priority', 'module'];
-   dataSource = new MatTableDataSource(this.reports);
-   displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
-   expandedElement!: Report | null;
+  displayedColumns: string[] = [
+    'id',
+    'reportType',
+    'status',
+    'priority',
+    'module',
+  ];
+  dataSource = new MatTableDataSource(this.reports);
+  displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
+  expandedElement!: Report | null;
 
-   @ViewChild(MatSort) sort!: MatSort;
-   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-   ngAfterViewInit() {
-    
-   }
+  ngAfterViewInit() {}
 
-   ngOnInit(): void {
-     this.report.loadReports();
-     this.report.reports$.subscribe(data => {
+  ngOnInit(): void {
+    this.report.loadReports();
+    this.report.reports$.subscribe((data) => {
       this.reports = data;
       this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-     });
-   }
-
-  constructor(private _liveAnnouncer: LiveAnnouncer, public userData: UserDataService, private reportService: ReportService) {
-  
+    });
   }
+
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    public userData: UserDataService,
+    private reportService: ReportService
+  ) {}
 
   announceSortChange(sortState: Sort) {
     this.expandedElement = null;
@@ -64,7 +83,7 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
   }
 
   priorityString(prio: number): string {
-    switch(prio) {
+    switch (prio) {
       case 1: {
         return 'hoch';
       }
@@ -86,5 +105,4 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }

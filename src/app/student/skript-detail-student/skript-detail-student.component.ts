@@ -5,10 +5,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-skript-detail-student',
   templateUrl: './skript-detail-student.component.html',
-  styleUrls: ['./skript-detail-student.component.css']
+  styleUrls: ['./skript-detail-student.component.css'],
 })
 export class SkriptDetailStudentComponent {
-
   @Input() report!: ReportSkript;
-
 }

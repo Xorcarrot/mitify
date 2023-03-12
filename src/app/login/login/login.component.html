@@ -1,35 +1,64 @@
 <mat-toolbar class="header" color="primary">
-    <span class="middle">IU Mitify Login</span>
+  <span class="middle">IU Mitify Login</span>
 </mat-toolbar>
-<form [formGroup]="loginFormGroup" >
-    
-    <div class="loginForm footer" *ngIf="!loading$">
-        <mat-form-field appearance="outline" class="stretch">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="pat@example.com" (keyup.enter)="logIn(loginFormGroup.value.email, loginFormGroup.value.password)" formControlName="email" required>
-            <button mat-icon-button matSuffix>
-                <mat-icon matTextSuffix>account_circle</mat-icon>
-            </button>
-            <mat-error *ngIf="loginFormGroup.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
+<form [formGroup]="loginFormGroup">
+  <div class="loginForm footer" *ngIf="!loading$">
+    <mat-form-field appearance="outline" class="stretch">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="pat@example.com"
+        (keyup.enter)="
+          logIn(loginFormGroup.value.email, loginFormGroup.value.password)
+        "
+        formControlName="email"
+        required
+      />
+      <button mat-icon-button matSuffix>
+        <mat-icon matTextSuffix>account_circle</mat-icon>
+      </button>
+      <mat-error *ngIf="loginFormGroup.controls['email'].invalid">{{
+        getErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
 
-        <br/>
+    <br />
 
-        <mat-form-field appearance="outline" class="stretch">
-            <mat-label>Passwort</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" (keyup.enter)="logIn(loginFormGroup.value.email, loginFormGroup.value.password)" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
+    <mat-form-field appearance="outline" class="stretch">
+      <mat-label>Passwort</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        (keyup.enter)="
+          logIn(loginFormGroup.value.email, loginFormGroup.value.password)
+        "
+        formControlName="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
 
-        <mat-error *ngIf="error != ''">{{error}}</mat-error>
+    <mat-error *ngIf="error != ''">{{ error }}</mat-error>
 
-        <!--Nach spezifikation weiterarbeiten-->
-        <mat-dialog-actions>
-            <button mat-flat-button color="primary" class="button" (click)="logIn(loginFormGroup.value.email, loginFormGroup.value.password)">Anmelden</button>
-        </mat-dialog-actions>
-
-    </div>
-
+    <!--Nach spezifikation weiterarbeiten-->
+    <mat-dialog-actions>
+      <button
+        mat-flat-button
+        color="primary"
+        class="button"
+        (click)="
+          logIn(loginFormGroup.value.email, loginFormGroup.value.password)
+        "
+      >
+        Anmelden
+      </button>
+    </mat-dialog-actions>
+  </div>
 </form>

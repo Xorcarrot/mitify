@@ -7,30 +7,35 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-
   @Input() author!: string;
   @Input() logedIn!: boolean;
 
-  constructor (public dialog: MatDialog, public userData: UserDataService, public userManagement: UserManagementService) { }
+  constructor(
+    public dialog: MatDialog,
+    public userData: UserDataService,
+    public userManagement: UserManagementService
+  ) {}
 
   openDialog() {
     this.dialog.open(DialogComponent, {
-      disableClose: true
+      disableClose: true,
     });
   }
 
   logOut(): void {
     let token = this.userData.token;
     console.log(token);
-    this.userManagement.userSignOut(token).subscribe(data => {
-      console.log("Logout done");
-    }, error => {
-      console.log("Error");
-    });
+    this.userManagement.userSignOut(token).subscribe(
+      (data) => {
+        console.log('Logout done');
+      },
+      (error) => {
+        console.log('Error');
+      }
+    );
     window.location.reload();
   }
-
 }

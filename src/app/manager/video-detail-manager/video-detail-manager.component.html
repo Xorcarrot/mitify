@@ -1,30 +1,32 @@
 <div class="container">
-    <h2>Video:</h2>
-    <div class="wrapper">
-        <h4>Lokalisierung:</h4>
-        <p>
-            Videotitel: {{report.videoTitle}}<span class="spacer"></span>Video URL: {{report.videoURL}}<span class="spacer"></span>
-            <!--
+  <h2>Video:</h2>
+  <div class="wrapper">
+    <h4>Lokalisierung:</h4>
+    <p>
+      Videotitel: {{ report.videoTitle }}<span class="spacer"></span>Video URL:
+      {{ report.videoURL }}<span class="spacer"></span>
+      <!--
             Zeitstempel Beginn: {{report.calcTimeToString(report.timestampStart)}}<span class="spacer"></span>Zeitstempel Ende: {{report.calcTimeToString(report.timestampEnd)}}
             -->
-        </p>
-    </div>
-    <div class="wrapper">
-        <h4>Beschreibung:</h4>
-        <p>
-            <span class="topSpacer"></span>
-            {{report.description}}
-        </p>
-    </div>
-    <div class="wrapper">
-        <h4>Autor:</h4>
-        <p>
-            Name: {{report.author}}<span class="spacer"></span>E-Mail: {{report.eMail}}
-        </p>
-    </div>
-    <div class="wrapper lastWrapper">
-        <h4>Historie:</h4>
-        <!--Wieder aktiv wenn datatable von Luca past
+    </p>
+  </div>
+  <div class="wrapper">
+    <h4>Beschreibung:</h4>
+    <p>
+      <span class="topSpacer"></span>
+      {{ report.description }}
+    </p>
+  </div>
+  <div class="wrapper">
+    <h4>Autor:</h4>
+    <p>
+      Name: {{ report.author }}<span class="spacer"></span>E-Mail:
+      {{ report.eMail }}
+    </p>
+  </div>
+  <div class="wrapper lastWrapper">
+    <h4>Historie:</h4>
+    <!--Wieder aktiv wenn datatable von Luca past
         <p>
             Erstellungsdatum: {{report.calcDateAndTime(report.reportDate)}}<span class="spacer"></span>
             <ng-container *ngIf="report.grantedDate != null">In Bearbeitungsdatum: {{report.calcDateAndTime(report.grantedDate)}}</ng-container><span class="spacer"></span>
@@ -32,25 +34,30 @@
             <ng-container *ngIf="report.completedDate != null && report.grantedDate == null">Ablehnungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
         </p>
         -->
-    </div>
-    <div class="editingContainer lastWrapper" *ngIf="editingMode">
-        Priorität erhöhen
-        <button mat-icon-button color="primary" aria-label="Erhöhe die Priorität">
-            <mat-icon>arrow_upward</mat-icon>
-          </button>
-        oder senken
-          <button mat-icon-button color="warn" aria-label="Senke die Priorität">
-            <mat-icon>arrow_downward</mat-icon>
-        </button>
-        .
-        <span class="tabu"></span>
-        <span class="spacer"></span>
-        <button mat-raised-button color="primary">in Bearbeitung</button>
-        <span class="tabu"></span>
-        <button mat-raised-button color="accent">Verwerfen</button>
-        <span class="tabu"></span>
-        <button mat-icon-button class="delete" color="warn" aria-label="Dauerhaft löschen">
-            <mat-icon>delete</mat-icon>
-        </button>
-    </div>
+  </div>
+  <div class="editingContainer lastWrapper" *ngIf="editingMode">
+    Priorität erhöhen
+    <button mat-icon-button color="primary" aria-label="Erhöhe die Priorität">
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+    oder senken
+    <button mat-icon-button color="warn" aria-label="Senke die Priorität">
+      <mat-icon>arrow_downward</mat-icon>
+    </button>
+    .
+    <span class="tabu"></span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary">in Bearbeitung</button>
+    <span class="tabu"></span>
+    <button mat-raised-button color="accent">Verwerfen</button>
+    <span class="tabu"></span>
+    <button
+      mat-icon-button
+      class="delete"
+      color="warn"
+      aria-label="Dauerhaft löschen"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
 </div>

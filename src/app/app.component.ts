@@ -1,13 +1,16 @@
 import { Router } from '@angular/router';
 import { UserDataService } from './user/userData.service';
 import { LoginComponent } from './login/login/login.component';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'mitify';
@@ -18,21 +21,23 @@ export class AppComponent implements OnInit {
 
   logedIn: boolean = false;
 
-  constructor(public dialog: MatDialog, public userData: UserDataService,private router: Router) {
+  constructor(
+    public dialog: MatDialog,
+    public userData: UserDataService,
+    private router: Router
+  ) {}
 
-  }
-  
   ngOnInit(): void {
-    if(this.userRole == 0) {
+    if (this.userRole == 0) {
       this.openDialog();
     }
   }
 
   openDialog(): void {
     this.dialogRef = this.dialog.open(LoginComponent, {
-      disableClose: true
+      disableClose: true,
     });
-    this.dialogRef.componentInstance.userRole.subscribe(data => {
+    this.dialogRef.componentInstance.userRole.subscribe((data) => {
       this.userRole = data;
       if (this.userRole == 1) {
         this.router.navigate(['/', 'user']);
@@ -40,15 +45,14 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/', 'manager']);
       }
     });
-    this.dialogRef.componentInstance.userName.subscribe(email => {
+    this.dialogRef.componentInstance.userName.subscribe((email) => {
       this.userEmail = email;
       this.closeDialog();
-    })
+    });
   }
 
   closeDialog(): void {
     this.dialogRef.close();
     this.logedIn = true;
   }
-
 }

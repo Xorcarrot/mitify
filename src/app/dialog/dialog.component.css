@@ -1,47 +1,47 @@
 .stepComp {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form {
-    display: flex;
+  display: flex;
 }
 
 .spacer {
-    flex: 1 1 auto;
-    margin-left: 10px;
-    margin-right: 10px;
+  flex: 1 1 auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .textarea {
-    width: 100%;
+  width: 100%;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .dummy {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .slider {
-    width: 80%;
+  width: 80%;
 }
 
 .spaceTop {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .bold {
-    font-size: 120%;
+  font-size: 120%;
 }
 
 .buttonClose {
-    position: absolute;
-    right: 2px;
-    top: 2px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
 }
 
 .timeInput {
-    width: 70px;
+  width: 70px;
 }

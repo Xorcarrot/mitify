@@ -1,25 +1,25 @@
 .stretch {
-    width: 100%;
+  width: 100%;
 }
 
 .middle {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .loginForm {
-    margin-left: 20px;
-    margin-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .footer {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .button {
-    margin-left: auto;
+  margin-left: auto;
 }

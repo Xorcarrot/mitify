@@ -4,20 +4,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 const routes: Routes = [
-  {path: '', component: PlaceholderNoUserComponent},
-  {path: 'user',
-    loadChildren: () => import('./student/student.module').then(m => m.StudentModule)},
-  { path: 'manager', 
-    loadChildren: () => import('./manager/manager.module').then(m => m.ManagerModule) },
-]
+  { path: '', component: PlaceholderNoUserComponent },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./student/student.module').then((m) => m.StudentModule),
+  },
+  {
+    path: 'manager',
+    loadChildren: () =>
+      import('./manager/manager.module').then((m) => m.ManagerModule),
+  },
+];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
-  ],
-  providers: []
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

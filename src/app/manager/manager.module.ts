@@ -27,7 +27,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-
 @NgModule({
   declarations: [
     ManagerComponent,
@@ -35,7 +34,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ModuleManagerTableClosedComponent,
     ModuleManagerTableComponent,
     SkriptDetailManagerComponent,
-    VideoDetailManagerComponent
+    VideoDetailManagerComponent,
   ],
   imports: [
     CommonModule,
@@ -58,6 +57,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatPaginatorModule,
     MatTooltipModule,
-  ]
+  ],
 })
-export class ManagerModule { }
+export class ManagerModule {}

@@ -14,18 +14,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar'; 
-import {MatIconModule} from '@angular/material/icon'; 
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatStepperModule} from '@angular/material/stepper'; 
-import {MatChipsModule} from '@angular/material/chips';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTableModule} from '@angular/material/table'; 
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {CdkAccordionModule} from '@angular/cdk/accordion'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatSortModule } from '@angular/material/sort';
 import { TestComComponent } from './test-com/test-com.component';
 
@@ -38,7 +38,6 @@ import { TestComComponent } from './test-com/test-com.component';
     StudentContainerComponent,
     StudentTableClosedComponent,
     TestComComponent,
-    
   ],
   imports: [
     MatInputModule,
@@ -60,7 +59,7 @@ import { TestComComponent } from './test-com/test-com.component';
     MatSortModule,
     MatPaginatorModule,
     MatTooltipModule,
-    StudentRoutingModule
-  ]
+    StudentRoutingModule,
+  ],
 })
-export class StudentModule { }
+export class StudentModule {}

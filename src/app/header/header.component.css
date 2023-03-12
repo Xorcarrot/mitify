@@ -1,17 +1,17 @@
 .header {
-    display: flex;
-    border-bottom: 5px rgb(64,84,180) ridge;
+  display: flex;
+  border-bottom: 5px rgb(64, 84, 180) ridge;
 }
 
 .spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .reportButton {
-    margin-left: 10px;
-    margin-top: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
 }
 
 .welcome {
-    margin-right: 20px;
+  margin-right: 20px;
 }
