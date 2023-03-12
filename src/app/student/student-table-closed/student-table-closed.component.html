@@ -1,14 +1,14 @@
 
 <div color="primary" class="header">
     <h2>Abgeschlossene Meldungen</h2>
-   </div>
+</div>
 
-   <div class="loadingButton" *ngIf="!loadClosedReports">
-    <button mat-raised-button color="primary" (click)="loadClosedReportsDB()">
-      <mat-icon aria-hidden="false" aria-label="Lade geschlossene Meldungen" fontIcon="sync"></mat-icon>
-      Lade Meldungen
-    </button>
-  </div>
+<div class="loadingButton" *ngIf="!loadClosedReports">
+  <button mat-raised-button color="accent" (click)="loadClosedReportsDB()">
+    <mat-icon aria-hidden="false" aria-label="Lade geschlossene Meldungen" fontIcon="sync"></mat-icon>
+    Lade Meldungen
+  </button>
+</div>
    
    <div class="mat-elevation-z8 tableContainer" *ngIf="loadClosedReports">
    
