@@ -20,7 +20,7 @@ export class ReportServiceService {
 
   //adds a new Skriptreport to the Database
   addSkript(report: ReportSkript): Observable<any> {
-    let skript = new SkriptPost(report.reportType, report.module, report.description, report.status, report.priority, report.page, report.chapter, report.illustrationNumber, report.tableNumber, report.reportDate, this.userData.id);
+    let skript = new SkriptPost(report.reportType, report.module, report.description, report.status, report.priority, report.page, report.chapter, report.illustrationNumber, report.tableNumber, report.reportDate, this.userData.id, this.userData.getAuthor(), this.userData.eMail);
     let skriptCont = new SkriptContainer(skript);
 
     let token = this.userData.token;

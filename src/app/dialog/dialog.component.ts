@@ -76,6 +76,7 @@ export class DialogComponent {
     } else if(learningElement == "Video") {
 
       this.report = new ReportVideo(type, modul, learningElement);
+      this.report.setUser(this.userData.name, this.userData.first_name, this.userData.eMail);
 
       this.elementFormGroup = this._formBuilder.group({
         title: ['', [

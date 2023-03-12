@@ -28,6 +28,8 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
    displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
    expandedElement!: Report | null;
 
+   loadClosedReports: boolean = false;
+
    @ViewChild(MatSort) sort!: MatSort;
    @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -75,6 +77,10 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  loadClosedReportsDB() {
+    this.loadClosedReports = true;
   }
 
 }

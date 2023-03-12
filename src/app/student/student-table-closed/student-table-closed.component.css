@@ -51,3 +51,8 @@
     .example-element-description-attribution {
       opacity: 0.5;
     }
+
+    .loadingButton {
+      width: 200px;
+      margin: 0 auto;
+    }
