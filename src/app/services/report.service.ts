@@ -1,6 +1,6 @@
 import { UserDataService } from './../user/userData.service';
 import { ReportResponse } from './../interfaces/ReportResponse';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -18,6 +18,14 @@ export class ReportService {
   fetchReports(): Observable<ReportResponse[]> {
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
     return this.http.get<ReportResponse[]>(this.errorReportUrl, {
+      headers: headers,
+    });
+  }
+
+  fetchClosedReports(): Observable<ReportResponse[]> {
+    let headers = new HttpHeaders().set('Authorization', this.userData.token);
+
+    return this.http.get<ReportResponse[]>(this.errorReportUrl + '?status=closed', {
       headers: headers,
     });
   }

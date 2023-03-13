@@ -129,29 +129,29 @@
         *matCellDef="let element"
         [attr.colspan]="displayedColumnsWithExpand.length"
       >
-        <div
-          *ngIf="element.getType() == 1"
-          class="example-element-detail"
-          [@detailExpand]="
-            element == expandedElement ? 'expanded' : 'collapsed'
-          "
-        >
-          <app-skript-detail-manager
-            [report]="element"
-          ></app-skript-detail-manager>
-        </div>
+      <div
+      *ngIf="element.page > 0"
+      class="example-element-detail"
+      [@detailExpand]="
+        element == expandedElement ? 'expanded' : 'collapsed'
+      "
+    >
+      <app-skript-detail-manager
+        [report]="element"
+      ></app-skript-detail-manager>
+      </div>
 
-        <div
-          *ngIf="element.getType() == 2"
-          class="example-element-detail"
-          [@detailExpand]="
-            element == expandedElement ? 'expanded' : 'collapsed'
-          "
-        >
-          <app-video-detail-manager
-            [report]="element"
-          ></app-video-detail-manager>
-        </div>
+      <div
+      *ngIf="element.page == null"
+      class="example-element-detail"
+      [@detailExpand]="
+        element == expandedElement ? 'expanded' : 'collapsed'
+      "
+    >
+      <app-video-detail-manager
+        [report]="element"
+      ></app-video-detail-manager>
+    </div>
       </td>
     </ng-container>
 

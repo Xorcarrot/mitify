@@ -130,19 +130,19 @@
         [attr.colspan]="displayedColumnsWithExpand.length"
       >
         <div
-          *ngIf="element.getType() == 1"
-          class="example-element-detail"
-          [@detailExpand]="
-            element == expandedElement ? 'expanded' : 'collapsed'
-          "
-        >
-          <app-skript-detail-student
-            [report]="element"
-          ></app-skript-detail-student>
+        *ngIf="element.page > 0"
+        class="example-element-detail"
+        [@detailExpand]="
+          element == expandedElement ? 'expanded' : 'collapsed'
+        "
+      >
+        <app-skript-detail-student
+          [report]="element"
+        ></app-skript-detail-student>
         </div>
 
         <div
-          *ngIf="element.getType() == 2"
+          *ngIf="element.page == null"
           class="example-element-detail"
           [@detailExpand]="
             element == expandedElement ? 'expanded' : 'collapsed'

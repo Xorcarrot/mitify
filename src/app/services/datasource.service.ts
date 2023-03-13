@@ -13,6 +13,8 @@ import { ReportSkript } from 'src/app/dialog/classes/subClasses/reportSkript';
 export class DatasourceService extends DataSource<ReportResponse> {
   reports$ = new BehaviorSubject<ReportResponse[]>([]);
   isLoading$ = new BehaviorSubject<boolean>(false);
+  reportsClosed$ = new BehaviorSubject<ReportResponse[]>([]);
+  isLoadingClosed$ = new BehaviorSubject<boolean>(false);
 
   connect(): Observable<ReportResponse[]> {
     return this.reports$.asObservable();
@@ -34,6 +36,65 @@ export class DatasourceService extends DataSource<ReportResponse> {
     this.loadReports();
     const reports: Report[] = [];
     this.reports$.subscribe((data) => {
+      data.forEach((re) => {
+        if (re.error_report.page > 0) {
+          reports.push(
+            new ReportSkript(
+              re.error_report.reportType,
+              re.error_report.module,
+              re.error_report.description,
+              re.error_report.page,
+              re.error_report.chapter,
+              re.error_report.illustrationNumber,
+              re.error_report.tableNumber,
+              re.error_report.id,
+              re.error_report.status,
+              re.error_report.priority,
+              re.error_report.author,
+              re.error_report.eMail,
+              re.error_report.report_date,
+              re.error_report.granted_date,
+              re.error_report.completed_date
+            )
+          );
+        } else {
+          reports.push(
+            new ReportVideo(
+              re.error_report.reportType,
+              re.error_report.module,
+              re.error_report.description,
+              re.error_report.videoTitle,
+              re.error_report.timestampStart,
+              re.error_report.timestampEnd,
+              re.error_report.videoURL,
+              re.error_report.id,
+              re.error_report.status,
+              re.error_report.priority,
+              re.error_report.author,
+              re.error_report.eMail,
+              re.error_report.report_date,
+              re.error_report.granted_date,
+              re.error_report.completed_date
+            )
+          );
+        }
+      });
+    });
+    return reports;
+  }
+
+  loadClosedReports(): void {
+    this.isLoadingClosed$.next(true);
+    this.reportService.fetchClosedReports().subscribe((reports) => {
+      this.reportsClosed$.next(reports);
+      this.isLoadingClosed$.next(false);
+    });
+  }
+
+  getClosedReportArray(): Report[] {
+    this.loadClosedReports();
+    const reports: Report[] = [];
+    this.reportsClosed$.subscribe((data) => {
       data.forEach((re) => {
         if (re.error_report.page > 0) {
           reports.push(

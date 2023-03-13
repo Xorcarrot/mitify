@@ -9,4 +9,10 @@ import { ReportSkript } from '../../dialog/classes/subClasses/reportSkript';
 export class SkriptDetailManagerComponent {
   @Input() report!: ReportSkript;
   @Input() editingMode!: boolean;
+
+  calcDateAndTime(time: any): string {
+    var date = new Date(time);
+    return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+  }
+
 }

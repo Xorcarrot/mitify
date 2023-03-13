@@ -5,6 +5,7 @@ import { ReportSkript } from './classes/subClasses/reportSkript';
 import { Modul } from './classes/modul';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog',
@@ -36,7 +37,8 @@ export class DialogComponent {
   constructor(
     private _formBuilder: FormBuilder,
     private httpService: ReportServiceService,
-    private userData: UserDataService
+    private userData: UserDataService,
+    private router: Router,
   ) {}
 
   moduls: Modul[] = [
@@ -198,10 +200,26 @@ export class DialogComponent {
   }
 
   postSkript(report: ReportSkript): void {
-    this.httpService.addSkript(report).subscribe();
+    this.httpService.addSkript(report).subscribe(() => {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      if(this.userData.role_id == 1) {
+        this.router.navigate(['/', 'user']);
+      } else if (this.userData.role_id == 2) {
+        this.router.navigate(['/', 'manager']);
+      }
+      }) 
+    });
   }
 
   postVideo(report: ReportVideo): void {
-    this.httpService.addVideo(report).subscribe();
+    this.httpService.addVideo(report).subscribe(() => {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      if(this.userData.role_id == 1) {
+        this.router.navigate(['/', 'user']);
+      } else if (this.userData.role_id == 2) {
+        this.router.navigate(['/', 'manager']);
+      }
+      }) 
+    });
   }
 }

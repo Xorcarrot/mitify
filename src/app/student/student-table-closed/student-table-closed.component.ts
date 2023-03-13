@@ -1,3 +1,5 @@
+import { ReportService } from './../../services/report.service';
+import { UserDataService } from './../../user/userData.service';
 import { REPORTS } from '../../../assets/REPORTS';
 import { Report } from 'src/app/dialog/classes/Report';
 import { MatPaginator } from '@angular/material/paginator';
@@ -17,6 +19,8 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { ReportResponse } from 'src/app/interfaces/ReportResponse';
+import { DatasourceService } from 'src/app/services/datasource.service';
 
 @Component({
   selector: 'app-student-table-closed',
@@ -34,7 +38,8 @@ import {
   ],
 })
 export class StudentTableClosedComponent implements AfterViewInit, OnInit {
-  reports: Report[] = new REPORTS().getReports();
+  report = new DatasourceService(this.reportService);
+  reports!: ReportResponse[];
 
   displayedColumns: string[] = [
     'id',
@@ -53,13 +58,24 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.report.loadClosedReports();
+    this.report.reportsClosed$.subscribe((data) => {
+      this.reports = data;
+      this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    private userData: UserDataService,
+    private reportService: ReportService
+  ) {}
 
   announceSortChange(sortState: Sort) {
     this.expandedElement = null;

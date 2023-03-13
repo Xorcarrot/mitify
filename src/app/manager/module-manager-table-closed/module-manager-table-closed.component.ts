@@ -5,7 +5,6 @@ import {
   AfterViewInit,
   Component,
   ViewChild,
-  Input,
   OnInit,
 } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
@@ -18,6 +17,10 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { ReportResponse } from 'src/app/interfaces/ReportResponse';
+import { DatasourceService } from 'src/app/services/datasource.service';
+import { ReportService } from 'src/app/services/report.service';
+import { UserDataService } from 'src/app/user/userData.service';
 
 @Component({
   selector: 'app-module-manager-table-closed',
@@ -37,7 +40,8 @@ import {
 export class ModuleManagerTableClosedComponent
   implements AfterViewInit, OnInit
 {
-  reports: Report[] = [];
+  report = new DatasourceService(this.reportService);
+  reports!: ReportResponse[];
 
   displayedColumns: string[] = [
     'id',
@@ -60,9 +64,21 @@ export class ModuleManagerTableClosedComponent
     this.dataSource.sort = this.sort;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.report.loadClosedReports();
+    this.report.reportsClosed$.subscribe((data) => {
+      this.reports = data;
+      this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    private userData: UserDataService,
+    private reportService: ReportService
+  ) {}
 
   announceSortChange(sortState: Sort) {
     this.expandedElement = null;
