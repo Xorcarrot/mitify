@@ -9,4 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 export class SkriptDetailStudentComponent {
   @Input() report!: ReportSkript;
+
+  calcDateAndTime(time: any): string {
+    var date = new Date(time);
+    return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+  }
 }

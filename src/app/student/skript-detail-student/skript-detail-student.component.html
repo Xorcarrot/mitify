@@ -22,11 +22,11 @@
   </div>
   <div class="wrapper lastWrapper">
     <h4>Historie:</h4>
-    <!-- <p>
-            Erstellungsdatum: {{report.calcDateAndTime(report.reportDate)}}<span class="spacer"></span>
-            <ng-container *ngIf="report.grantedDate != null">In Bearbeitungsdatum: {{report.calcDateAndTime(report.grantedDate)}}</ng-container><span class="spacer"></span>
-            <ng-container *ngIf="report.completedDate != null && report.grantedDate != null">Fertigstellungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
-            <ng-container *ngIf="report.completedDate != null && report.grantedDate == null">Ablehnungsdatum: {{report.calcDateAndTime(report.completedDate)}}</ng-container>
-        </p> -->
+    <p>
+            Erstellungsdatum: {{calcDateAndTime(report.report_date)}}<span class="spacer"></span>
+            <ng-container *ngIf="report.granted_date != null">In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}</ng-container><span class="spacer"></span>
+            <ng-container *ngIf="report.completed_date != null && report.granted_date != null">Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
+            <ng-container *ngIf="report.completed_date != null && report.granted_date == null">Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
+        </p>
   </div>
 </div>

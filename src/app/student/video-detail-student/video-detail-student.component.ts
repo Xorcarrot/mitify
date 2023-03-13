@@ -9,4 +9,18 @@ import { Report } from '../../dialog/classes/Report';
 })
 export class VideoDetailStudentComponent {
   @Input() report!: ReportVideo;
+
+  calcDateAndTime(time: any): string {
+    var date = new Date(time);
+    return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+  }
+
+  calcTimeToString(time: any): String {
+    var timeC = new Date(time * 1000);
+
+    var minutes = timeC.getUTCMinutes();
+    var seconds = timeC.getUTCSeconds();
+
+    return minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+  }
 }

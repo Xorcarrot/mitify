@@ -106,4 +106,13 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  getModule(moduleId: number): any {
+    switch (moduleId) {
+      case 1:
+        return 'Big Data';
+      case 2: 
+        return 'Mathematik Grundlagen';
+    } 
+  }
 }

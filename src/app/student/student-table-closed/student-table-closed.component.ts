@@ -97,4 +97,13 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
   loadClosedReportsDB() {
     this.loadClosedReports = true;
   }
+
+  getModule(moduleId: number): any {
+    switch (moduleId) {
+      case 1:
+        return 'Big Data';
+      case 2: 
+        return 'Mathematik Grundlagen';
+    } 
+  }
 }

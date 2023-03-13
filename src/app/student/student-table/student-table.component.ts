@@ -8,7 +8,6 @@ import {
   AfterViewInit,
   Component,
   ViewChild,
-  Input,
   OnInit,
 } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
@@ -104,5 +103,14 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getModule(moduleId: number): any {
+    switch (moduleId) {
+      case 1:
+        return 'Big Data';
+      case 2: 
+        return 'Mathematik Grundlagen';
+    } 
   }
 }

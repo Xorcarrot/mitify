@@ -7,11 +7,12 @@ export abstract class Report {
     reportType?: string;            //Angabe zum Typ der Meldung (Fehler|Verbesserungsvorschlag|Inhaltsergänzung)
     priority?: Number;              //Priorität der Meldung(1 = niedrig|2 = mittel|3 = hoch)
     module?: String;                 //Angabe zum Modul
+    university_module_id?: number;
     author?: String;                //Ersteller der Meldung
     eMail?: String;                 //Email des Erstellers
-    reportDate?: number;            //Datum in Millisekunden an dem der Fehler erstellt wurde
-    grantedDate?: number;           //Datum in Millisekunden an dem der Fehler zu Bearbeitung freigegeben wurde
-    completedDate?: number;         //Datum in Millisekunden an dem die Fehlerbehebung abgeschlossen und abgelehnt wurde
+    report_date?: number;            //Datum in Millisekunden an dem der Fehler erstellt wurde
+    granted_date?: number;           //Datum in Millisekunden an dem der Fehler zu Bearbeitung freigegeben wurde
+    completed_date?: number;         //Datum in Millisekunden an dem die Fehlerbehebung abgeschlossen und abgelehnt wurde
     description?: String;           //Beschreibung zum Fehler
 
 
@@ -27,7 +28,7 @@ export abstract class Report {
         if(!status) {
             this.status = "neu";
             this.priority = 1;      
-            this.reportDate = new Date().getTime();
+            this.report_date = new Date().getTime();
         }
 
         //Baut das fertig Objekt vom Backend zusammen
@@ -37,9 +38,9 @@ export abstract class Report {
             this.priority = priority;
             this.author = author;
             this.eMail = eMail;
-            this.reportDate = reportDate;
-            this.grantedDate = grantedDate;
-            this.completedDate = completedDate;
+            this.report_date = reportDate;
+            this.granted_date = grantedDate;
+            this.completed_date = completedDate;
         }
     }
 
@@ -51,6 +52,10 @@ export abstract class Report {
     setUser(name: string, first_name: string, email: string): void {
         this.author = first_name + ' ' + name;
         this.eMail = email;
+    }
+
+    setModulId(id: number) {
+        this.university_module_id = id;
     }
 
 }

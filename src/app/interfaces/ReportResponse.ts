@@ -19,6 +19,7 @@ export interface ReportResponse {
     report_date: number;
     granted_date: number;
     completed_date: number;
+    university_module_id: number;
     mitify_user: {
       email: string;
       name: string;

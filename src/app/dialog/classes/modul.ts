@@ -1,9 +1,9 @@
 export class Modul {
-  value: String;
+  id: number;
   name: String;
 
-  constructor(value: String, name: String) {
-    this.value = value;
+  constructor(id: number, name: String) {
+    this.id = id;
     this.name = name;
   }
 }

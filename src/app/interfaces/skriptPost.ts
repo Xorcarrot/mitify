@@ -1,7 +1,6 @@
 export class SkriptPost {
 
     reportType!: any;
-    module!: any;
     description!: any; 
     status!: any;
     priority!: any; 
@@ -14,11 +13,10 @@ export class SkriptPost {
     report_date!: any; 
     granted_date: any = null;
     completed_date: any = null;
-    mitify_user_id!: any;
+    university_module_id: any;
 
-        constructor(reportType: any, module: any, description: any, status: any, priority: any, page: any, chapter: any, illustrationNumber: any, tableNumber: any, report_date: any, mitify_user_id: any, author: any, eMail: any) {
+        constructor(reportType: any, module: any, description: any, status: any, priority: any, page: any, chapter: any, illustrationNumber: any, tableNumber: any, report_date: any, mitify_user_id: any, author: any, eMail: any, moduleId: any) {
             this.reportType = reportType;
-            this.module = module;
             this.description = description;
             this.status = status;
             this.priority = priority;
@@ -27,9 +25,9 @@ export class SkriptPost {
             this.illustrationNumber = illustrationNumber;
             this.tableNumber = tableNumber;
             this.report_date = report_date;
-            this.mitify_user_id =mitify_user_id;
             this.author = author;
             this.eMail = eMail;
+            this.university_module_id = moduleId;
         }
     
 }

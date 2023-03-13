@@ -35,10 +35,11 @@ export class ReportServiceService {
       report.chapter,
       report.illustrationNumber,
       report.tableNumber,
-      report.reportDate,
+      report.report_date,
       this.userData.id,
       this.userData.getAuthor(),
-      this.userData.eMail
+      this.userData.eMail,
+      report.university_module_id,
     );
     let skriptCont = new SkriptContainer(skript);
 
@@ -64,10 +65,11 @@ export class ReportServiceService {
       report.timestampStart,
       report.timestampEnd,
       report.videoURL,
-      report.reportDate,
+      report.report_date,
       this.userData.id,
       this.userData.getAuthor(),
-      this.userData.eMail
+      this.userData.eMail,
+      report.university_module_id,
     );
     let videoCont = new VideoContainer(video);
 

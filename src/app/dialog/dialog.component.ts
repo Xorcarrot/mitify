@@ -40,17 +40,24 @@ export class DialogComponent {
   ) {}
 
   moduls: Modul[] = [
-    { value: 'Big Data', name: 'Big Data' },
-    { value: 'Mathematik Grundlagen', name: 'Mathematik Grundlagen' },
-    { value: 'Turnen', name: 'Turnen' },
+    { id: 1, name: 'Big Data' },
+    { id: 2, name: 'Mathematik Grundlagen' },
   ];
 
   genrateForm(type: any, learningElement: any, modul: any) {
     this.elementFormGroup = null;
     this.element = learningElement;
+    let modulId;
+
+    if(modul == 'Big Data') {
+      modulId = 1;
+    } else {
+      modulId = 2;
+    }
 
     if (learningElement == 'Skript') {
       this.report = new ReportSkript(type, modul, learningElement);
+      this.report.setModulId(modulId);
       this.report.setUser(
         this.userData.name,
         this.userData.first_name,
@@ -71,6 +78,7 @@ export class DialogComponent {
       });
     } else if (learningElement == 'Video') {
       this.report = new ReportVideo(type, modul, learningElement);
+      this.report.setModulId(modulId);
       this.report.setUser(
         this.userData.name,
         this.userData.first_name,
