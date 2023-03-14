@@ -24,9 +24,9 @@
     <h4>Historie:</h4>
     <p>
             Erstellungsdatum: {{calcDateAndTime(report.report_date)}}<span class="spacer"></span>
-            <ng-container *ngIf="report.granted_date != null">In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}</ng-container><span class="spacer"></span>
-            <ng-container *ngIf="report.completed_date != null && report.granted_date != null">Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
-            <ng-container *ngIf="report.completed_date != null && report.granted_date == null">Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
+            <ng-container *ngIf="report.granted_date != 0">In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}</ng-container><span class="spacer"></span>
+            <ng-container *ngIf="report.completed_date != 0 && report.granted_date != 0">Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
+            <ng-container *ngIf="report.completed_date != 0 && report.granted_date == 0">Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
         </p>
   </div>
 </div>

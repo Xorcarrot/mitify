@@ -11,8 +11,8 @@ export class SkriptPost {
     illustrationNumber!: any; 
     tableNumber!: any;
     report_date!: any; 
-    granted_date: any = null;
-    completed_date: any = null;
+    granted_date: any = 0;
+    completed_date: any = 0;
     university_module_id: any;
 
         constructor(reportType: any, module: any, description: any, status: any, priority: any, page: any, chapter: any, illustrationNumber: any, tableNumber: any, report_date: any, mitify_user_id: any, author: any, eMail: any, moduleId: any) {
