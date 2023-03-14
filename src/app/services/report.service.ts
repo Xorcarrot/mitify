@@ -29,46 +29,62 @@ export class ReportService {
   fetchClosedReports(): Observable<ReportResponse[]> {
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
-    return this.http.get<ReportResponse[]>(this.errorReportUrl + '?status=closed', {
+    return this.http.get<ReportResponse[]>(this.errorReportUrl + '?status=abgeschlossen', {
       headers: headers,
     });
   }
 
   constructor(private http: HttpClient, private userData: UserDataService) {}
 
-  changeSkriptStaus(id: number, newStatus: string) {
+  changeSkriptStaus(id: any, newStatus: any) {
     const url = this.skriptReportUrl + '/' + id;
-    let patchObj!: SkirptStatus;
-    patchObj.skript_report.status = newStatus;
+    let patchObj: SkirptStatus = {skript_report: {
+      status: newStatus
+    }};
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
-    this.http.patch(url, patchObj, {headers: headers});
+    return this.http.patch(url, patchObj, {headers: headers});
   }
 
-  changeSkriptPriority(id: number, newPriority: number) {
+  changeSkriptPriority(id: any, newPriority: any) {
     const url = this.skriptReportUrl + '/' + id;
-    let patchObj!: SkirptPriority;
-    patchObj.skript_report.priority = newPriority;
+    let patchObj: SkirptPriority = {skript_report: {
+      priority: newPriority
+    }};
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
-    this.http.patch(url, patchObj, {headers: headers});
+    return this.http.patch(url, patchObj, {headers: headers});
   }
 
-  changeVideoStatus(id: number, newStatus: string) {
+  changeVideoStatus(id: any, newStatus: any) {
     const url = this.videoReportUrl + '/' + id;
-    let patchObj!: VideoStatus;
-    patchObj.video_report.status = newStatus;
+    let patchObj: VideoStatus = {video_report: {
+      status: newStatus
+    }};
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
-    this.http.patch(url, patchObj, {headers: headers});
+    return this.http.patch(url, patchObj, {headers: headers});
   }
 
-  changeVideoPriority(id: number, newPriority: number) {
+  changeVideoPriority(id: any, newPriority: any) {
     const url = this.videoReportUrl + '/' + id;
-    let patchObj!: VideoPriority;
-    patchObj.video_report.priority = newPriority;
+    let patchObj: VideoPriority = {video_report: {
+      priority: newPriority
+    }};
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
-    this.http.patch(url, patchObj, {headers: headers});
+    return this.http.patch(url, patchObj, {headers: headers});
+  }
+
+  deleteSkript(id:any) {
+    const url = this.skriptReportUrl + '/' + id;
+    let headers = new HttpHeaders().set('Authorization', this.userData.token);
+    return this.http.delete(url, {headers: headers});
+  }
+
+  deleteVideo(id:any) {
+    const url = this.videoReportUrl + '/' + id;
+    let headers = new HttpHeaders().set('Authorization', this.userData.token);
+    return this.http.delete(url, {headers: headers});
   }
 }

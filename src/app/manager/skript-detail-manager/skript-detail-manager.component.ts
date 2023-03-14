@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ReportService } from 'src/app/services/report.service';
 import { Component, Input } from '@angular/core';
 import { ReportSkript } from '../../dialog/classes/subClasses/reportSkript';
 
@@ -14,5 +16,54 @@ export class SkriptDetailManagerComponent {
     var date = new Date(time);
     return date.toLocaleDateString() + " " + date.toLocaleTimeString();
   }
+
+  changePriorityUp(id: any, priority: any) {
+    if(priority > 1) {
+      priority = priority - 1;
+      this.reportService.changeSkriptPriority(id, priority).subscribe(() => {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/', 'manager']);
+        }) 
+      });
+    }
+  }
+
+  changePriorityDown(id: any, priority: any) {
+    if(priority < 3) {
+      priority = priority + 1;
+      this.reportService.changeSkriptPriority(id, priority).subscribe(() => {
+        this.router.navigateByUrl('/', { skipLocationChange: true}).then(() => {
+          this.router.navigate(['/', 'manager']);
+        })
+      });
+    }
+  }
+
+  statusInProgress(id:any) {
+    this.reportService.changeSkriptStaus(id, 'in Bearbeitung').subscribe(() => {
+      this.router.navigateByUrl('/', { skipLocationChange: true}).then(() => {
+        this.router.navigate(['/', 'manager']);
+      })
+    })
+  }
+
+  statusDone(id:any) {
+    this.reportService.changeSkriptStaus(id, 'abgeschlossen').subscribe(() => {
+      this.router.navigateByUrl('/', { skipLocationChange: true}).then(() => {
+        this.router.navigate(['/', 'manager']);
+      })
+    })
+  }
+
+  delete(id:any) {
+    this.reportService.deleteSkript(id).subscribe(() => {
+      this.router.navigateByUrl('/', { skipLocationChange: true}).then(() => {
+        this.router.navigate(['/', 'manager']);
+      })
+    })
+  }
+
+
+  constructor(private reportService: ReportService, private router: Router) {}
 
 }

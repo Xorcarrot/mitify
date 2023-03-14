@@ -11,7 +11,7 @@ export class ReportSkript extends Report {
     
     //Constructor zum erstellen eines neuen Srikpt Meldung Objekts
     constructor (type: string, modul: String, description?: String, pageNumber?: Number, chapter?: Number, illustrationNumber?: Number, tableNumber?: Number, 
-        id?: Number, status?: String, priority?: Number, author?: String, eMail?: String, reportDate?: number, grantedDate?: number, completedDate?: number) {
+        id?: number, status?: String, priority?: Number, author?: String, eMail?: String, reportDate?: number, grantedDate?: number, completedDate?: number) {
 
             super(type, modul, description, id, status, 
                 priority, author, eMail, reportDate, grantedDate, completedDate);
