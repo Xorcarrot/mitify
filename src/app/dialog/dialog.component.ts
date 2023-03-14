@@ -76,7 +76,7 @@ export class DialogComponent {
           [Validators.required, Validators.min(0), Validators.max(20)],
         ],
         tabOrIllNumber: ['', [Validators.min(0), Validators.max(100)]],
-        description: ['', [Validators.required, Validators.maxLength(500)]],
+        description: ['', [Validators.required, Validators.maxLength(200)]],
       });
     } else if (learningElement == 'Video') {
       this.report = new ReportVideo(type, modul, learningElement);
