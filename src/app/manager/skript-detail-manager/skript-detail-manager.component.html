@@ -51,9 +51,9 @@
     <span class="tabu"></span>
     <span class="spacer"></span>
     <button mat-raised-button *ngIf="report.status == 'neu'" color="primary" (click)="statusInProgress(report.id)">in Bearbeitung</button>
-    <button mat-raised-button *ngIf="report.status == 'in Bearbeitung'" color="primary" (click)="statusDone(report.id)">Abschließen</button>
+    <button mat-raised-button *ngIf="report.status == 'in Bearbeitung'" color="primary" (click)="statusDone(report.id, report.granted_date)">Abschließen</button>
     <span class="tabu"></span>
-    <button mat-raised-button *ngIf="report.status == 'neu'" color="accent" (click)="statusDone(report.id)">Verwerfen</button>
+    <button mat-raised-button *ngIf="report.status == 'neu'" color="accent" (click)="statusDone(report.id, report.granted_date)">Verwerfen</button>
     <span class="tabu"></span>
     <button
       mat-icon-button

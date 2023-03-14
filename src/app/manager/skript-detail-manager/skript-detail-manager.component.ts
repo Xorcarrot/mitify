@@ -40,15 +40,17 @@ export class SkriptDetailManagerComponent {
   }
 
   statusInProgress(id:any) {
-    this.reportService.changeSkriptStaus(id, 'in Bearbeitung').subscribe(() => {
+    var time = new Date().getTime();
+    this.reportService.changeSkriptStaus(id, 'in Bearbeitung', time, 0).subscribe(() => {
       this.router.navigateByUrl('/', { skipLocationChange: true}).then(() => {
         this.router.navigate(['/', 'manager']);
       })
     })
   }
 
-  statusDone(id:any) {
-    this.reportService.changeSkriptStaus(id, 'abgeschlossen').subscribe(() => {
+  statusDone(id:any, date:any) {
+    var time = new Date().getTime();
+    this.reportService.changeSkriptStaus(id, 'abgeschlossen', date, time).subscribe(() => {
       this.router.navigateByUrl('/', { skipLocationChange: true}).then(() => {
         this.router.navigate(['/', 'manager']);
       })

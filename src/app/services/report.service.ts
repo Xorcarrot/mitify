@@ -36,10 +36,12 @@ export class ReportService {
 
   constructor(private http: HttpClient, private userData: UserDataService) {}
 
-  changeSkriptStaus(id: any, newStatus: any) {
+  changeSkriptStaus(id: any, newStatus: any, granted_date: any, completed_date: any) {
     const url = this.skriptReportUrl + '/' + id;
     let patchObj: SkirptStatus = {skript_report: {
-      status: newStatus
+      status: newStatus,
+      granted_date: granted_date,
+      completed_date: completed_date
     }};
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
@@ -56,10 +58,12 @@ export class ReportService {
     return this.http.patch(url, patchObj, {headers: headers});
   }
 
-  changeVideoStatus(id: any, newStatus: any) {
+  changeVideoStatus(id: any, newStatus: any, granted_date: any, completed_date: any) {
     const url = this.videoReportUrl + '/' + id;
     let patchObj: VideoStatus = {video_report: {
-      status: newStatus
+      status: newStatus,
+      granted_date: granted_date,
+      completed_date: completed_date
     }};
     let headers = new HttpHeaders().set('Authorization', this.userData.token);
 
