@@ -98,7 +98,7 @@ export class ModuleManagerTableClosedComponent
         return 'normal';
       }
       case 3: {
-        return 'nieder';
+        return 'niedrig';
       }
     }
     return 'ERROR';

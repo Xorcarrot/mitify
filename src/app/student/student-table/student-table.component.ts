@@ -90,7 +90,7 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
         return 'normal';
       }
       case 3: {
-        return 'nieder';
+        return 'niedrig';
       }
     }
     return 'ERROR';
