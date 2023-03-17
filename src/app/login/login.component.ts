@@ -82,7 +82,7 @@ export class LoginComponent {
         );
       },
       (error) => {
-        this.error = 'Ihre Benutzer Passwort Kombination ist Falsch!';
+        this.error = 'Falsche Nutzerdaten!';
       }
     );
     this.loading$ = false;
