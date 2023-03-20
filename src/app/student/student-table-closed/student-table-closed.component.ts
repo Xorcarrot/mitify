@@ -1,6 +1,4 @@
 import { ReportService } from './../../services/report.service';
-import { UserDataService } from './../../user/userData.service';
-import { REPORTS } from '../../../assets/REPORTS';
 import { Report } from 'src/app/dialog/classes/Report';
 import { MatPaginator } from '@angular/material/paginator';
 import {
@@ -48,17 +46,26 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     'priority',
     'module',
   ];
-  dataSource = new MatTableDataSource(this.reports);
+  dataSource = new MatTableDataSource<ReportResponse>(this.reports);
   displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
   expandedElement!: Report | null;
 
   loadClosedReports: boolean = false;
 
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort, {static: false}) set sort(value: MatSort) {
+    if(this.dataSource) {
+      this.dataSource.sort = value;
+    }
+  };
+  @ViewChild(MatPaginator, {static: false}) set paginator(value: MatPaginator) {
+    if(this.dataSource) {
+      this.dataSource.paginator = value;
+    }
+  };
 
   ngAfterViewInit() {
-    
+    this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
   }
 
   ngOnInit(): void {
@@ -66,8 +73,6 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     this.report.reportsClosed$.subscribe((data) => {
       this.reports = data;
       this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
     })
   }
 

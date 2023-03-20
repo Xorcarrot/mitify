@@ -47,7 +47,7 @@ export class StudentTableComponent implements AfterViewInit, OnInit {
     'priority',
     'module',
   ];
-  dataSource = new MatTableDataSource(this.reports);
+  dataSource = new MatTableDataSource<ReportResponse>(this.reports);
   displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
   expandedElement!: Report | null;
 

@@ -56,11 +56,19 @@ export class ModuleManagerTableClosedComponent
 
   loadClosedReports: boolean = false;
 
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
+  @ViewChild(MatSort, {static: false}) set sort(value: MatSort) {
+    if(this.dataSource) {
+      this.dataSource.sort = value;
+    }
+  };
+  @ViewChild(MatPaginator, {static: false}) set paginator(value: MatPaginator) {
+    if(this.dataSource) {
+      this.dataSource.paginator = value;
+    }
+  };
   ngAfterViewInit() {
-
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   ngOnInit(): void {
@@ -68,8 +76,6 @@ export class ModuleManagerTableClosedComponent
     this.report.reportsClosed$.subscribe((data) => {
       this.reports = data;
       this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
     })
   }
 
