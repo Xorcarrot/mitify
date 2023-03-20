@@ -73,7 +73,6 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    private userData: UserDataService,
     private reportService: ReportService
   ) {}
 

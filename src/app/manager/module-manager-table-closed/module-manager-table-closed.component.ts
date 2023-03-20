@@ -60,8 +60,7 @@ export class ModuleManagerTableClosedComponent
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+
   }
 
   ngOnInit(): void {
@@ -76,7 +75,6 @@ export class ModuleManagerTableClosedComponent
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    private userData: UserDataService,
     private reportService: ReportService
   ) {}
 
