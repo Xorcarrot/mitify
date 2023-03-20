@@ -51,7 +51,7 @@ export class DialogComponent {
     this.element = learningElement;
     let modulId;
 
-    if(modul == 'Big Data') {
+    if(modul == 1) {
       modulId = 1;
     } else {
       modulId = 2;
@@ -221,5 +221,15 @@ export class DialogComponent {
       }
       }) 
     });
+  }
+
+  getModule(moduleId: number): any {
+    console.log(moduleId);
+    switch (moduleId) {
+      case 1:
+        return 'Big Data';
+      case 2: 
+        return 'Mathematik Grundlagen';
+    } 
   }
 }

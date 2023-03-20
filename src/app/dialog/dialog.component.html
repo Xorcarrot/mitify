@@ -368,7 +368,7 @@
     <div *ngIf="skriptAdded">
       <p>
         <b>Meldungsart:</b> {{ report.reportType }}<span class="spacer"></span
-        ><b>Modul:</b> {{ report.module }}<span class="spacer"></span
+        ><b>Modul:</b> {{ getModule(report.university_module_id) }}<span class="spacer"></span
         ><b>Medium:</b> Skript<br />
         <b>Beschreibung:</b><br />
         {{ report.description }}<br />
@@ -384,7 +384,7 @@
     <div *ngIf="videoAdded">
       <p>
         <b>Meldungsart:</b> {{ report.reportType }}<span class="spacer"></span
-        ><b>Modul:</b> {{ report.module }}<span class="spacer"></span
+        ><b>Modul:</b> {{ getModule(report.university_module_id) }}<span class="spacer"></span
         ><b>Medium:</b> Video<br />
         <b>Beschreibung:</b><br />
         {{ report.description }}<br />
