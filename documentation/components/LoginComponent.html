@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Login Component für die Eingabe von Userdaten und deren Validierung.</p>
+
+    </p>
 
 
 
@@ -201,12 +208,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/login/login.component.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/login/login.component.ts:62</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor injeziert mehrere Service</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -215,6 +224,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -229,6 +239,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Zum erstellen von Formularen</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>userManagement</td>
@@ -241,6 +255,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Beinhaltet alle Funktion für den User</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>userData</td>
@@ -253,6 +271,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Beinhaltet alle Informationen zum User</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -282,9 +304,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/login/login.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/login/login.component.ts:34</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event gibt Parent den Name des User zurück</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -303,9 +331,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/login/login.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/login/login.component.ts:38</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event gibt Parent die Rolle des User zurück</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -336,17 +370,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/login/login.component.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/login/login.component.ts:80</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funktion für das Rückgeben einer geeigneten Fehlermeldung.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>&quot;Geben Sie eine gültige Email an&quot; | &quot;&quot; | &quot;Keine Richtige Email&quot;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>String mit Errormeldung</p>
 
                     </div>
                 </td>
@@ -373,14 +415,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/login/login.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/login/login.component.ts:96</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funktion die den Anmeldeprozess mit dem Backend startet</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -391,6 +435,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -405,6 +450,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Emailadresse des Users</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>password</td>
@@ -417,6 +466,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Passwort des Users</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -464,10 +517,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/login/login.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/login/login.component.ts:29</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Bei Fehlgeschlagener Anmeldung wird hier der Error gespeichert</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -495,10 +554,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/login/login.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/login/login.component.ts:21</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Param ob Passwort sichtbar oder nicht</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -526,10 +591,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/login/login.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/login/login.component.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Param der sagt ob Spinner erscheinen soll.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -547,19 +618,15 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>this._formBuilder.group({
-    email: [
-      &#x27;&#x27;,
-      [
-        Validators.required,
-        //Validators.email
-      ],
-    ],
+    email: [&#x27;&#x27;, [Validators.required, Validators.email]],
     password: [
       &#x27;&#x27;,
       [
         Validators.required,
         Validators.minLength(7),
-        //Validators.pattern(&#x27;(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[0-9])(?&#x3D;.*[$@$!%*?&amp;])[A-Za-z\d$@$!%*?&amp;].{7,}&#x27;)
+        Validators.pattern(
+          &#x27;(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[0-9])(?&#x3D;.*[$@$!%*?&amp;])[A-Za-zd$@$!%*?&amp;].{7,}&#x27;
+        ),
       ],
     ],
   })</code>
@@ -567,14 +634,15 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/login/login.component.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/login/login.component.ts:50</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Passwort vorraussetzung um als korrekt ausgewertet zu werden:</p>
-<p>-Mindestens 8 chars
+                    <div class="io-description"><p>Formular das die Einlogdaten validiert.</p>
+<p>Passwort vorraussetzung um als korrekt ausgewertet zu werden:
+-Mindestens 8 chars
 -einen Kleinbuchstaben
 -einen Großbuchstaben
 -eine Nummer
@@ -605,10 +673,15 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/login/login.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/login/login.component.ts:73</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">Beinhaltet alle Informationen zum User</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -621,27 +694,46 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UserResponse } from &#x27;../user/userResponse&#x27;;
 import { UserDataService } from &#x27;src/app/user/userData.service&#x27;;
 import { UserManagementService } from &#x27;../user/userManagement.service&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
 import { MitifyUser } from &#x27;../user/mitify_user&#x27;;
 import { Component, Output, EventEmitter } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 import { HttpResponse } from &#x27;@angular/common/http&#x27;;
 
+/**
+ * Login Component für die Eingabe von Userdaten und deren Validierung.
+ */
 @Component({
   selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.component.html&#x27;,
   styleUrls: [&#x27;./login.component.css&#x27;],
 })
 export class LoginComponent {
+  /**
+   * Param ob Passwort sichtbar oder nicht
+   */
   hide: boolean &#x3D; true;
+  /**
+   * Param der sagt ob Spinner erscheinen soll.
+   */
   loading$: boolean &#x3D; false;
+  /**
+   * Bei Fehlgeschlagener Anmeldung wird hier der Error gespeichert
+   */
   error: string &#x3D; &#x27;&#x27;;
 
+  /**
+   * Event gibt Parent den Name des User zurück
+   */
   @Output() userName &#x3D; new EventEmitter&lt;string&gt;();
+  /**
+   * Event gibt Parent die Rolle des User zurück
+   */
   @Output() userRole &#x3D; new EventEmitter&lt;number&gt;();
 
-  /**Passwort vorraussetzung um als korrekt ausgewertet zu werden:
+  /**
+   * Formular das die Einlogdaten validiert.
    *
+   * Passwort vorraussetzung um als korrekt ausgewertet zu werden:
    * -Mindestens 8 chars
    * -einen Kleinbuchstaben
    * -einen Großbuchstaben
@@ -649,29 +741,35 @@ export class LoginComponent {
    * -ein Spezialzeichen
    * **/
   loginFormGroup &#x3D; this._formBuilder.group({
-    email: [
-      &#x27;&#x27;,
-      [
-        Validators.required,
-        //Validators.email
-      ],
-    ],
+    email: [&#x27;&#x27;, [Validators.required, Validators.email]],
     password: [
       &#x27;&#x27;,
       [
         Validators.required,
         Validators.minLength(7),
-        //Validators.pattern(&#x27;(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[0-9])(?&#x3D;.*[$@$!%*?&amp;])[A-Za-z\d$@$!%*?&amp;].{7,}&#x27;)
+        Validators.pattern(
+          &#x27;(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[0-9])(?&#x3D;.*[$@$!%*?&amp;])[A-Za-zd$@$!%*?&amp;].{7,}&#x27;
+        ),
       ],
     ],
   });
 
+  /**
+   * Constructor injeziert mehrere Service
+   * @param _formBuilder Zum erstellen von Formularen
+   * @param userManagement Beinhaltet alle Funktion für den User
+   * @param userData Beinhaltet alle Informationen zum User
+   */
   constructor(
     private _formBuilder: FormBuilder,
     private userManagement: UserManagementService,
     public userData: UserDataService
   ) {}
 
+  /**
+   * Funktion für das Rückgeben einer geeigneten Fehlermeldung.
+   * @returns {string} String mit Errormeldung
+   */
   getErrorMessage() {
     if (this.loginFormGroup.controls[&#x27;email&#x27;].hasError(&#x27;required&#x27;)) {
       return &#x27;Geben Sie eine gültige Email an&#x27;;
@@ -682,6 +780,12 @@ export class LoginComponent {
       : &#x27;&#x27;;
   }
 
+  /**
+   * Funktion die den Anmeldeprozess mit dem Backend startet
+   * @param email Emailadresse des Users
+   * @param password Passwort des Users
+   * @todo Anmeldung soll nicht mit dem Backendserver geschehen sondern mit den IU Daten
+   */
   logIn(email: any, password: any): void {
     this.loading$ &#x3D; true;
     let userTry &#x3D; new MitifyUser(email, password);
@@ -700,14 +804,14 @@ export class LoginComponent {
         console.log(
           &#x27;Hallo &#x27; + res.body?.user.name + &#x27;, du bist jetzt eingeloggt!&#x27;
         );
+        this.loading$ &#x3D; false;
       },
       (error) &#x3D;&gt; {
         this.error &#x3D; &#x27;Falsche Nutzerdaten!&#x27;;
+        this.loading$ &#x3D; false;
       }
     );
-    this.loading$ &#x3D; false;
   }
-  
 }
 </code></pre>
     </div>
@@ -717,6 +821,9 @@ export class LoginComponent {
   &lt;span class&#x3D;&quot;middle&quot;&gt;IU Mitify Login&lt;/span&gt;
 &lt;/mat-toolbar&gt;
 &lt;form [formGroup]&#x3D;&quot;loginFormGroup&quot;&gt;
+  &lt;div class&#x3D;&quot;placeholder&quot; *ngIf&#x3D;&quot;loading$&quot;&gt;
+    &lt;mat-spinner class&#x3D;&quot;spinner&quot;&gt;&lt;/mat-spinner&gt;
+  &lt;/div&gt;
   &lt;div class&#x3D;&quot;loginForm footer&quot; *ngIf&#x3D;&quot;!loading$&quot;&gt;
     &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;stretch&quot;&gt;
       &lt;mat-label&gt;Email&lt;/mat-label&gt;
@@ -809,6 +916,16 @@ export class LoginComponent {
 .button {
   margin-left: auto;
 }
+
+.placeholder {
+  width: 288.017px;
+  height: 180.5px;
+}
+
+.spinner {
+  margin: auto;
+  margin-top: 50px;
+}
 </code></pre>
     </div>
 
@@ -837,7 +954,7 @@ export class LoginComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="header" color="primary">  <span class="middle">IU Mitify Login</span></mat-toolbar><form [formGroup]="loginFormGroup">  <div class="loginForm footer" *ngIf="!loading$">    <mat-form-field appearance="outline" class="stretch">      <mat-label>Email</mat-label>      <input        matInput        placeholder="pat@example.com"        (keyup.enter)="          logIn(loginFormGroup.value.email, loginFormGroup.value.password)        "        formControlName="email"        required      />      <button mat-icon-button matSuffix>        <mat-icon matTextSuffix>account_circle</mat-icon>      </button>      <mat-error *ngIf="loginFormGroup.controls[\'email\'].invalid">{{        getErrorMessage()      }}</mat-error>    </mat-form-field>    <br />    <mat-form-field appearance="outline" class="stretch">      <mat-label>Passwort</mat-label>      <input        matInput        [type]="hide ? \'password\' : \'text\'"        (keyup.enter)="          logIn(loginFormGroup.value.email, loginFormGroup.value.password)        "        formControlName="password"      />      <button        mat-icon-button        matSuffix        (click)="hide = !hide"        [attr.aria-label]="\'Hide password\'"        [attr.aria-pressed]="hide"      >        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>      </button>    </mat-form-field>    <mat-error *ngIf="error != \'\'">{{ error }}</mat-error>    <!--Nach spezifikation weiterarbeiten-->    <mat-dialog-actions>      <button        mat-flat-button        color="primary"        class="button"        (click)="          logIn(loginFormGroup.value.email, loginFormGroup.value.password)        "      >        Anmelden      </button>    </mat-dialog-actions>  </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="header" color="primary">  <span class="middle">IU Mitify Login</span></mat-toolbar><form [formGroup]="loginFormGroup">  <div class="placeholder" *ngIf="loading$">    <mat-spinner class="spinner"></mat-spinner>  </div>  <div class="loginForm footer" *ngIf="!loading$">    <mat-form-field appearance="outline" class="stretch">      <mat-label>Email</mat-label>      <input        matInput        placeholder="pat@example.com"        (keyup.enter)="          logIn(loginFormGroup.value.email, loginFormGroup.value.password)        "        formControlName="email"        required      />      <button mat-icon-button matSuffix>        <mat-icon matTextSuffix>account_circle</mat-icon>      </button>      <mat-error *ngIf="loginFormGroup.controls[\'email\'].invalid">{{        getErrorMessage()      }}</mat-error>    </mat-form-field>    <br />    <mat-form-field appearance="outline" class="stretch">      <mat-label>Passwort</mat-label>      <input        matInput        [type]="hide ? \'password\' : \'text\'"        (keyup.enter)="          logIn(loginFormGroup.value.email, loginFormGroup.value.password)        "        formControlName="password"      />      <button        mat-icon-button        matSuffix        (click)="hide = !hide"        [attr.aria-label]="\'Hide password\'"        [attr.aria-pressed]="hide"      >        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>      </button>    </mat-form-field>    <mat-error *ngIf="error != \'\'">{{ error }}</mat-error>    <!--Nach spezifikation weiterarbeiten-->    <mat-dialog-actions>      <button        mat-flat-button        color="primary"        class="button"        (click)="          logIn(loginFormGroup.value.email, loginFormGroup.value.password)        "      >        Anmelden      </button>    </mat-dialog-actions>  </div></form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerComponent', 'selector': 'app-manager'},{'name': 'ModuleManagerContainerComponent', 'selector': 'app-module-manager-container'},{'name': 'ModuleManagerTableClosedComponent', 'selector': 'app-module-manager-table-closed'},{'name': 'ModuleManagerTableComponent', 'selector': 'app-module-manager-table'},{'name': 'PlaceholderNoUserComponent', 'selector': 'app-placeholder-no-user'},{'name': 'SkriptDetailManagerComponent', 'selector': 'app-skript-detail-manager'},{'name': 'SkriptDetailStudentComponent', 'selector': 'app-skript-detail-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentContainerComponent', 'selector': 'app-student-container'},{'name': 'StudentTableClosedComponent', 'selector': 'app-student-table-closed'},{'name': 'StudentTableComponent', 'selector': 'app-student-table'},{'name': 'TestComComponent', 'selector': 'app-test-com'},{'name': 'VideoDetailManagerComponent', 'selector': 'app-video-detail-manager'},{'name': 'VideoDetailStudentComponent', 'selector': 'app-video-detail-student'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

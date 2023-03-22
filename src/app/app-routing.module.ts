@@ -1,8 +1,10 @@
 import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no-user.component';
-import { ModuleManagerContainerComponent } from './manager/module-manager-container/module-manager-container.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
+/**
+ * beide Routes. student und manager
+ */
 const routes: Routes = [
   { path: '', component: PlaceholderNoUserComponent },
   {
@@ -17,6 +19,9 @@ const routes: Routes = [
   },
 ];
 
+/**
+ * Router der das navigieren zu den beiden Modulen ermöglicht
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

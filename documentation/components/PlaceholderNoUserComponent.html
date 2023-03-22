@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Sollten Navigationsprobleme passieren kann diese Component helfen</p>
+
+    </p>
 
 
     <p class="comment">
@@ -185,7 +192,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -276,8 +283,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -313,8 +320,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -355,7 +362,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -382,7 +389,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -409,7 +416,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/placeholder-no-user/placeholder-no-user.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -427,19 +434,26 @@ import { UserManagementService } from &#x27;./../user/userManagement.service&#x2
 import { Component, Inject, Input, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 
+/**
+ * Sollten Navigationsprobleme passieren kann diese Component helfen
+ * @todo bei Releas entfernen
+ */
 @Component({
   selector: &#x27;app-placeholder-no-user&#x27;,
   templateUrl: &#x27;./placeholder-no-user.component.html&#x27;,
-  styleUrls: [&#x27;./placeholder-no-user.component.css&#x27;]
+  styleUrls: [&#x27;./placeholder-no-user.component.css&#x27;],
 })
 export class PlaceholderNoUserComponent implements OnInit {
-
   message!: string;
 
-  constructor(public userManagement: UserManagementService, public userData: UserDataService, private router: Router) {}
+  constructor(
+    public userManagement: UserManagementService,
+    public userData: UserDataService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    if(this.userData.role_id &#x3D;&#x3D; 1) {
+    if (this.userData.role_id &#x3D;&#x3D; 1) {
       this.router.navigate([&#x27;/&#x27;, &#x27;user&#x27;]);
     } else if (this.userData.role_id &#x3D;&#x3D; 2) {
       this.router.navigate([&#x27;/&#x27;, &#x27;manager&#x27;]);
@@ -448,23 +462,25 @@ export class PlaceholderNoUserComponent implements OnInit {
 
   getData(): void {
     console.log(this.userData.getToken());
-    this.userManagement.getData(this.userData.getToken()).subscribe(data &#x3D;&gt; {
+    this.userManagement.getData(this.userData.getToken()).subscribe((data) &#x3D;&gt; {
       console.log(data);
     });
   }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
-    &lt;h1&gt;Bei Releas nicht enthalten.&lt;br/&gt;Dient nur der Navigation!&lt;/h1&gt;
-    &lt;h3&gt;Auswählen um auf die verschiedenen Ansichten zu wechseln:&lt;/h3&gt;
-    &lt;button mat-raised-button color&#x3D;&quot;warn&quot; routerLink&#x3D;&quot;user&quot;&gt;Student&lt;/button&gt;
-    &lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
-    &lt;button mat-raised-button color&#x3D;&quot;accent&quot; routerLink&#x3D;&quot;manager&quot;&gt;Modulverantwortlicher&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+  &lt;h1&gt;Bei Releas nicht enthalten.&lt;br /&gt;Dient nur der Navigation!&lt;/h1&gt;
+  &lt;h3&gt;Auswählen um auf die verschiedenen Ansichten zu wechseln:&lt;/h3&gt;
+  &lt;button mat-raised-button color&#x3D;&quot;warn&quot; routerLink&#x3D;&quot;user&quot;&gt;Student&lt;/button&gt;
+  &lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
+  &lt;button mat-raised-button color&#x3D;&quot;accent&quot; routerLink&#x3D;&quot;manager&quot;&gt;
+    Modulverantwortlicher
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -472,19 +488,20 @@ export class PlaceholderNoUserComponent implements OnInit {
                     <code>./placeholder-no-user.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.container {
-    border: solid 5px black;
-    border-radius: 5px;
-    width: 350px;
-    text-align: center;
-    background-color: wheat;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
+  border: solid 5px black;
+  border-radius: 5px;
+  width: 350px;
+  text-align: center;
+  background-color: wheat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 }
 
 .container button {
-    margin: 10px;
-}</code></pre>
+  margin: 10px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -512,7 +529,7 @@ export class PlaceholderNoUserComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">    <h1>Bei Releas nicht enthalten.<br/>Dient nur der Navigation!</h1>    <h3>Auswählen um auf die verschiedenen Ansichten zu wechseln:</h3>    <button mat-raised-button color="warn" routerLink="user">Student</button>    <span class="spacer"></span>    <button mat-raised-button color="accent" routerLink="manager">Modulverantwortlicher</button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1>Bei Releas nicht enthalten.<br />Dient nur der Navigation!</h1>  <h3>Auswählen um auf die verschiedenen Ansichten zu wechseln:</h3>  <button mat-raised-button color="warn" routerLink="user">Student</button>  <span class="spacer"></span>  <button mat-raised-button color="accent" routerLink="manager">    Modulverantwortlicher  </button></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerComponent', 'selector': 'app-manager'},{'name': 'ModuleManagerContainerComponent', 'selector': 'app-module-manager-container'},{'name': 'ModuleManagerTableClosedComponent', 'selector': 'app-module-manager-table-closed'},{'name': 'ModuleManagerTableComponent', 'selector': 'app-module-manager-table'},{'name': 'PlaceholderNoUserComponent', 'selector': 'app-placeholder-no-user'},{'name': 'SkriptDetailManagerComponent', 'selector': 'app-skript-detail-manager'},{'name': 'SkriptDetailStudentComponent', 'selector': 'app-skript-detail-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentContainerComponent', 'selector': 'app-student-container'},{'name': 'StudentTableClosedComponent', 'selector': 'app-student-table-closed'},{'name': 'StudentTableComponent', 'selector': 'app-student-table'},{'name': 'TestComComponent', 'selector': 'app-test-com'},{'name': 'VideoDetailManagerComponent', 'selector': 'app-video-detail-manager'},{'name': 'VideoDetailStudentComponent', 'selector': 'app-video-detail-student'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PlaceholderNoUserComponent'};

@@ -29,6 +29,10 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatSortModule } from '@angular/material/sort';
 import { TestComComponent } from './test-com/test-com.component';
 
+/**
+ * Modul für die Studenten Components
+ * @todo Nicht gebrauchte imports entfernen
+ */
 @NgModule({
   declarations: [
     StudentComponent,

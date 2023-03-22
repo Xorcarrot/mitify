@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Detailansicht für Skripte wenn von einem Studenten geöffnet</p>
+
+    </p>
 
 
 
@@ -179,7 +186,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/student/video-detail-student/video-detail-student.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/student/video-detail-student/video-detail-student.component.ts:13</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -213,14 +220,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/student/video-detail-student/video-detail-student.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/student/video-detail-student/video-detail-student.component.ts:20</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Rechnet die Zeit in Millisekunden in ein Datum um</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -231,6 +240,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -245,6 +255,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Zeit in Millisekunden</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -256,7 +270,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Datum mit Zeit</p>
+
                     </div>
                 </td>
             </tr>
@@ -282,14 +297,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/student/video-detail-student/video-detail-student.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/student/video-detail-student/video-detail-student.component.ts:30</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Rechnet die Zeitstempel eines Videos in das Format &quot;mm:ss&quot; um</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -300,6 +317,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -314,6 +332,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Zeit in Sekunden</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -325,7 +347,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Zeit im Format &quot;mm:ss&quot;</p>
+
                     </div>
                 </td>
             </tr>
@@ -339,8 +362,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ReportVideo } from &#x27;../../dialog/classes/subClasses/reportVideo&#x27;;
 import { Component, Input } from &#x27;@angular/core&#x27;;
-import { Report } from &#x27;../../dialog/classes/Report&#x27;;
 
+/**
+ * Detailansicht für Skripte wenn von einem Studenten geöffnet
+ */
 @Component({
   selector: &#x27;app-video-detail-student&#x27;,
   templateUrl: &#x27;./video-detail-student.component.html&#x27;,
@@ -349,18 +374,32 @@ import { Report } from &#x27;../../dialog/classes/Report&#x27;;
 export class VideoDetailStudentComponent {
   @Input() report!: ReportVideo;
 
+  /**
+   * Rechnet die Zeit in Millisekunden in ein Datum um
+   * @param time Zeit in Millisekunden
+   * @returns {string} Datum mit Zeit
+   */
   calcDateAndTime(time: any): string {
     var date &#x3D; new Date(time);
-    return date.toLocaleDateString() + &quot; &quot; + date.toLocaleTimeString();
+    return date.toLocaleDateString() + &#x27; &#x27; + date.toLocaleTimeString();
   }
 
+  /**
+   * Rechnet die Zeitstempel eines Videos in das Format &quot;mm:ss&quot; um
+   * @param time Zeit in Sekunden
+   * @returns Zeit im Format &quot;mm:ss&quot;
+   */
   calcTimeToString(time: any): String {
     var timeC &#x3D; new Date(time * 1000);
 
     var minutes &#x3D; timeC.getUTCMinutes();
     var seconds &#x3D; timeC.getUTCSeconds();
 
-    return minutes.toString().padStart(2, &#x27;0&#x27;) + &quot;:&quot; + seconds.toString().padStart(2, &#x27;0&#x27;);
+    return (
+      minutes.toString().padStart(2, &#x27;0&#x27;) +
+      &#x27;:&#x27; +
+      seconds.toString().padStart(2, &#x27;0&#x27;)
+    );
   }
 }
 </code></pre>
@@ -373,8 +412,10 @@ export class VideoDetailStudentComponent {
     &lt;h4&gt;Lokalisierung:&lt;/h4&gt;
     &lt;p&gt;
       Videotitel: {{ report.videoTitle }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;Video URL:
-      {{ report.videoURL }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
-      Zeitstempel Beginn: {{calcTimeToString(report.timestampStart)}}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;Zeitstempel Ende: {{calcTimeToString(report.timestampEnd)}}
+      {{ report.videoURL }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt; Zeitstempel Beginn:
+      {{ calcTimeToString(report.timestampStart)
+      }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;Zeitstempel Ende:
+      {{ calcTimeToString(report.timestampEnd) }}
     &lt;/p&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;wrapper&quot;&gt;
@@ -387,11 +428,23 @@ export class VideoDetailStudentComponent {
   &lt;div class&#x3D;&quot;wrapper lastWrapper&quot;&gt;
     &lt;h4&gt;Historie:&lt;/h4&gt;
     &lt;p&gt;
-            Erstellungsdatum: {{calcDateAndTime(report.report_date)}}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
-            &lt;ng-container *ngIf&#x3D;&quot;report.granted_date !&#x3D; 0&quot;&gt;In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}&lt;/ng-container&gt;&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
-            &lt;ng-container *ngIf&#x3D;&quot;report.completed_date !&#x3D; 0 &amp;&amp; report.granted_date !&#x3D; 0&quot;&gt;Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}&lt;/ng-container&gt;
-            &lt;ng-container *ngIf&#x3D;&quot;report.completed_date !&#x3D; 0 &amp;&amp; report.granted_date &#x3D;&#x3D; 0&quot;&gt;Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}&lt;/ng-container&gt;
-        &lt;/p&gt;
+      Erstellungsdatum: {{ calcDateAndTime(report.report_date)
+      }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
+      &lt;ng-container *ngIf&#x3D;&quot;report.granted_date !&#x3D; 0&quot;
+        &gt;In Bearbeitungsdatum:
+        {{ calcDateAndTime(report.granted_date) }}&lt;/ng-container
+      &gt;&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;
+      &lt;ng-container
+        *ngIf&#x3D;&quot;report.completed_date !&#x3D; 0 &amp;&amp; report.granted_date !&#x3D; 0&quot;
+        &gt;Fertigstellungsdatum:
+        {{ calcDateAndTime(report.completed_date) }}&lt;/ng-container
+      &gt;
+      &lt;ng-container
+        *ngIf&#x3D;&quot;report.completed_date !&#x3D; 0 &amp;&amp; report.granted_date &#x3D;&#x3D; 0&quot;
+        &gt;Ablehnungsdatum:
+        {{ calcDateAndTime(report.completed_date) }}&lt;/ng-container
+      &gt;
+    &lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -448,7 +501,7 @@ export class VideoDetailStudentComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <h2>Video:</h2>  <div class="wrapper">    <h4>Lokalisierung:</h4>    <p>      Videotitel: {{ report.videoTitle }}<span class="spacer"></span>Video URL:      {{ report.videoURL }}<span class="spacer"></span>      Zeitstempel Beginn: {{calcTimeToString(report.timestampStart)}}<span class="spacer"></span>Zeitstempel Ende: {{calcTimeToString(report.timestampEnd)}}    </p>  </div>  <div class="wrapper">    <h4>Beschreibung:</h4>    <p>      <span class="topSpacer"></span>      {{ report.description }}    </p>  </div>  <div class="wrapper lastWrapper">    <h4>Historie:</h4>    <p>            Erstellungsdatum: {{calcDateAndTime(report.report_date)}}<span class="spacer"></span>            <ng-container *ngIf="report.granted_date != 0">In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}</ng-container><span class="spacer"></span>            <ng-container *ngIf="report.completed_date != 0 && report.granted_date != 0">Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>            <ng-container *ngIf="report.completed_date != 0 && report.granted_date == 0">Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>        </p>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h2>Video:</h2>  <div class="wrapper">    <h4>Lokalisierung:</h4>    <p>      Videotitel: {{ report.videoTitle }}<span class="spacer"></span>Video URL:      {{ report.videoURL }}<span class="spacer"></span> Zeitstempel Beginn:      {{ calcTimeToString(report.timestampStart)      }}<span class="spacer"></span>Zeitstempel Ende:      {{ calcTimeToString(report.timestampEnd) }}    </p>  </div>  <div class="wrapper">    <h4>Beschreibung:</h4>    <p>      <span class="topSpacer"></span>      {{ report.description }}    </p>  </div>  <div class="wrapper lastWrapper">    <h4>Historie:</h4>    <p>      Erstellungsdatum: {{ calcDateAndTime(report.report_date)      }}<span class="spacer"></span>      <ng-container *ngIf="report.granted_date != 0"        >In Bearbeitungsdatum:        {{ calcDateAndTime(report.granted_date) }}</ng-container      ><span class="spacer"></span>      <ng-container        *ngIf="report.completed_date != 0 && report.granted_date != 0"        >Fertigstellungsdatum:        {{ calcDateAndTime(report.completed_date) }}</ng-container      >      <ng-container        *ngIf="report.completed_date != 0 && report.granted_date == 0"        >Ablehnungsdatum:        {{ calcDateAndTime(report.completed_date) }}</ng-container      >    </p>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerComponent', 'selector': 'app-manager'},{'name': 'ModuleManagerContainerComponent', 'selector': 'app-module-manager-container'},{'name': 'ModuleManagerTableClosedComponent', 'selector': 'app-module-manager-table-closed'},{'name': 'ModuleManagerTableComponent', 'selector': 'app-module-manager-table'},{'name': 'PlaceholderNoUserComponent', 'selector': 'app-placeholder-no-user'},{'name': 'SkriptDetailManagerComponent', 'selector': 'app-skript-detail-manager'},{'name': 'SkriptDetailStudentComponent', 'selector': 'app-skript-detail-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentContainerComponent', 'selector': 'app-student-container'},{'name': 'StudentTableClosedComponent', 'selector': 'app-student-table-closed'},{'name': 'StudentTableComponent', 'selector': 'app-student-table'},{'name': 'TestComComponent', 'selector': 'app-test-com'},{'name': 'VideoDetailManagerComponent', 'selector': 'app-video-detail-manager'},{'name': 'VideoDetailStudentComponent', 'selector': 'app-video-detail-student'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'VideoDetailStudentComponent'};

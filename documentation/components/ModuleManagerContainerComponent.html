@@ -68,14 +68,15 @@
 </p>
 
 
-
-
     <p class="comment">
-        <h3>Implements</h3>
+        <h3>Description</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+        <p>Container für alle Managertabellen</p>
+
     </p>
+
+
 
 
 <section>
@@ -126,20 +127,6 @@
     <table class="table table-sm table-bordered index-table">
         <tbody>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -174,7 +161,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/manager/module-manager-container/module-manager-container.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/manager/module-manager-container/module-manager-container.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -200,88 +187,52 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/manager/module-manager-container/module-manager-container.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/manager/module-manager-container/module-manager-container.component.ts:15</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Nimmt den Token entgegen</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
 
 
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/manager/module-manager-container/module-manager-container.component.ts:16</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 
+/**
+ * Container für alle Managertabellen
+ */
 @Component({
   selector: &#x27;app-module-manager-container&#x27;,
   templateUrl: &#x27;./module-manager-container.component.html&#x27;,
-  styleUrls: [&#x27;./module-manager-container.component.css&#x27;]
+  styleUrls: [&#x27;./module-manager-container.component.css&#x27;],
 })
-export class ModuleManagerContainerComponent implements OnInit {
-
+export class ModuleManagerContainerComponent {
+  /**
+   * Nimmt den Token entgegen
+   */
   @Input() token: any;
 
-  constructor() {
-    
-  }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-module-manager-table&gt;&lt;/app-module-manager-table&gt;
-&lt;app-module-manager-table-closed&gt;&lt;/app-module-manager-table-closed&gt;</code></pre>
+&lt;app-module-manager-table-closed&gt;&lt;/app-module-manager-table-closed&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">

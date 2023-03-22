@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Dient zur Zeit nur den Testen der Verbindung und des richtigen Tokens mit dem Backend</p>
+
+    </p>
 
 
     <p class="comment">
@@ -185,7 +192,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/student/test-com/test-com.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/student/test-com/test-com.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -264,8 +271,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/student/test-com/test-com.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/student/test-com/test-com.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -301,8 +308,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/student/test-com/test-com.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/student/test-com/test-com.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -343,7 +350,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/student/test-com/test-com.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/student/test-com/test-com.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -370,7 +377,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/student/test-com/test-com.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/student/test-com/test-com.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -397,7 +404,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/student/test-com/test-com.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/student/test-com/test-com.component.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -414,41 +421,45 @@
 import { UserDataService } from &#x27;src/app/user/userData.service&#x27;;
 import { UserManagementService } from &#x27;src/app/user/userManagement.service&#x27;;
 
+/**
+ * Dient zur Zeit nur den Testen der Verbindung und des richtigen Tokens mit dem Backend
+ * @todo Vor Releas entfernen
+ */
 @Component({
   selector: &#x27;app-test-com&#x27;,
   templateUrl: &#x27;./test-com.component.html&#x27;,
-  styleUrls: [&#x27;./test-com.component.css&#x27;]
+  styleUrls: [&#x27;./test-com.component.css&#x27;],
 })
 export class TestComComponent implements OnInit {
-
   message!: string;
 
-  constructor(public userManagement: UserManagementService, public userData: UserDataService) {
+  constructor(
+    public userManagement: UserManagementService,
+    public userData: UserDataService
+  ) {}
 
-  }
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   getData(): void {
-    this.userManagement.getData(this.userData.getToken()).subscribe(data &#x3D;&gt; {
-      console.log(&quot;User &quot; + this.userData.getAuthor() + &quot; requested data.&quot;);
+    this.userManagement.getData(this.userData.getToken()).subscribe((data) &#x3D;&gt; {
+      console.log(&#x27;User &#x27; + this.userData.getAuthor() + &#x27; requested data.&#x27;);
       console.log(data);
     });
   }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
-    &lt;h1&gt;Bei Releas nicht enthalten.&lt;br/&gt;Dient nur zum Test&lt;/h1&gt;
-    &lt;h3&gt;Sende Anfrage an Server. Konsole ist die Message!&lt;/h3&gt;
-    &lt;br/&gt;
-    &lt;button mat-raised-button color&#x3D;&quot;accent&quot; (click)&#x3D;&quot;getData()&quot;&gt;Test User Login&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+  &lt;h1&gt;Bei Releas nicht enthalten.&lt;br /&gt;Dient nur zum Test&lt;/h1&gt;
+  &lt;h3&gt;Sende Anfrage an Server. Konsole ist die Message!&lt;/h3&gt;
+  &lt;br /&gt;
+  &lt;button mat-raised-button color&#x3D;&quot;accent&quot; (click)&#x3D;&quot;getData()&quot;&gt;
+    Test User Login
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -456,19 +467,20 @@ export class TestComComponent implements OnInit {
                     <code>./test-com.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.container {
-    border: solid 5px black;
-    border-radius: 5px;
-    width: 350px;
-    text-align: center;
-    background-color: wheat;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
+  border: solid 5px black;
+  border-radius: 5px;
+  width: 350px;
+  text-align: center;
+  background-color: wheat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 }
 
 .container button {
-    margin: 10px;
-}</code></pre>
+  margin: 10px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -496,7 +508,7 @@ export class TestComComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">    <h1>Bei Releas nicht enthalten.<br/>Dient nur zum Test</h1>    <h3>Sende Anfrage an Server. Konsole ist die Message!</h3>    <br/>    <button mat-raised-button color="accent" (click)="getData()">Test User Login</button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1>Bei Releas nicht enthalten.<br />Dient nur zum Test</h1>  <h3>Sende Anfrage an Server. Konsole ist die Message!</h3>  <br />  <button mat-raised-button color="accent" (click)="getData()">    Test User Login  </button></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerComponent', 'selector': 'app-manager'},{'name': 'ModuleManagerContainerComponent', 'selector': 'app-module-manager-container'},{'name': 'ModuleManagerTableClosedComponent', 'selector': 'app-module-manager-table-closed'},{'name': 'ModuleManagerTableComponent', 'selector': 'app-module-manager-table'},{'name': 'PlaceholderNoUserComponent', 'selector': 'app-placeholder-no-user'},{'name': 'SkriptDetailManagerComponent', 'selector': 'app-skript-detail-manager'},{'name': 'SkriptDetailStudentComponent', 'selector': 'app-skript-detail-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentContainerComponent', 'selector': 'app-student-container'},{'name': 'StudentTableClosedComponent', 'selector': 'app-student-table-closed'},{'name': 'StudentTableComponent', 'selector': 'app-student-table'},{'name': 'TestComComponent', 'selector': 'app-test-com'},{'name': 'VideoDetailManagerComponent', 'selector': 'app-video-detail-manager'},{'name': 'VideoDetailStudentComponent', 'selector': 'app-video-detail-student'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TestComComponent'};
