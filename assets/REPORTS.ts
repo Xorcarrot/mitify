@@ -2,10 +2,6 @@ import { ReportVideo } from './../app/dialog/classes/subClasses/reportVideo';
 import { ReportSkript } from './../app/dialog/classes/subClasses/reportSkript';
 import { Report } from 'src/app/dialog/classes/Report';
 
-/**
- * Testdatei mit Fakereports
- * @todo vor Releas entfernen
- */
 export class REPORTS {
   reports: Report[] = [];
 
