@@ -8,9 +8,8 @@ describe('SkriptDetailManagerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkriptDetailManagerComponent ]
-    })
-    .compileComponents();
+      declarations: [SkriptDetailManagerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SkriptDetailManagerComponent);
     component = fixture.componentInstance;

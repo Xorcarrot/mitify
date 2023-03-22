@@ -95,7 +95,9 @@
       >
         Modul
       </th>
-      <td mat-cell *matCellDef="let element">{{ getModule(element.university_module_id) }}</td>
+      <td mat-cell *matCellDef="let element">
+        {{ getModule(element.university_module_id) }}
+      </td>
     </ng-container>
 
     <!-- button to expand -->
@@ -129,29 +131,29 @@
         *matCellDef="let element"
         [attr.colspan]="displayedColumnsWithExpand.length"
       >
-      <div
-      *ngIf="element.page > 0"
-      class="example-element-detail"
-      [@detailExpand]="
-        element == expandedElement ? 'expanded' : 'collapsed'
-      "
-    >
-      <app-skript-detail-manager
-        [report]="element"
-      ></app-skript-detail-manager>
-      </div>
+        <div
+          *ngIf="element.page > 0"
+          class="example-element-detail"
+          [@detailExpand]="
+            element == expandedElement ? 'expanded' : 'collapsed'
+          "
+        >
+          <app-skript-detail-manager
+            [report]="element"
+          ></app-skript-detail-manager>
+        </div>
 
-      <div
-      *ngIf="element.page == null"
-      class="example-element-detail"
-      [@detailExpand]="
-        element == expandedElement ? 'expanded' : 'collapsed'
-      "
-    >
-      <app-video-detail-manager
-        [report]="element"
-      ></app-video-detail-manager>
-    </div>
+        <div
+          *ngIf="element.page == null"
+          class="example-element-detail"
+          [@detailExpand]="
+            element == expandedElement ? 'expanded' : 'collapsed'
+          "
+        >
+          <app-video-detail-manager
+            [report]="element"
+          ></app-video-detail-manager>
+        </div>
       </td>
     </ng-container>
 

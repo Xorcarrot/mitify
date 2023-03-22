@@ -3,12 +3,7 @@ import { ReportResponse } from '../../interfaces/ReportResponse';
 import { ReportService } from './../../services/report.service';
 import { Report } from 'src/app/dialog/classes/Report';
 import { MatPaginator } from '@angular/material/paginator';
-import {
-  AfterViewInit,
-  Component,
-  ViewChild,
-  OnInit,
-} from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
@@ -20,6 +15,10 @@ import {
   trigger,
 } from '@angular/animations';
 
+/**
+ * Componente die die Tabelle für offene Meldungen bereitstellt.
+ * @author Patrick Pußwald
+ */
 @Component({
   selector: 'app-module-manager-table',
   templateUrl: './module-manager-table.component.html',
@@ -35,12 +34,25 @@ import {
     ]),
   ],
 })
-export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
+export class ModuleManagerTableComponent implements OnInit {
+  /**
+   * Informationen für die Tabelle vom Backend
+   */
   report = new DatasourceService(this.reportService);
+  /**
+   * Alle Reports für die Tabelle
+   */
   reports!: ReportResponse[];
-
+  /**
+   * Aktuller Status ob Meldungen geladen sind.
+   * @todo muss erst gefixed werden
+   * @deprecated
+   *
+   */
   loaded = false;
-
+  /**
+   * Spalten für die Tabelle
+   */
   displayedColumns: string[] = [
     'id',
     'reportType',
@@ -48,15 +60,31 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
     'priority',
     'module',
   ];
+  /**
+   * Datenquelle zum Erstellen der Tabelle
+   */
   dataSource!: MatTableDataSource<ReportResponse>;
+  /**
+   * Information welche Spalte ausgeklappt ist
+   */
   displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
+  /**
+   * Inforamtionen zum ausgeklappten Element
+   */
   expandedElement!: Report | null;
 
+  /**
+   * Sortierfunktion
+   */
   @ViewChild(MatSort) sort!: MatSort;
+  /**
+   * Paginator
+   */
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  ngAfterViewInit() {}
-
+  /**
+   * Lädt alle Daten vom Backend und erstellt danach die Tabelle
+   */
   ngOnInit(): void {
     this.report.loadReports();
     this.report.reports$.subscribe((data) => {
@@ -68,11 +96,20 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
     this.loaded = true;
   }
 
+  /**
+   * Iniziert div. Service
+   * @param _liveAnnouncer Gibt Information über die Sortierung weiter
+   * @param reportService Service zum laden der Daten vom Backend
+   */
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private reportService: ReportService
   ) {}
 
+  /**
+   * Funktion zum erstellen der sortierten Tabelle
+   * @param sortState Angewanter Filter
+   */
   announceSortChange(sortState: Sort) {
     this.expandedElement = null;
     if (sortState.direction) {
@@ -82,6 +119,11 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
     }
   }
 
+  /**
+   * Übersetzt die Prioritätsnummer in einen String
+   * @param prio Nummer der Priorität
+   * @returns {string} String zur Priorität oder ERROR
+   */
   priorityString(prio: number): string {
     switch (prio) {
       case 1: {
@@ -97,6 +139,10 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
     return 'ERROR';
   }
 
+  /**
+   * wendet den Filter auf die Tabelle an
+   * @param event Event das über den Input eingegeben wird
+   */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
 
@@ -107,12 +153,18 @@ export class ModuleManagerTableComponent implements AfterViewInit, OnInit {
     }
   }
 
+  /**
+   * Übersetzt die Modulid in einen lesbaren Namen.
+   * @param moduleId ID des Moduls
+   * @returns {string} Name des Moduls
+   * @todo Muss ins Backend verlagert werden
+   */
   getModule(moduleId: number): any {
     switch (moduleId) {
       case 1:
         return 'Big Data';
-      case 2: 
+      case 2:
         return 'Mathematik Grundlagen';
-    } 
+    }
   }
 }

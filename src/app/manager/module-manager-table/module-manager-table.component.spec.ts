@@ -8,9 +8,8 @@ describe('ModuleManagerTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModuleManagerTableComponent ]
-    })
-    .compileComponents();
+      declarations: [ModuleManagerTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ModuleManagerTableComponent);
     component = fixture.componentInstance;

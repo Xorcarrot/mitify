@@ -30,30 +30,72 @@
   <div class="wrapper lastWrapper">
     <h4>Historie:</h4>
 
-        <p>
-            Erstellungsdatum: {{calcDateAndTime(report.report_date)}}<span class="spacer"></span>
-            <ng-container *ngIf="report.granted_date != 0">In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}</ng-container><span class="spacer"></span>
-            <ng-container *ngIf="report.completed_date != 0 && report.granted_date != 0">Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
-            <ng-container *ngIf="report.completed_date != 0 && report.granted_date == 0">Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
-        </p>
-
+    <p>
+      Erstellungsdatum: {{ calcDateAndTime(report.report_date)
+      }}<span class="spacer"></span>
+      <ng-container *ngIf="report.granted_date != 0"
+        >In Bearbeitungsdatum:
+        {{ calcDateAndTime(report.granted_date) }}</ng-container
+      ><span class="spacer"></span>
+      <ng-container
+        *ngIf="report.completed_date != 0 && report.granted_date != 0"
+        >Fertigstellungsdatum:
+        {{ calcDateAndTime(report.completed_date) }}</ng-container
+      >
+      <ng-container
+        *ngIf="report.completed_date != 0 && report.granted_date == 0"
+        >Ablehnungsdatum:
+        {{ calcDateAndTime(report.completed_date) }}</ng-container
+      >
+    </p>
   </div>
   <div class="editingContainer lastWrapper" *ngIf="editingMode">
     Priorität erhöhen
-    <button mat-icon-button color="primary" aria-label="Erhöhe die Priorität" (click)="changePriorityUp(report.id, report.priority)">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Erhöhe die Priorität"
+      (click)="changePriorityUp(report.id, report.priority)"
+    >
       <mat-icon>arrow_upward</mat-icon>
     </button>
     oder senken
-    <button mat-icon-button color="warn" aria-label="Senke die Priorität" (click)="changePriorityDown(report.id, report.priority)">
+    <button
+      mat-icon-button
+      color="warn"
+      aria-label="Senke die Priorität"
+      (click)="changePriorityDown(report.id, report.priority)"
+    >
       <mat-icon>arrow_downward</mat-icon>
     </button>
     .
     <span class="tabu"></span>
     <span class="spacer"></span>
-    <button mat-raised-button *ngIf="report.status == 'neu'" color="primary" (click)="statusInProgress(report.id)">in Bearbeitung</button>
-    <button mat-raised-button *ngIf="report.status == 'in Bearbeitung'" color="primary" (click)="statusDone(report.id, report.granted_date)">Abschließen</button>
+    <button
+      mat-raised-button
+      *ngIf="report.status == 'neu'"
+      color="primary"
+      (click)="statusInProgress(report.id)"
+    >
+      in Bearbeitung
+    </button>
+    <button
+      mat-raised-button
+      *ngIf="report.status == 'in Bearbeitung'"
+      color="primary"
+      (click)="statusDone(report.id, report.granted_date)"
+    >
+      Abschließen
+    </button>
     <span class="tabu"></span>
-    <button mat-raised-button *ngIf="report.status == 'neu'" color="accent" (click)="statusDone(report.id, report.granted_date)">Verwerfen</button>
+    <button
+      mat-raised-button
+      *ngIf="report.status == 'neu'"
+      color="accent"
+      (click)="statusDone(report.id, report.granted_date)"
+    >
+      Verwerfen
+    </button>
     <span class="tabu"></span>
     <button
       mat-icon-button

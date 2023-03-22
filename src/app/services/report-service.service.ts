@@ -4,14 +4,16 @@ import { SkriptContainer } from './../interfaces/skriptContainer';
 import { SkriptPost } from './../interfaces/skriptPost';
 import { UserDataService } from './../user/userData.service';
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ReportSkript } from './../dialog/classes/subClasses/reportSkript';
 import { ReportVideo } from './../dialog/classes/subClasses/reportVideo';
 
+/**
+ * Service für das speichern von Skript und Video Reports zuständig. URL zum Backend auch enthalten
+ * @todo Refactor Servicename
+ * @todo URL sollen in einem Enum gespeichert werden
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +25,11 @@ export class ReportServiceService {
   videoReportUrl: string =
     'https://fathomless-eyrie-95662.herokuapp.com/api/v1/video_reports';
 
-  //adds a new Skriptreport to the Database
+  /**
+   * Skirpt wird zur Datenbank gesendet und gespeichert
+   * @param report Die zu speichernde Skriptmeldung
+   * @returns Observable mit Antwort vom Backend
+   */
   addSkript(report: ReportSkript): Observable<any> {
     let skript = new SkriptPost(
       report.reportType,
@@ -39,7 +45,7 @@ export class ReportServiceService {
       this.userData.id,
       this.userData.getAuthor(),
       this.userData.eMail,
-      report.university_module_id,
+      report.university_module_id
     );
     let skriptCont = new SkriptContainer(skript);
 
@@ -53,7 +59,11 @@ export class ReportServiceService {
     });
   }
 
-  //adds a new Videoreport to the Database
+  /**
+   * Videomeldung wird zur Datenbank gesendet und gespeichert
+   * @param report Die zu speichernde Videomeldung
+   * @returns Observable mit Antwort vom Backend
+   */
   addVideo(report: ReportVideo): Observable<any> {
     let video = new VideoPost(
       report.reportType,
@@ -69,7 +79,7 @@ export class ReportServiceService {
       this.userData.id,
       this.userData.getAuthor(),
       this.userData.eMail,
-      report.university_module_id,
+      report.university_module_id
     );
     let videoCont = new VideoContainer(video);
 
@@ -83,5 +93,10 @@ export class ReportServiceService {
     });
   }
 
+  /**
+   * Injiziert div. Services
+   * @param http Zum Aufbau einer Verbindung mit dem Backend
+   * @param userData Enthält alle Informationen zum User
+   */
   constructor(private http: HttpClient, private userData: UserDataService) {}
 }

@@ -6,7 +6,7 @@ import { DatasourceService } from './datasource.service';
 describe('Service: Datasource', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DatasourceService]
+      providers: [DatasourceService],
     });
   });
 
