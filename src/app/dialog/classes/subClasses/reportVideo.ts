@@ -1,37 +1,104 @@
-import { Report } from "../Report";
+import { Report } from '../Report';
 
-//Klasse die Reports um weitere Attribute erweitert
+/**
+ * Erweitert Reports um die Subklasse ReportVideo
+ */
 export class ReportVideo extends Report {
+  /**
+   * Titel des Videos
+   */
+  videoTitle?: String;
+  /**
+   * Zeitstempel in Sekunden
+   */
+  timestampStart?: number;
+  /**
+   * Zeitstempel in Sekunden
+   */
+  timestampEnd?: number;
+  /**
+   * URL des Videos
+   */
+  videoURL?: String;
 
-    videoTitle?: String;                     //Titel des Videos
-    timestampStart?: number;            //Zeitstempel in Sekunden
-    timestampEnd?: number;              //Zeitstempel in Sekunden
-    videoURL?: String;                  //URL des Videos
+  /**
+   * Erstellt ein neues Videoobjekt
+   * @param type Typ der Fehlermeldung
+   * @param modul Modul der Fehlermeldung
+   * @param description Beschreibung der Fehlermeldung
+   * @param title Titel des Videos
+   * @param timestampStart Zeitstempel Start des Fehlers
+   * @param timestampEnd Zeitstempel Beginn des Fehlers
+   * @param videoUrl URL des Videos
+   * @param id ID der Meldung
+   * @param status Status der Meldung
+   * @param priority Priorität der Meldung
+   * @param author Author der Meldung
+   * @param eMail Email des Authors
+   * @param reportDate Datum der Meldungserstellung
+   * @param grantedDate Datum der Bearbeitungsfreigabe
+   * @param completedDate Datum des Abschlusses
+   */
+  constructor(
+    type: string,
+    modul: String,
+    description?: String,
+    title?: String,
+    timestampStart?: number,
+    timestampEnd?: number,
+    videoUrl?: String,
+    id?: number,
+    status?: String,
+    priority?: Number,
+    author?: String,
+    eMail?: String,
+    reportDate?: number,
+    grantedDate?: number,
+    completedDate?: number
+  ) {
+    super(
+      type,
+      modul,
+      description,
+      id,
+      status,
+      priority,
+      author,
+      eMail,
+      reportDate,
+      grantedDate,
+      completedDate
+    );
 
-    
-    //Constructor zum erstellen eines neuen Srikpt Meldung Objekts
-    constructor (type: string, modul: String, description?: String, title?: String, timestampStart?: number, timestampEnd?: number, videoUrl?: String,
-        id?: number, status?: String, priority?: Number, author?: String, eMail?: String, reportDate?: number, grantedDate?: number, completedDate?: number) {
+    this.videoTitle = title;
+    this.timestampStart = timestampStart;
+    this.timestampEnd = timestampEnd;
+    this.videoURL = videoUrl;
+  }
 
-            super(type, modul, description, id, status, 
-                priority, author, eMail, reportDate, grantedDate, completedDate);
+  /**
+   * 1 -> Skript 2 -> Video Kennzahl der Art der Meldung
+   * @returns 2 für das Unterscheiden der Meldungsarten
+   */
+  getType(): number {
+    return 2;
+  }
 
-            this.videoTitle = title;
-            this.timestampStart = timestampStart;
-            this.timestampEnd = timestampEnd;
-            this.videoURL = videoUrl;
-        }
+  /**
+   * Wandelt einen Zeitstempel von Sekunden in ein "xx:xx" Format um.
+   * @param time Zeit in Sekunden
+   * @returns Zeit in "mm:ss"
+   */
+  calcTimeToString(time: any): String {
+    var timeC = new Date(time * 1000);
 
-    getType(): number {
-        return 2;
-    }
+    var minutes = timeC.getUTCMinutes();
+    var seconds = timeC.getUTCSeconds();
 
-    calcTimeToString(time: any): String {
-        var timeC = new Date(time * 1000);
-    
-        var minutes = timeC.getUTCMinutes();
-        var seconds = timeC.getUTCSeconds();
-    
-        return minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
-      }
+    return (
+      minutes.toString().padStart(2, '0') +
+      ':' +
+      seconds.toString().padStart(2, '0')
+    );
+  }
 }

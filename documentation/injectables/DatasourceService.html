@@ -62,6 +62,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service der für den Zugriff und dem Laden der Daten aus dem Backend zuständig ist.</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -108,22 +115,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#connect" >connect</a>
-                            </li>
-                            <li>
-                                <a href="#disconnect" >disconnect</a>
-                            </li>
-                            <li>
                                 <a href="#getClosedReportArray" >getClosedReportArray</a>
                             </li>
                             <li>
                                 <a href="#getReportArray" >getReportArray</a>
-                            </li>
-                            <li>
-                                <a href="#loadClosedReports" >loadClosedReports</a>
-                            </li>
-                            <li>
-                                <a href="#loadReports" >loadReports</a>
                             </li>
                         </ul>
                     </td>
@@ -148,12 +143,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/app/services/datasource.service.ts:143</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">src/app/services/datasource.service.ts:197</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Injeziert den ReportService um eine Verbindung mit dem Backend zu erstellen.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -162,6 +159,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -176,6 +174,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Service der alle Daten beinhaltet zum erstellen einer Verbindung mit dem Backend.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -191,80 +193,6 @@
     <h3 id="methods">
         Methods
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="connect"></a>
-                    <span class="name">
-                        <span ><b>connect</b></span>
-                        <a href="#connect"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>connect()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/datasource.service.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/ReportResponse.html" target="_self" >Observable&lt;ReportResponse[]&gt;</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="disconnect"></a>
-                    <span class="name">
-                        <span ><b>disconnect</b></span>
-                        <a href="#disconnect"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>disconnect()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/services/datasource.service.ts:23</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -285,17 +213,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/services/datasource.service.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/services/datasource.service.ts:148</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funktion die den heruntergeladenen Report Array mit abgeschlossenen Meldungen zurückgibt.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Report.html" target="_self" >Report[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Array von abgeschlossenen Reports</p>
 
                     </div>
                 </td>
@@ -322,91 +258,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/services/datasource.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/services/datasource.service.ts:77</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Funktion die den heruntergeladenen Report Array mit offenen Meldungen zurückgibt.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Report.html" target="_self" >Report[]</a></code>
 
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="loadClosedReports"></a>
-                    <span class="name">
-                        <span ><b>loadClosedReports</b></span>
-                        <a href="#loadClosedReports"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>loadClosedReports()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/services/datasource.service.ts:86</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="loadReports"></a>
-                    <span class="name">
-                        <span ><b>loadReports</b></span>
-                        <a href="#loadReports"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>loadReports()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/datasource.service.ts:27</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <p>Array von offenen Reports</p>
 
                     </div>
                 </td>
@@ -437,10 +307,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/datasource.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/datasource.service.ts:26</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Boolean der den aktuellen Zustand des Ladens der offenen Meldungen wiederspiegelt.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -462,10 +338,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/datasource.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/services/datasource.service.ts:34</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Boolean der den aktuellen Zustand des Ladens der abgeschlossenen Meldungen wiederspiegelt.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -487,10 +369,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/datasource.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/datasource.service.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array mit allen noch offenen Meldungen</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -512,10 +400,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/datasource.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/services/datasource.service.ts:30</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array mit allen abgeschlossenen Meldungen</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -534,23 +428,59 @@ import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
 import { Report } from &#x27;src/app/dialog/classes/Report&#x27;;
 import { ReportSkript } from &#x27;src/app/dialog/classes/subClasses/reportSkript&#x27;;
 
+/**
+ * Service der für den Zugriff und dem Laden der Daten aus dem Backend zuständig ist.
+ * 
+ * @author Patrick Pusswald
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;,
 })
 export class DatasourceService extends DataSource&lt;ReportResponse&gt; {
+  /**
+   * Array mit allen noch offenen Meldungen
+   */
   reports$ &#x3D; new BehaviorSubject&lt;ReportResponse[]&gt;([]);
+  /**
+   * Boolean der den aktuellen Zustand des Ladens der offenen Meldungen wiederspiegelt.
+   */
   isLoading$ &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+  /**
+   * Array mit allen abgeschlossenen Meldungen
+   */
   reportsClosed$ &#x3D; new BehaviorSubject&lt;ReportResponse[]&gt;([]);
+  /**
+   * Boolean der den aktuellen Zustand des Ladens der abgeschlossenen Meldungen wiederspiegelt.
+   */
   isLoadingClosed$ &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
 
+  /**
+   * Funktion zum herstellen einer Verbindung mit dem Backend.
+   * 
+   * @returns Array von ReportResponse aus dem Backend
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   connect(): Observable&lt;ReportResponse[]&gt; {
     return this.reports$.asObservable();
   }
 
+  /**
+   * Funktion zum trennen der Verbindung mit dem Backend.
+   * 
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   disconnect(): void {
     this.reports$.complete();
   }
 
+  /**
+   * Funktion die das Abgreifen der offenen Meldungen vom Backend startet.
+   * 
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   loadReports(): void {
     this.isLoading$.next(true);
     this.reportService.fetchReports().subscribe((reports) &#x3D;&gt; {
@@ -559,6 +489,12 @@ export class DatasourceService extends DataSource&lt;ReportResponse&gt; {
     });
   }
 
+  /**
+   * Funktion die den heruntergeladenen Report Array mit offenen Meldungen zurückgibt.
+   * 
+   * @returns Array von offenen Reports
+   * @author Patrick Pußwald
+   */
   getReportArray(): Report[] {
     this.loadReports();
     const reports: Report[] &#x3D; [];
@@ -610,6 +546,12 @@ export class DatasourceService extends DataSource&lt;ReportResponse&gt; {
     return reports;
   }
 
+  /**
+   * Funktion die das Abgreifen der offenen Meldungen vom Backend startet.
+   * 
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   loadClosedReports(): void {
     this.isLoadingClosed$.next(true);
     this.reportService.fetchClosedReports().subscribe((reports) &#x3D;&gt; {
@@ -618,6 +560,12 @@ export class DatasourceService extends DataSource&lt;ReportResponse&gt; {
     });
   }
 
+  /**
+   * Funktion die den heruntergeladenen Report Array mit abgeschlossenen Meldungen zurückgibt.
+   * 
+   * @returns Array von abgeschlossenen Reports
+   * @author Patrick Pußwald
+   */
   getClosedReportArray(): Report[] {
     this.loadClosedReports();
     const reports: Report[] &#x3D; [];
@@ -669,6 +617,11 @@ export class DatasourceService extends DataSource&lt;ReportResponse&gt; {
     return reports;
   }
 
+  /**
+   * Injeziert den ReportService um eine Verbindung mit dem Backend zu erstellen.
+   * 
+   * @param reportService Service der alle Daten beinhaltet zum erstellen einer Verbindung mit dem Backend.
+   */
   constructor(private reportService: ReportService) {
     super();
   }

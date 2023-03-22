@@ -7,23 +7,59 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Report } from 'src/app/dialog/classes/Report';
 import { ReportSkript } from 'src/app/dialog/classes/subClasses/reportSkript';
 
+/**
+ * Service der für den Zugriff und dem Laden der Daten aus dem Backend zuständig ist.
+ *
+ * @author Patrick Pusswald
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class DatasourceService extends DataSource<ReportResponse> {
+  /**
+   * Array mit allen noch offenen Meldungen
+   */
   reports$ = new BehaviorSubject<ReportResponse[]>([]);
+  /**
+   * Boolean der den aktuellen Zustand des Ladens der offenen Meldungen wiederspiegelt.
+   */
   isLoading$ = new BehaviorSubject<boolean>(false);
+  /**
+   * Array mit allen abgeschlossenen Meldungen
+   */
   reportsClosed$ = new BehaviorSubject<ReportResponse[]>([]);
+  /**
+   * Boolean der den aktuellen Zustand des Ladens der abgeschlossenen Meldungen wiederspiegelt.
+   */
   isLoadingClosed$ = new BehaviorSubject<boolean>(false);
 
+  /**
+   * Funktion zum herstellen einer Verbindung mit dem Backend.
+   *
+   * @returns Array von ReportResponse aus dem Backend
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   connect(): Observable<ReportResponse[]> {
     return this.reports$.asObservable();
   }
 
+  /**
+   * Funktion zum trennen der Verbindung mit dem Backend.
+   *
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   disconnect(): void {
     this.reports$.complete();
   }
 
+  /**
+   * Funktion die das Abgreifen der offenen Meldungen vom Backend startet.
+   *
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   loadReports(): void {
     this.isLoading$.next(true);
     this.reportService.fetchReports().subscribe((reports) => {
@@ -32,6 +68,12 @@ export class DatasourceService extends DataSource<ReportResponse> {
     });
   }
 
+  /**
+   * Funktion die den heruntergeladenen Report Array mit offenen Meldungen zurückgibt.
+   *
+   * @returns Array von offenen Reports
+   * @author Patrick Pußwald
+   */
   getReportArray(): Report[] {
     this.loadReports();
     const reports: Report[] = [];
@@ -83,6 +125,12 @@ export class DatasourceService extends DataSource<ReportResponse> {
     return reports;
   }
 
+  /**
+   * Funktion die das Abgreifen der offenen Meldungen vom Backend startet.
+   *
+   * @author Patrick Pußwald
+   * @ignore Nicht dirket aufrufen
+   */
   loadClosedReports(): void {
     this.isLoadingClosed$.next(true);
     this.reportService.fetchClosedReports().subscribe((reports) => {
@@ -91,6 +139,12 @@ export class DatasourceService extends DataSource<ReportResponse> {
     });
   }
 
+  /**
+   * Funktion die den heruntergeladenen Report Array mit abgeschlossenen Meldungen zurückgibt.
+   *
+   * @returns Array von abgeschlossenen Reports
+   * @author Patrick Pußwald
+   */
   getClosedReportArray(): Report[] {
     this.loadClosedReports();
     const reports: Report[] = [];
@@ -142,6 +196,11 @@ export class DatasourceService extends DataSource<ReportResponse> {
     return reports;
   }
 
+  /**
+   * Injeziert den ReportService um eine Verbindung mit dem Backend zu erstellen.
+   *
+   * @param reportService Service der alle Daten beinhaltet zum erstellen einer Verbindung mit dem Backend.
+   */
   constructor(private reportService: ReportService) {
     super();
   }

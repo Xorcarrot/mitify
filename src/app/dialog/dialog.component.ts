@@ -38,7 +38,7 @@ export class DialogComponent {
     private _formBuilder: FormBuilder,
     private httpService: ReportServiceService,
     private userData: UserDataService,
-    private router: Router,
+    private router: Router
   ) {}
 
   moduls: Modul[] = [
@@ -51,7 +51,7 @@ export class DialogComponent {
     this.element = learningElement;
     let modulId;
 
-    if(modul == 1) {
+    if (modul == 1) {
       modulId = 1;
     } else {
       modulId = 2;
@@ -202,24 +202,24 @@ export class DialogComponent {
   postSkript(report: ReportSkript): void {
     this.httpService.addSkript(report).subscribe(() => {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      if(this.userData.role_id == 1) {
-        this.router.navigate(['/', 'user']);
-      } else if (this.userData.role_id == 2) {
-        this.router.navigate(['/', 'manager']);
-      }
-      }) 
+        if (this.userData.role_id == 1) {
+          this.router.navigate(['/', 'user']);
+        } else if (this.userData.role_id == 2) {
+          this.router.navigate(['/', 'manager']);
+        }
+      });
     });
   }
 
   postVideo(report: ReportVideo): void {
     this.httpService.addVideo(report).subscribe(() => {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      if(this.userData.role_id == 1) {
-        this.router.navigate(['/', 'user']);
-      } else if (this.userData.role_id == 2) {
-        this.router.navigate(['/', 'manager']);
-      }
-      }) 
+        if (this.userData.role_id == 1) {
+          this.router.navigate(['/', 'user']);
+        } else if (this.userData.role_id == 2) {
+          this.router.navigate(['/', 'manager']);
+        }
+      });
     });
   }
 
@@ -228,8 +228,8 @@ export class DialogComponent {
     switch (moduleId) {
       case 1:
         return 'Big Data';
-      case 2: 
+      case 2:
         return 'Mathematik Grundlagen';
-    } 
+    }
   }
 }
