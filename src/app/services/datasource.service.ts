@@ -48,7 +48,6 @@ export class DatasourceService extends DataSource<ReportResponse> {
    * Funktion zum trennen der Verbindung mit dem Backend.
    *
    * @author Patrick Pußwald
-   * @ignore Nicht dirket aufrufen
    */
   disconnect(): void {
     this.reports$.complete();
@@ -58,7 +57,6 @@ export class DatasourceService extends DataSource<ReportResponse> {
    * Funktion die das Abgreifen der offenen Meldungen vom Backend startet.
    *
    * @author Patrick Pußwald
-   * @ignore Nicht dirket aufrufen
    */
   loadReports(): void {
     this.isLoading$.next(true);
@@ -129,7 +127,6 @@ export class DatasourceService extends DataSource<ReportResponse> {
    * Funktion die das Abgreifen der offenen Meldungen vom Backend startet.
    *
    * @author Patrick Pußwald
-   * @ignore Nicht dirket aufrufen
    */
   loadClosedReports(): void {
     this.isLoadingClosed$.next(true);

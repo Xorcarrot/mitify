@@ -1,3 +1,6 @@
+/**
+ * Interface für die Reportdaten die vom Backend gesendet werden.
+ */
 export interface ReportResponse {
   error_report: {
     author: string;

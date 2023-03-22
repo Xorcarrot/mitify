@@ -68,6 +68,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Erstellung von neuen Reports.
+Component hält die Informationen für das Formular, Validierungsregeln der Inputs und übergibt Reports zum speichern im Backend.</p>
+
+    </p>
 
 
 
@@ -231,12 +239,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/dialog/dialog.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/dialog/dialog.component.ts:70</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor der beim laden der Komponente div. Service injeziert.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -245,6 +255,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -259,6 +270,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Für die Erstellung von Formularen</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>httpService</td>
@@ -271,6 +286,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Zum Senden der neuen Meldung ans Beckend</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>userData</td>
@@ -283,6 +302,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Hält Information über User und Token</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -295,6 +318,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Zum weiterleiten an die Tabellen</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -334,14 +361,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="194"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:194</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Erstellt einen SkriptReport</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -352,6 +381,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -366,6 +396,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Seitennummer des Fehlers</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>chapter</td>
@@ -378,6 +412,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Kapitelnummer des Fehlers</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>tabOrIllNumber</td>
@@ -390,6 +428,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Kenner ob Tabelle oder Abbildung hinzugefügt wird</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>description</td>
@@ -402,6 +444,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Beschreibung der Meldung</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -439,14 +485,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="154"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:154</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:227</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Erstellt einen VideoReport</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -457,6 +505,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -471,6 +520,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Titel des Videos</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>timestampStart</td>
@@ -483,6 +536,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Zeitstempel Start wo der Fehler ist</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>timestampEnd</td>
@@ -495,6 +552,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Zeitstempel Ende wo der Fehler ist</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>videoUrl</td>
@@ -507,6 +568,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>URL des Videos</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>description</td>
@@ -519,6 +584,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Beschreibung des Fehlers</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -556,14 +625,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="171"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:171</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="250"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:250</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Rechnet Sekunden in ein &quot;mm:ss&quot; Format um</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -574,6 +645,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -588,6 +660,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Zeit in Sekunden</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -599,7 +675,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Zeit im Format &quot;mm:ss&quot;</p>
+
                     </div>
                 </td>
             </tr>
@@ -625,14 +702,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:101</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Initalisiert das Formular und erstellt die benötigte Meldung</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -643,6 +722,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -657,6 +737,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Typ der Meldung</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>learningElement</td>
@@ -669,6 +753,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Information ob Skript oder Video</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>modul</td>
@@ -681,6 +769,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Modul der Meldung</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -718,14 +810,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="226"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:226</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="330"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:330</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Wandelt eine ModulID in einen String um
+<a href="Todo">Todo</a></p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -736,6 +831,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -750,6 +846,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>ID des Moduls</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -761,7 +861,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Name des Moduls</p>
+
                     </div>
                 </td>
             </tr>
@@ -787,14 +888,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:179</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Trigger für eine Abbildung</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -824,14 +927,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="113"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:113</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:168</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Trigger für eine Tabelle</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -861,14 +966,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="202"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:202</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:294</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Sendet ein ReportSkript zum Backend zum speichern</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -879,6 +986,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -893,6 +1001,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>ReportSkirpt zum speichern</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -930,14 +1042,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="214"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:214</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="310"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:310</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Sendet ein ReportVideo zum Backend zum speichern</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -948,6 +1062,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -962,6 +1077,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>ReportVideo zum speichern</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -999,14 +1118,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="198"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:198</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="286"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:286</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Für Updaten des Inputs</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1017,6 +1138,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1031,6 +1153,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Event des Inputs</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1068,14 +1194,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="184"
-                            class="link-to-prism">src/app/dialog/dialog.component.ts:184</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="268"
+                            class="link-to-prism">src/app/dialog/dialog.component.ts:268</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Update den param Zeitstempel für ein Video</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1086,6 +1214,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1100,6 +1229,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Event des Inputs</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>minutes</td>
@@ -1112,6 +1245,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Zeit in Minuten</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1159,10 +1296,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/dialog/dialog.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/dialog/dialog.component.ts:24</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Für dynamisches formularladen wird hier die Art des Reports gespeichert.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1185,10 +1328,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/dialog/dialog.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/dialog/dialog.component.ts:70</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initalisiert die Zweite Gruppe des Formulares</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1214,10 +1363,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/dialog/dialog.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/dialog/dialog.component.ts:61</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initalisiert die Erste Gruppe des Formulares</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1245,10 +1400,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/dialog/dialog.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/dialog/dialog.component.ts:28</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Speichert die Information ob eine Abbildung oder eine Tabelle gewählt wurde.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1276,10 +1437,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/dialog/dialog.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/dialog/dialog.component.ts:40</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Video: Minuten des Zeitstempels Ende</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1307,10 +1474,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/dialog/dialog.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/dialog/dialog.component.ts:32</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Video: Minuten des Zeitstempels Start</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1341,10 +1514,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/dialog/dialog.component.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/dialog/dialog.component.ts:90</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Zwei Module werden erstellt.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1367,10 +1546,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/dialog/dialog.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/dialog/dialog.component.ts:48</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Report wird erstellt bis Skript oder Video gewählt wurde, und wird dann in das jeweilige Objekt umgewandelt.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1398,10 +1583,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/dialog/dialog.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/dialog/dialog.component.ts:44</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Video: Sekunden des Zeitstempels Ende</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1429,10 +1620,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/dialog/dialog.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/dialog/dialog.component.ts:36</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Video: Sekunden des Zeitstempels Start</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1460,10 +1657,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/dialog/dialog.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/dialog/dialog.component.ts:52</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>TRUE wenn für Skript entschieden.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1491,10 +1694,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/dialog/dialog.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/dialog/dialog.component.ts:56</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>TRUE wenn für Video entschieden.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -1510,54 +1719,106 @@ import { ReportVideo } from &#x27;./classes/subClasses/reportVideo&#x27;;
 import { ReportSkript } from &#x27;./classes/subClasses/reportSkript&#x27;;
 import { Modul } from &#x27;./classes/modul&#x27;;
 import { Component } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 
+/**
+ * Erstellung von neuen Reports.
+ * Component hält die Informationen für das Formular, Validierungsregeln der Inputs und übergibt Reports zum speichern im Backend.
+ * @author Patrick Pußwald
+ */
 @Component({
   selector: &#x27;app-dialog&#x27;,
   templateUrl: &#x27;./dialog.component.html&#x27;,
   styleUrls: [&#x27;./dialog.component.css&#x27;],
 })
 export class DialogComponent {
+  /**
+   * Für dynamisches formularladen wird hier die Art des Reports gespeichert.
+   */
   element: String &#x3D; &#x27;&#x27;;
+  /**
+   * Speichert die Information ob eine Abbildung oder eine Tabelle gewählt wurde.
+   */
   illOrTab: Number &#x3D; 0;
-
+  /**
+   * Video: Minuten des Zeitstempels Start
+   */
   minutesStart &#x3D; 0;
+  /**
+   * Video: Sekunden des Zeitstempels Start
+   */
   secondsStart &#x3D; 0;
-
+  /**
+   * Video: Minuten des Zeitstempels Ende
+   */
   minutesEnd &#x3D; 10;
+  /**
+   * Video: Sekunden des Zeitstempels Ende
+   */
   secondsEnd &#x3D; 0;
-
+  /**
+   * Report wird erstellt bis Skript oder Video gewählt wurde, und wird dann in das jeweilige Objekt umgewandelt.
+   */
   report!: any;
+  /**
+   * TRUE wenn für Skript entschieden.
+   */
   skriptAdded: boolean &#x3D; false;
+  /**
+   * TRUE wenn für Video entschieden.
+   */
   videoAdded: boolean &#x3D; false;
 
+  /**
+   * Initalisiert die Erste Gruppe des Formulares
+   */
   genralFormGroup &#x3D; this._formBuilder.group({
     type: [&#x27;&#x27;, Validators.required],
     learningElement: [&#x27;&#x27;, Validators.required],
     modul: [&#x27;&#x27;, Validators.required],
   });
 
+  /**
+   * Initalisiert die Zweite Gruppe des Formulares
+   */
   elementFormGroup: any;
 
+  /**
+   * Constructor der beim laden der Komponente div. Service injeziert.
+   * @param _formBuilder Für die Erstellung von Formularen
+   * @param httpService Zum Senden der neuen Meldung ans Beckend
+   * @param userData Hält Information über User und Token
+   * @param router Zum weiterleiten an die Tabellen
+   */
   constructor(
     private _formBuilder: FormBuilder,
     private httpService: ReportServiceService,
     private userData: UserDataService,
-    private router: Router,
+    private router: Router
   ) {}
 
+  /**
+   * Zwei Module werden erstellt.
+   * @todo muss ins Backend verlagert werden. Nur Platzhalter
+   */
   moduls: Modul[] &#x3D; [
     { id: 1, name: &#x27;Big Data&#x27; },
     { id: 2, name: &#x27;Mathematik Grundlagen&#x27; },
   ];
 
+  /**
+   * Initalisiert das Formular und erstellt die benötigte Meldung
+   * @param type Typ der Meldung
+   * @param learningElement Information ob Skript oder Video
+   * @param modul Modul der Meldung
+   */
   genrateForm(type: any, learningElement: any, modul: any) {
     this.elementFormGroup &#x3D; null;
     this.element &#x3D; learningElement;
     let modulId;
 
-    if(modul &#x3D;&#x3D; 1) {
+    if (modul &#x3D;&#x3D; 1) {
       modulId &#x3D; 1;
     } else {
       modulId &#x3D; 2;
@@ -1616,6 +1877,9 @@ export class DialogComponent {
     }
   }
 
+  /**
+   * Trigger für eine Tabelle
+   */
   inputTab() {
     if (this.illOrTab &#x3D;&#x3D; 1) {
       this.illOrTab &#x3D; 0;
@@ -1624,6 +1888,9 @@ export class DialogComponent {
     }
   }
 
+  /**
+   * Trigger für eine Abbildung
+   */
   inputIll() {
     if (this.illOrTab &#x3D;&#x3D; 2) {
       this.illOrTab &#x3D; 0;
@@ -1632,6 +1899,13 @@ export class DialogComponent {
     }
   }
 
+  /**
+   * Erstellt einen SkriptReport
+   * @param pageNumber Seitennummer des Fehlers
+   * @param chapter Kapitelnummer des Fehlers
+   * @param tabOrIllNumber Kenner ob Tabelle oder Abbildung hinzugefügt wird
+   * @param description Beschreibung der Meldung
+   */
   addSkript(
     pageNumber: any,
     chapter: any,
@@ -1657,6 +1931,14 @@ export class DialogComponent {
     this.skriptAdded &#x3D; true;
   }
 
+  /**
+   * Erstellt einen VideoReport
+   * @param title Titel des Videos
+   * @param timestampStart Zeitstempel Start wo der Fehler ist
+   * @param timestampEnd Zeitstempel Ende wo der Fehler ist
+   * @param videoUrl URL des Videos
+   * @param description Beschreibung des Fehlers
+   */
   addVideo(
     title: any,
     timestampStart: any,
@@ -1674,6 +1956,12 @@ export class DialogComponent {
     this.videoAdded &#x3D; true;
   }
 
+  /**
+   * Rechnet Sekunden in ein &quot;mm:ss&quot; Format um
+   * @param seconds Zeit in Sekunden
+   * @returns Zeit im Format &quot;mm:ss&quot;
+   * @todo Muss in einen eigenen Service verlagert werden
+   */
   calcTime(seconds: number): String {
     var time &#x3D; new Date(seconds * 1000);
 
@@ -1687,6 +1975,11 @@ export class DialogComponent {
     );
   }
 
+  /**
+   * Update den param Zeitstempel für ein Video
+   * @param event Event des Inputs
+   * @param minutes Zeit in Minuten
+   */
   updateTimeStart(event: any, minutes: boolean) {
     if (minutes &#x3D;&#x3D; true) {
       this.minutesStart &#x3D; event.value * 60;
@@ -1701,42 +1994,62 @@ export class DialogComponent {
     this.report.timestampStart &#x3D; time;
   }
 
+  /**
+   * Für Updaten des Inputs
+   * @param event Event des Inputs
+   */
   updateInput(event: any) {
     var time &#x3D; new Date(event.value);
   }
 
+  /**
+   * Sendet ein ReportSkript zum Backend zum speichern
+   * @param report ReportSkirpt zum speichern
+   */
   postSkript(report: ReportSkript): void {
     this.httpService.addSkript(report).subscribe(() &#x3D;&gt; {
       this.router.navigateByUrl(&#x27;/&#x27;, { skipLocationChange: true }).then(() &#x3D;&gt; {
-      if(this.userData.role_id &#x3D;&#x3D; 1) {
-        this.router.navigate([&#x27;/&#x27;, &#x27;user&#x27;]);
-      } else if (this.userData.role_id &#x3D;&#x3D; 2) {
-        this.router.navigate([&#x27;/&#x27;, &#x27;manager&#x27;]);
-      }
-      }) 
+        if (this.userData.role_id &#x3D;&#x3D; 1) {
+          this.router.navigate([&#x27;/&#x27;, &#x27;user&#x27;]);
+        } else if (this.userData.role_id &#x3D;&#x3D; 2) {
+          this.router.navigate([&#x27;/&#x27;, &#x27;manager&#x27;]);
+        }
+      });
     });
   }
 
+  /**
+   * Sendet ein ReportVideo zum Backend zum speichern
+   * @param report ReportVideo zum speichern
+   */
   postVideo(report: ReportVideo): void {
     this.httpService.addVideo(report).subscribe(() &#x3D;&gt; {
       this.router.navigateByUrl(&#x27;/&#x27;, { skipLocationChange: true }).then(() &#x3D;&gt; {
-      if(this.userData.role_id &#x3D;&#x3D; 1) {
-        this.router.navigate([&#x27;/&#x27;, &#x27;user&#x27;]);
-      } else if (this.userData.role_id &#x3D;&#x3D; 2) {
-        this.router.navigate([&#x27;/&#x27;, &#x27;manager&#x27;]);
-      }
-      }) 
+        if (this.userData.role_id &#x3D;&#x3D; 1) {
+          this.router.navigate([&#x27;/&#x27;, &#x27;user&#x27;]);
+        } else if (this.userData.role_id &#x3D;&#x3D; 2) {
+          this.router.navigate([&#x27;/&#x27;, &#x27;manager&#x27;]);
+        }
+      });
     });
   }
+
+  /**
+   * Wandelt eine ModulID in einen String um
+   * @param moduleId ID des Moduls
+   * @returns Name des Moduls
+   * @todo Informationen über die Module müssen vom Backend kommen um später neue Module anlegen zu können.
+   * {@link Todo}
+   */
 
   getModule(moduleId: number): any {
     console.log(moduleId);
     switch (moduleId) {
       case 1:
         return &#x27;Big Data&#x27;;
-      case 2: 
+      case 2:
         return &#x27;Mathematik Grundlagen&#x27;;
-    } 
+    }
   }
 }
 </code></pre>
@@ -2113,8 +2426,8 @@ export class DialogComponent {
     &lt;div *ngIf&#x3D;&quot;skriptAdded&quot;&gt;
       &lt;p&gt;
         &lt;b&gt;Meldungsart:&lt;/b&gt; {{ report.reportType }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span
-        &gt;&lt;b&gt;Modul:&lt;/b&gt; {{ getModule(report.university_module_id) }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span
-        &gt;&lt;b&gt;Medium:&lt;/b&gt; Skript&lt;br /&gt;
+        &gt;&lt;b&gt;Modul:&lt;/b&gt; {{ getModule(report.university_module_id)
+        }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;&lt;b&gt;Medium:&lt;/b&gt; Skript&lt;br /&gt;
         &lt;b&gt;Beschreibung:&lt;/b&gt;&lt;br /&gt;
         {{ report.description }}&lt;br /&gt;
         &lt;b&gt;Seite:&lt;/b&gt; {{ report.page }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span
@@ -2129,8 +2442,8 @@ export class DialogComponent {
     &lt;div *ngIf&#x3D;&quot;videoAdded&quot;&gt;
       &lt;p&gt;
         &lt;b&gt;Meldungsart:&lt;/b&gt; {{ report.reportType }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span
-        &gt;&lt;b&gt;Modul:&lt;/b&gt; {{ getModule(report.university_module_id) }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span
-        &gt;&lt;b&gt;Medium:&lt;/b&gt; Video&lt;br /&gt;
+        &gt;&lt;b&gt;Modul:&lt;/b&gt; {{ getModule(report.university_module_id)
+        }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span&gt;&lt;b&gt;Medium:&lt;/b&gt; Video&lt;br /&gt;
         &lt;b&gt;Beschreibung:&lt;/b&gt;&lt;br /&gt;
         {{ report.description }}&lt;br /&gt;
         &lt;b&gt;Titel:&lt;/b&gt; {{ report.videoTitle }}&lt;span class&#x3D;&quot;spacer&quot;&gt;&lt;/span
@@ -2251,7 +2564,7 @@ export class DialogComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-stepper orientation="vertical" [linear]="true" #stepper>  <!--Generelles Formular für alle Medien-->  <mat-step [stepControl]="genralFormGroup">    <form [formGroup]="genralFormGroup">      <ng-template matStepLabel class="stepLabel" class="stepComp">        <span>Angaben zur Meldung</span>        <button          class="buttonClose"          mat-dialog-close          mat-icon-button          color="primary"          aria-label="Dialog schließen"        >          <mat-icon>close</mat-icon>        </button>      </ng-template>      <span class="stepHead">Art der Meldung</span>      <mat-chip-listbox        aria-label="typeSelection"        formControlName="type"        class="stepComp"      >        <mat-chip-option color="primary">Fehler</mat-chip-option>        <mat-chip-option color="primary"          >Verbesserungsvorschlag</mat-chip-option        >        <mat-chip-option color="primary">Inhaltsergänzung</mat-chip-option>      </mat-chip-listbox>      <span class="stepHead">Art des Mediums</span>      <mat-chip-listbox        aria-label="typeSelection"        formControlName="learningElement"        class="stepComp"      >        <mat-chip-option color="primary">Skript</mat-chip-option>        <mat-chip-option color="primary">Video</mat-chip-option>      </mat-chip-listbox>      <mat-form-field appearance="fill" class="stepComp">        <mat-label>Modul</mat-label>        <mat-select formControlName="modul" required>          <mat-option *ngFor="let modul of moduls" [value]="modul.id">            {{ modul.name }}          </mat-option>        </mat-select>      </mat-form-field>      <div>        <button          mat-raised-button          matStepperNext          color="primary"          [disabled]="!genralFormGroup.valid"          (click)="            genrateForm(              genralFormGroup.value.type,              genralFormGroup.value.learningElement,              genralFormGroup.value.modul            )          "        >          Weiter <mat-icon>arrow_forward_ios</mat-icon>        </button>      </div>    </form>  </mat-step>  <!--Formularname für spezifisiches Medium-->  <ng-container *ngIf="element == \'\'">    <mat-step>      <ng-template matStepLabel class="stepLabel"        >Angaben zum Element</ng-template      >    </mat-step>  </ng-container>  <!--Formular für Skript-->  <ng-container *ngIf="element == \'Skript\'">    <mat-step [stepControl]="elementFormGroup">      <form [formGroup]="elementFormGroup">        <ng-template matStepLabel class="stepLabel"          >Angaben zum Skript</ng-template        >        <div>          <mat-form-field appearance="fill" floatLabel="always">            <mat-label>Seitennummer</mat-label>            <input              matInput              type="number"              formControlName="pageNumber"              min="1"              max="400"              required            />            <span matTextPrefix>S.</span>            <mat-hint              *ngIf="                !elementFormGroup.controls[\'pageNumber\'].valid &&                (elementFormGroup.controls[\'pageNumber\'].touched ||                  elementFormGroup.controls[\'pageNumber\'].dirty)              "              class="error"              align="end"              >Wert zwischen 1 - 400!</mat-hint            >          </mat-form-field>          <span class="spacer"></span>          <mat-form-field appearance="fill" floatLabel="always">            <mat-label>Kapitelnummer</mat-label>            <input              matInput              type="number"              formControlName="chapter"              min="1"              max="20"              required            />            <span matTextPrefix>Ch. </span>            <mat-hint              *ngIf="                !elementFormGroup.controls[\'chapter\'].valid &&                (elementFormGroup.controls[\'chapter\'].touched ||                  elementFormGroup.controls[\'chapter\'].dirty)              "              class="error"              align="end"              >Wert zwischen 1 - 20!</mat-hint            >          </mat-form-field>        </div>        <span          class="stepComp"          *ngIf="            report.type == \'Fehler\' || report.type == \'Verbesserungsvorschlag\'          "          >Bitte beschreiben sie uns den gefundenen {{ report.type }}:</span        >        <span class="stepComp" *ngIf="report.type == \'Inhaltsergänzung\'"          >Bitte beschreiben sie uns die gefundene {{ report.type }}:</span        >        <div>          <mat-form-field appearance="fill" class="textarea">            <mat-label>Beschreibung</mat-label>            <textarea              matInput              #textarea              class="textarea"              formControlName="description"              maxlength="500"              required            ></textarea>            <mat-hint align="end">{{ textarea.value.length }}/500</mat-hint>          </mat-form-field>        </div>        <span class="stepComp"          >Optionale Auswahl einer Tabelle oder Abbildung</span        >        <div class="stepComp">          <mat-button-toggle-group name="illTab" aria-label="Optional">            <mat-button-toggle color="primary" (click)="inputTab()"              >Tabelle</mat-button-toggle            >            <mat-button-toggle color="primary" (click)="inputIll()"              >Abbildung</mat-button-toggle            >          </mat-button-toggle-group>        </div>        <div>          <ng-container *ngIf="illOrTab == 1">            <mat-form-field appearance="fill" floatLabel="always">              <mat-label>Tabellennummer</mat-label>              <input                matInput                type="number"                formControlName="tabOrIllNumber"                min="1"                max="100"              />              <span matTextPrefix>Tab.</span>              <mat-hint                *ngIf="                  !elementFormGroup.controls[\'tabOrIllNumber\'].valid &&                  (elementFormGroup.controls[\'tabOrIllNumber\'].touched ||                    elementFormGroup.controls[\'tabOrIllNumber\'].dirty)                "                class="error"                align="end"                >Wert zwischen 1 - 100!</mat-hint              >            </mat-form-field>          </ng-container>          <ng-container *ngIf="illOrTab == 2">            <mat-form-field appearance="fill" floatLabel="always">              <mat-label>Abbildungsnummer</mat-label>              <input                matInput                type="number"                formControlName="tabOrIllNumber"                min="1"                max="100"              />              <span matTextPrefix>Abb.</span>              <mat-hint                *ngIf="                  !elementFormGroup.controls[\'tabOrIllNumber\'].valid &&                  (elementFormGroup.controls[\'tabOrIllNumber\'].touched ||                    elementFormGroup.controls[\'tabOrIllNumber\'].dirty)                "                class="error"                align="end"                >Wert zwischen 1 - 100!</mat-hint              >            </mat-form-field>          </ng-container>        </div>        <div>          <button mat-raised-button matStepperPrevious color="primary">            Zurück <mat-icon>arrow_back_ios</mat-icon>          </button>          <span class="spacer"></span>          <button            mat-raised-button            matStepperNext            color="primary"            [disabled]="!elementFormGroup.valid"            (click)="              addSkript(                elementFormGroup.value.pageNumber,                elementFormGroup.value.chapter,                elementFormGroup.value.tabOrIllNumber,                elementFormGroup.value.description              )            "          >            Weiter <mat-icon>arrow_forward_ios</mat-icon>          </button>        </div>      </form>    </mat-step>  </ng-container>  <!--Formular für das Medium Video-->  <ng-container *ngIf="element == \'Video\'">    <mat-step [stepControl]="elementFormGroup">      <form [formGroup]="elementFormGroup">        <ng-template matStepLabel class="stepLabel"          >Angaben zum Video</ng-template        >        <div class="stepComp">          <mat-form-field appearance="fill">            <mat-label>Videotitel</mat-label>            <input              matInput              #titleInput              formControlName="title"              maxlength="20"              minlength="1"              placeholder="Titel des Video"              required            />            <mat-hint align="end">{{ titleInput.value.length }}/20</mat-hint>          </mat-form-field>        </div>        <span          class="stepComp"          *ngIf="            report.type == \'Fehler\' || report.type == \'Verbesserungsvorschlag\'          "          >In welchem Zeitrahmen befindet sich ungefähr der          {{ report.type }}:</span        >        <span class="stepComp" *ngIf="report.type == \'Inhaltsergänzung\'"          >In welchem Zeitrahmen befindet sich ungefähr die          {{ report.type }}:</span        >        <mat-slider class="slider" min="0" max="3600">          <input            #timeStart            matSliderStartThumb            formControlName="timestampStart"          />          <input            #timeEnd            value="1800"            matSliderEndThumb            formControlName="timestampEnd"          />        </mat-slider>        <br />        <span class="bold stepComp"          >von {{ calcTime(timeStart.valueAsNumber) }} bis          {{ calcTime(timeEnd.valueAsNumber) }}</span        >        <div class="stepComp spaceTop">          <mat-form-field appearance="fill">            <mat-label>URL optional:</mat-label>            <input              matInput              #urlInput              formControlName="videoUrl"              maxlength="50"              minlength="1"              placeholder="https://mycampus.iubh.de/..."            />            <mat-hint align="end">{{ urlInput.value.length }}/50</mat-hint>          </mat-form-field>        </div>        <div>          <mat-form-field appearance="fill" class="textarea">            <mat-label>Beschreibung</mat-label>            <textarea              matInput              #textarea              class="textarea"              formControlName="description"              maxlength="500"              required            ></textarea>            <mat-hint align="end">{{ textarea.value.length }}/500</mat-hint>          </mat-form-field>        </div>        <div>          <button mat-raised-button matStepperPrevious color="primary">            Zurück <mat-icon>arrow_back_ios</mat-icon>          </button>          <span class="spacer"></span>          <button            mat-raised-button            matStepperNext            color="primary"            [disabled]="!elementFormGroup.valid"            (click)="              addVideo(                elementFormGroup.value.title,                elementFormGroup.value.timestampStart,                elementFormGroup.value.timestampEnd,                elementFormGroup.value.videoUrl,                elementFormGroup.value.description              )            "          >            Weiter <mat-icon>arrow_forward_ios</mat-icon>          </button>        </div>      </form>    </mat-step>  </ng-container>  <mat-step>    <ng-template matStepLabel class="stepLabel"      >Eingabe Kontrollieren</ng-template    >    <p>Bitte kontrollieren Sie die eingegebenen Daten:</p>    <div *ngIf="skriptAdded">      <p>        <b>Meldungsart:</b> {{ report.reportType }}<span class="spacer"></span        ><b>Modul:</b> {{ getModule(report.university_module_id) }}<span class="spacer"></span        ><b>Medium:</b> Skript<br />        <b>Beschreibung:</b><br />        {{ report.description }}<br />        <b>Seite:</b> {{ report.page }}<span class="spacer"></span        ><b>Kapitel: </b> {{ report.chapter }}<br />        <b>Abbildung:</b>        {{ report.illustrationNumber > 0 ? report.illustrationNumber : "k.A."        }}<span class="spacer"></span><b>Tabelle:</b>        {{ report.tableNumber > 0 ? report.tableNumber : "k.A." }}      </p>    </div>    <div *ngIf="videoAdded">      <p>        <b>Meldungsart:</b> {{ report.reportType }}<span class="spacer"></span        ><b>Modul:</b> {{ getModule(report.university_module_id) }}<span class="spacer"></span        ><b>Medium:</b> Video<br />        <b>Beschreibung:</b><br />        {{ report.description }}<br />        <b>Titel:</b> {{ report.videoTitle }}<span class="spacer"></span        ><b>URL: </b> {{ report.videoURL }}<br />        <b>Zeit beginn:</b> {{ calcTime(report.timestampStart)        }}<span class="spacer"></span><b>Zeit ende:</b>        {{ calcTime(report.timestampEnd) }}      </p>    </div>    <div>      <button mat-raised-button color="primary" matStepperPrevious>        Zurück <mat-icon>arrow_back_ios</mat-icon>      </button>      <span class="spacer"></span>      <button        *ngIf="skriptAdded"        mat-raised-button        color="primary"        (click)="postSkript(report)"        mat-dialog-close        matTooltip="Nach dem Speichern können die Daten nicht mehr verändert werden."      >        Speichern <mat-icon>save</mat-icon>      </button>      <button        *ngIf="videoAdded"        mat-raised-button        color="primary"        (click)="postVideo(report)"        mat-dialog-close        matTooltip="Nach dem Speichern können die Daten nicht mehr verändert werden."      >        Speichern <mat-icon>save</mat-icon>      </button>    </div>  </mat-step></mat-stepper></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-stepper orientation="vertical" [linear]="true" #stepper>  <!--Generelles Formular für alle Medien-->  <mat-step [stepControl]="genralFormGroup">    <form [formGroup]="genralFormGroup">      <ng-template matStepLabel class="stepLabel" class="stepComp">        <span>Angaben zur Meldung</span>        <button          class="buttonClose"          mat-dialog-close          mat-icon-button          color="primary"          aria-label="Dialog schließen"        >          <mat-icon>close</mat-icon>        </button>      </ng-template>      <span class="stepHead">Art der Meldung</span>      <mat-chip-listbox        aria-label="typeSelection"        formControlName="type"        class="stepComp"      >        <mat-chip-option color="primary">Fehler</mat-chip-option>        <mat-chip-option color="primary"          >Verbesserungsvorschlag</mat-chip-option        >        <mat-chip-option color="primary">Inhaltsergänzung</mat-chip-option>      </mat-chip-listbox>      <span class="stepHead">Art des Mediums</span>      <mat-chip-listbox        aria-label="typeSelection"        formControlName="learningElement"        class="stepComp"      >        <mat-chip-option color="primary">Skript</mat-chip-option>        <mat-chip-option color="primary">Video</mat-chip-option>      </mat-chip-listbox>      <mat-form-field appearance="fill" class="stepComp">        <mat-label>Modul</mat-label>        <mat-select formControlName="modul" required>          <mat-option *ngFor="let modul of moduls" [value]="modul.id">            {{ modul.name }}          </mat-option>        </mat-select>      </mat-form-field>      <div>        <button          mat-raised-button          matStepperNext          color="primary"          [disabled]="!genralFormGroup.valid"          (click)="            genrateForm(              genralFormGroup.value.type,              genralFormGroup.value.learningElement,              genralFormGroup.value.modul            )          "        >          Weiter <mat-icon>arrow_forward_ios</mat-icon>        </button>      </div>    </form>  </mat-step>  <!--Formularname für spezifisiches Medium-->  <ng-container *ngIf="element == \'\'">    <mat-step>      <ng-template matStepLabel class="stepLabel"        >Angaben zum Element</ng-template      >    </mat-step>  </ng-container>  <!--Formular für Skript-->  <ng-container *ngIf="element == \'Skript\'">    <mat-step [stepControl]="elementFormGroup">      <form [formGroup]="elementFormGroup">        <ng-template matStepLabel class="stepLabel"          >Angaben zum Skript</ng-template        >        <div>          <mat-form-field appearance="fill" floatLabel="always">            <mat-label>Seitennummer</mat-label>            <input              matInput              type="number"              formControlName="pageNumber"              min="1"              max="400"              required            />            <span matTextPrefix>S.</span>            <mat-hint              *ngIf="                !elementFormGroup.controls[\'pageNumber\'].valid &&                (elementFormGroup.controls[\'pageNumber\'].touched ||                  elementFormGroup.controls[\'pageNumber\'].dirty)              "              class="error"              align="end"              >Wert zwischen 1 - 400!</mat-hint            >          </mat-form-field>          <span class="spacer"></span>          <mat-form-field appearance="fill" floatLabel="always">            <mat-label>Kapitelnummer</mat-label>            <input              matInput              type="number"              formControlName="chapter"              min="1"              max="20"              required            />            <span matTextPrefix>Ch. </span>            <mat-hint              *ngIf="                !elementFormGroup.controls[\'chapter\'].valid &&                (elementFormGroup.controls[\'chapter\'].touched ||                  elementFormGroup.controls[\'chapter\'].dirty)              "              class="error"              align="end"              >Wert zwischen 1 - 20!</mat-hint            >          </mat-form-field>        </div>        <span          class="stepComp"          *ngIf="            report.type == \'Fehler\' || report.type == \'Verbesserungsvorschlag\'          "          >Bitte beschreiben sie uns den gefundenen {{ report.type }}:</span        >        <span class="stepComp" *ngIf="report.type == \'Inhaltsergänzung\'"          >Bitte beschreiben sie uns die gefundene {{ report.type }}:</span        >        <div>          <mat-form-field appearance="fill" class="textarea">            <mat-label>Beschreibung</mat-label>            <textarea              matInput              #textarea              class="textarea"              formControlName="description"              maxlength="500"              required            ></textarea>            <mat-hint align="end">{{ textarea.value.length }}/500</mat-hint>          </mat-form-field>        </div>        <span class="stepComp"          >Optionale Auswahl einer Tabelle oder Abbildung</span        >        <div class="stepComp">          <mat-button-toggle-group name="illTab" aria-label="Optional">            <mat-button-toggle color="primary" (click)="inputTab()"              >Tabelle</mat-button-toggle            >            <mat-button-toggle color="primary" (click)="inputIll()"              >Abbildung</mat-button-toggle            >          </mat-button-toggle-group>        </div>        <div>          <ng-container *ngIf="illOrTab == 1">            <mat-form-field appearance="fill" floatLabel="always">              <mat-label>Tabellennummer</mat-label>              <input                matInput                type="number"                formControlName="tabOrIllNumber"                min="1"                max="100"              />              <span matTextPrefix>Tab.</span>              <mat-hint                *ngIf="                  !elementFormGroup.controls[\'tabOrIllNumber\'].valid &&                  (elementFormGroup.controls[\'tabOrIllNumber\'].touched ||                    elementFormGroup.controls[\'tabOrIllNumber\'].dirty)                "                class="error"                align="end"                >Wert zwischen 1 - 100!</mat-hint              >            </mat-form-field>          </ng-container>          <ng-container *ngIf="illOrTab == 2">            <mat-form-field appearance="fill" floatLabel="always">              <mat-label>Abbildungsnummer</mat-label>              <input                matInput                type="number"                formControlName="tabOrIllNumber"                min="1"                max="100"              />              <span matTextPrefix>Abb.</span>              <mat-hint                *ngIf="                  !elementFormGroup.controls[\'tabOrIllNumber\'].valid &&                  (elementFormGroup.controls[\'tabOrIllNumber\'].touched ||                    elementFormGroup.controls[\'tabOrIllNumber\'].dirty)                "                class="error"                align="end"                >Wert zwischen 1 - 100!</mat-hint              >            </mat-form-field>          </ng-container>        </div>        <div>          <button mat-raised-button matStepperPrevious color="primary">            Zurück <mat-icon>arrow_back_ios</mat-icon>          </button>          <span class="spacer"></span>          <button            mat-raised-button            matStepperNext            color="primary"            [disabled]="!elementFormGroup.valid"            (click)="              addSkript(                elementFormGroup.value.pageNumber,                elementFormGroup.value.chapter,                elementFormGroup.value.tabOrIllNumber,                elementFormGroup.value.description              )            "          >            Weiter <mat-icon>arrow_forward_ios</mat-icon>          </button>        </div>      </form>    </mat-step>  </ng-container>  <!--Formular für das Medium Video-->  <ng-container *ngIf="element == \'Video\'">    <mat-step [stepControl]="elementFormGroup">      <form [formGroup]="elementFormGroup">        <ng-template matStepLabel class="stepLabel"          >Angaben zum Video</ng-template        >        <div class="stepComp">          <mat-form-field appearance="fill">            <mat-label>Videotitel</mat-label>            <input              matInput              #titleInput              formControlName="title"              maxlength="20"              minlength="1"              placeholder="Titel des Video"              required            />            <mat-hint align="end">{{ titleInput.value.length }}/20</mat-hint>          </mat-form-field>        </div>        <span          class="stepComp"          *ngIf="            report.type == \'Fehler\' || report.type == \'Verbesserungsvorschlag\'          "          >In welchem Zeitrahmen befindet sich ungefähr der          {{ report.type }}:</span        >        <span class="stepComp" *ngIf="report.type == \'Inhaltsergänzung\'"          >In welchem Zeitrahmen befindet sich ungefähr die          {{ report.type }}:</span        >        <mat-slider class="slider" min="0" max="3600">          <input            #timeStart            matSliderStartThumb            formControlName="timestampStart"          />          <input            #timeEnd            value="1800"            matSliderEndThumb            formControlName="timestampEnd"          />        </mat-slider>        <br />        <span class="bold stepComp"          >von {{ calcTime(timeStart.valueAsNumber) }} bis          {{ calcTime(timeEnd.valueAsNumber) }}</span        >        <div class="stepComp spaceTop">          <mat-form-field appearance="fill">            <mat-label>URL optional:</mat-label>            <input              matInput              #urlInput              formControlName="videoUrl"              maxlength="50"              minlength="1"              placeholder="https://mycampus.iubh.de/..."            />            <mat-hint align="end">{{ urlInput.value.length }}/50</mat-hint>          </mat-form-field>        </div>        <div>          <mat-form-field appearance="fill" class="textarea">            <mat-label>Beschreibung</mat-label>            <textarea              matInput              #textarea              class="textarea"              formControlName="description"              maxlength="500"              required            ></textarea>            <mat-hint align="end">{{ textarea.value.length }}/500</mat-hint>          </mat-form-field>        </div>        <div>          <button mat-raised-button matStepperPrevious color="primary">            Zurück <mat-icon>arrow_back_ios</mat-icon>          </button>          <span class="spacer"></span>          <button            mat-raised-button            matStepperNext            color="primary"            [disabled]="!elementFormGroup.valid"            (click)="              addVideo(                elementFormGroup.value.title,                elementFormGroup.value.timestampStart,                elementFormGroup.value.timestampEnd,                elementFormGroup.value.videoUrl,                elementFormGroup.value.description              )            "          >            Weiter <mat-icon>arrow_forward_ios</mat-icon>          </button>        </div>      </form>    </mat-step>  </ng-container>  <mat-step>    <ng-template matStepLabel class="stepLabel"      >Eingabe Kontrollieren</ng-template    >    <p>Bitte kontrollieren Sie die eingegebenen Daten:</p>    <div *ngIf="skriptAdded">      <p>        <b>Meldungsart:</b> {{ report.reportType }}<span class="spacer"></span        ><b>Modul:</b> {{ getModule(report.university_module_id)        }}<span class="spacer"></span><b>Medium:</b> Skript<br />        <b>Beschreibung:</b><br />        {{ report.description }}<br />        <b>Seite:</b> {{ report.page }}<span class="spacer"></span        ><b>Kapitel: </b> {{ report.chapter }}<br />        <b>Abbildung:</b>        {{ report.illustrationNumber > 0 ? report.illustrationNumber : "k.A."        }}<span class="spacer"></span><b>Tabelle:</b>        {{ report.tableNumber > 0 ? report.tableNumber : "k.A." }}      </p>    </div>    <div *ngIf="videoAdded">      <p>        <b>Meldungsart:</b> {{ report.reportType }}<span class="spacer"></span        ><b>Modul:</b> {{ getModule(report.university_module_id)        }}<span class="spacer"></span><b>Medium:</b> Video<br />        <b>Beschreibung:</b><br />        {{ report.description }}<br />        <b>Titel:</b> {{ report.videoTitle }}<span class="spacer"></span        ><b>URL: </b> {{ report.videoURL }}<br />        <b>Zeit beginn:</b> {{ calcTime(report.timestampStart)        }}<span class="spacer"></span><b>Zeit ende:</b>        {{ calcTime(report.timestampEnd) }}      </p>    </div>    <div>      <button mat-raised-button color="primary" matStepperPrevious>        Zurück <mat-icon>arrow_back_ios</mat-icon>      </button>      <span class="spacer"></span>      <button        *ngIf="skriptAdded"        mat-raised-button        color="primary"        (click)="postSkript(report)"        mat-dialog-close        matTooltip="Nach dem Speichern können die Daten nicht mehr verändert werden."      >        Speichern <mat-icon>save</mat-icon>      </button>      <button        *ngIf="videoAdded"        mat-raised-button        color="primary"        (click)="postVideo(report)"        mat-dialog-close        matTooltip="Nach dem Speichern können die Daten nicht mehr verändert werden."      >        Speichern <mat-icon>save</mat-icon>      </button>    </div>  </mat-step></mat-stepper></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ManagerComponent', 'selector': 'app-manager'},{'name': 'ModuleManagerContainerComponent', 'selector': 'app-module-manager-container'},{'name': 'ModuleManagerTableClosedComponent', 'selector': 'app-module-manager-table-closed'},{'name': 'ModuleManagerTableComponent', 'selector': 'app-module-manager-table'},{'name': 'PlaceholderNoUserComponent', 'selector': 'app-placeholder-no-user'},{'name': 'SkriptDetailManagerComponent', 'selector': 'app-skript-detail-manager'},{'name': 'SkriptDetailStudentComponent', 'selector': 'app-skript-detail-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentContainerComponent', 'selector': 'app-student-container'},{'name': 'StudentTableClosedComponent', 'selector': 'app-student-table-closed'},{'name': 'StudentTableComponent', 'selector': 'app-student-table'},{'name': 'TestComComponent', 'selector': 'app-test-com'},{'name': 'VideoDetailManagerComponent', 'selector': 'app-video-detail-manager'},{'name': 'VideoDetailStudentComponent', 'selector': 'app-video-detail-student'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DialogComponent'};

@@ -325,6 +325,7 @@ export class DialogComponent {
    * @returns Name des Moduls
    * @todo Informationen über die Module müssen vom Backend kommen um später neue Module anlegen zu können.
    */
+
   getModule(moduleId: number): any {
     console.log(moduleId);
     switch (moduleId) {

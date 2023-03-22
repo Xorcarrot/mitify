@@ -2,6 +2,9 @@
   <span class="middle">IU Mitify Login</span>
 </mat-toolbar>
 <form [formGroup]="loginFormGroup">
+  <div class="placeholder" *ngIf="loading$">
+    <mat-spinner class="spinner"></mat-spinner>
+  </div>
   <div class="loginForm footer" *ngIf="!loading$">
     <mat-form-field appearance="outline" class="stretch">
       <mat-label>Email</mat-label>
