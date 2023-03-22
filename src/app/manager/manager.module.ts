@@ -27,6 +27,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+/**
+ * Modul mit allen Imports
+ * @todo Alle Imports löschen die nicht von den Manager Components gebraucht werden
+ */
 @NgModule({
   declarations: [
     ManagerComponent,

@@ -1,3 +1,6 @@
+/**
+ * Interface zum senden der Zugangsdaten eines Users
+ */
 export class MitifyUser {
   mitify_user = {
     email: '',

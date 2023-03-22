@@ -1,3 +1,6 @@
+/**
+ * Interface für die Antwort des Backend wenn die Userdaten gesendet werden
+ */
 export interface UserResponse {
   message: string;
   user: {

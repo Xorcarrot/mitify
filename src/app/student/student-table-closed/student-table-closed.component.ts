@@ -1,12 +1,7 @@
 import { ReportService } from './../../services/report.service';
 import { Report } from 'src/app/dialog/classes/Report';
 import { MatPaginator } from '@angular/material/paginator';
-import {
-  AfterViewInit,
-  Component,
-  ViewChild,
-  OnInit,
-} from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
@@ -20,6 +15,10 @@ import {
 import { ReportResponse } from 'src/app/interfaces/ReportResponse';
 import { DatasourceService } from 'src/app/services/datasource.service';
 
+/**
+ * Componente die die Tabelle für abgeschlossene Meldungen bereitstellt.
+ * @author Patrick Pußwald
+ */
 @Component({
   selector: 'app-student-table-closed',
   templateUrl: './student-table-closed.component.html',
@@ -36,9 +35,17 @@ import { DatasourceService } from 'src/app/services/datasource.service';
   ],
 })
 export class StudentTableClosedComponent implements AfterViewInit, OnInit {
+  /**
+   * Informationen für die Tabelle vom Backend
+   */
   report = new DatasourceService(this.reportService);
+  /**
+   * Alle Reports für die Tabelle
+   */
   reports!: ReportResponse[];
-
+  /**
+   * Spalten für die Tabelle
+   */
   displayedColumns: string[] = [
     'id',
     'reportType',
@@ -46,41 +53,75 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     'priority',
     'module',
   ];
+  /**
+   * Datenquelle zum Erstellen der Tabelle
+   */
   dataSource = new MatTableDataSource<ReportResponse>(this.reports);
+  /**
+   * Information welche Spalte ausgeklappt ist
+   */
   displayedColumnsWithExpand = [...this.displayedColumns, 'expand'];
+  /**
+   * Inforamtionen zum ausgeklappten Element
+   */
   expandedElement!: Report | null;
-
+  /**
+   * Boolean ob die abgeschlossenen Meldungen geladen werden sollen
+   */
   loadClosedReports: boolean = false;
 
-  @ViewChild(MatSort, {static: false}) set sort(value: MatSort) {
-    if(this.dataSource) {
+  /**
+   * Sortierfunktion
+   */
+  @ViewChild(MatSort, { static: false }) set sort(value: MatSort) {
+    if (this.dataSource) {
       this.dataSource.sort = value;
     }
-  };
-  @ViewChild(MatPaginator, {static: false}) set paginator(value: MatPaginator) {
-    if(this.dataSource) {
+  }
+  /**
+   * Paginator
+   */
+  @ViewChild(MatPaginator, { static: false }) set paginator(
+    value: MatPaginator
+  ) {
+    if (this.dataSource) {
       this.dataSource.paginator = value;
     }
-  };
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
   }
 
+  /**
+   * Fügt der Tabelle die Sortier und Paginator Funktion hinzu
+   */
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  /**
+   * Lädt alle Daten vom Backend und erstellt danach die Tabelle
+   */
   ngOnInit(): void {
     this.report.loadClosedReports();
     this.report.reportsClosed$.subscribe((data) => {
       this.reports = data;
       this.dataSource = new MatTableDataSource<ReportResponse>(this.reports);
-    })
+    });
   }
 
+  /**
+   * Iniziert div. Service
+   * @param _liveAnnouncer Gibt Information über die Sortierung weiter
+   * @param reportService Service zum laden der Daten vom Backend
+   */
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private reportService: ReportService
   ) {}
 
+  /**
+   * Funktion zum erstellen der sortierten Tabelle
+   * @param sortState Angewanter Filter
+   */
   announceSortChange(sortState: Sort) {
     this.expandedElement = null;
     if (sortState.direction) {
@@ -90,6 +131,11 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     }
   }
 
+  /**
+   * Übersetzt die Prioritätsnummer in einen String
+   * @param prio Nummer der Priorität
+   * @returns {string} String zur Priorität oder ERROR
+   */
   priorityString(prio: number): string {
     switch (prio) {
       case 1: {
@@ -105,6 +151,10 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     return 'ERROR';
   }
 
+  /**
+   * wendet den Filter auf die Tabelle an
+   * @param event Event das über den Input eingegeben wird
+   */
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -114,16 +164,25 @@ export class StudentTableClosedComponent implements AfterViewInit, OnInit {
     }
   }
 
+  /**
+   * Erstellt die Tabelle
+   */
   loadClosedReportsDB() {
     this.loadClosedReports = true;
   }
 
+  /**
+   * Übersetzt die Modulid in einen lesbaren Namen.
+   * @param moduleId ID des Moduls
+   * @returns {string} Name des Moduls
+   * @todo Muss ins Backend verlagert werden
+   */
   getModule(moduleId: number): any {
     switch (moduleId) {
       case 1:
         return 'Big Data';
-      case 2: 
+      case 2:
         return 'Mathematik Grundlagen';
-    } 
+    }
   }
 }

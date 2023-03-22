@@ -1,0 +1,1251 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mitify documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">mitify documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >ReportService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/report.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service zum Abgreifen von den Meldungen im Backend</p>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorReportUrl" >errorReportUrl</a>
+                            </li>
+                            <li>
+                                <a href="#skriptReportUrl" >skriptReportUrl</a>
+                            </li>
+                            <li>
+                                <a href="#videoReportUrl" >videoReportUrl</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeSkriptPriority" >changeSkriptPriority</a>
+                            </li>
+                            <li>
+                                <a href="#changeSkriptStaus" >changeSkriptStaus</a>
+                            </li>
+                            <li>
+                                <a href="#changeVideoPriority" >changeVideoPriority</a>
+                            </li>
+                            <li>
+                                <a href="#changeVideoStatus" >changeVideoStatus</a>
+                            </li>
+                            <li>
+                                <a href="#deleteSkript" >deleteSkript</a>
+                            </li>
+                            <li>
+                                <a href="#deleteVideo" >deleteVideo</a>
+                            </li>
+                            <li>
+                                <a href="#fetchClosedReports" >fetchClosedReports</a>
+                            </li>
+                            <li>
+                                <a href="#fetchReports" >fetchReports</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, userData: <a href="../injectables/UserDataService.html" target="_self">UserDataService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/services/report.service.ts:50</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Injeziert div. Services</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Für den Aufbau einer Verbindung mit dem Backend</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>userData</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserDataService.html" target="_self" >UserDataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Enthält alle Informationen zum User</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeSkriptPriority"></a>
+                    <span class="name">
+                        <span ><b>changeSkriptPriority</b></span>
+                        <a href="#changeSkriptPriority"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeSkriptPriority(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, newPriority: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/services/report.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Verändert die aktuelle Priorität des SkriptReports und speichert sie im Backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID der Meldung</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>newPriority</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Neue Priorität der Meldung</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable mit Antwort des Backends</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeSkriptStaus"></a>
+                    <span class="name">
+                        <span ><b>changeSkriptStaus</b></span>
+                        <a href="#changeSkriptStaus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeSkriptStaus(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, newStatus: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, granted_date: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, completed_date: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/services/report.service.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Verändert den aktuellen Status eines SkriptReports und speichert ihn im Backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID der Meldung</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>newStatus</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Status der neu gesetzt werden soll</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>granted_date</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Datum an dem der Status auf &quot;in Bearbeitung&quot; gesetzt wurde</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>completed_date</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Datum an dem der Status auf &quot;abgeschlossen&quot; gesetzt wurde</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable mit Antwort des Servers</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeVideoPriority"></a>
+                    <span class="name">
+                        <span ><b>changeVideoPriority</b></span>
+                        <a href="#changeVideoPriority"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeVideoPriority(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, newPriority: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/services/report.service.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Verändert die aktuelle Priorität des VideoReports und speichert sie im Backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID der Meldung</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>newPriority</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Neue Priorität der Meldung</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>mit Antwort des Backends</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeVideoStatus"></a>
+                    <span class="name">
+                        <span ><b>changeVideoStatus</b></span>
+                        <a href="#changeVideoStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeVideoStatus(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, newStatus: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, granted_date: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, completed_date: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/services/report.service.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Verändert den aktuellen Status eines VideoReports und speichert ihn im Backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID der Meldung</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>newStatus</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Status der neu gesetzt werden soll</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>granted_date</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Datum an dem der Status auf &quot;in Bearbeitung&quot; gesetzt wurde</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>completed_date</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Datum an dem der Status auf &quot;abgeschlossen&quot; gesetzt wurde</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>mit Antwort des Servers</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteSkript"></a>
+                    <span class="name">
+                        <span ><b>deleteSkript</b></span>
+                        <a href="#deleteSkript"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteSkript(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/app/services/report.service.ts:154</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Löscht dauerhaft und unwiederruflich die Skirptmeldung</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID der zu löschenden Meldung</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>mit Antwort des Backends</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteVideo"></a>
+                    <span class="name">
+                        <span ><b>deleteVideo</b></span>
+                        <a href="#deleteVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteVideo(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="165"
+                            class="link-to-prism">src/app/services/report.service.ts:165</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Löscht dauerhaft und unwiederruflich die Videomeldung</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID der zu löschenden Meldung</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>mit Antwort des Backends</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchClosedReports"></a>
+                    <span class="name">
+                        <span ><b>fetchClosedReports</b></span>
+                        <a href="#fetchClosedReports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchClosedReports()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/report.service.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Funktion ist Auslöser für die Verbindung zum Backend und holt mit einer GET Methode alle abgeschlossenen Meldungen</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ReportResponse.html" target="_self" >Observable&lt;ReportResponse[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Alle abgeschlossenen Meldungen</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchReports"></a>
+                    <span class="name">
+                        <span ><b>fetchReports</b></span>
+                        <a href="#fetchReports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchReports()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/services/report.service.ts:30</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Funktion ist Auslöser für die Verbindung zum Backend und holt mit einer GET Methode alle offenen Meldungen</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ReportResponse.html" target="_self" >Observable&lt;ReportResponse[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Alle offenen Meldungen</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorReportUrl"></a>
+                    <span class="name">
+                        <span ><b>errorReportUrl</b></span>
+                        <a href="#errorReportUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://fathomless-eyrie-95662.herokuapp.com/api/v1/error_reports&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/report.service.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="skriptReportUrl"></a>
+                    <span class="name">
+                        <span ><b>skriptReportUrl</b></span>
+                        <a href="#skriptReportUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://fathomless-eyrie-95662.herokuapp.com/api/v1/skript_reports&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/report.service.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="videoReportUrl"></a>
+                    <span class="name">
+                        <span ><b>videoReportUrl</b></span>
+                        <a href="#videoReportUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://fathomless-eyrie-95662.herokuapp.com/api/v1/video_reports&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/report.service.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { VideoPriority } from &#x27;./patch/videoPriority&#x27;;
+import { SkirptStatus } from &#x27;./patch/skriptStatus&#x27;;
+import { SkirptPriority } from &#x27;./patch/skriptPriority&#x27;;
+import { UserDataService } from &#x27;./../user/userData.service&#x27;;
+import { ReportResponse } from &#x27;./../interfaces/ReportResponse&#x27;;
+import { HttpClient, HttpHeaders, HttpParams } from &#x27;@angular/common/http&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { VideoStatus } from &#x27;./patch/videoStatus&#x27;;
+
+/**
+ * Service zum Abgreifen von den Meldungen im Backend
+ * @todo URLs sollen in einem Enum gespeichert werden
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class ReportService {
+  errorReportUrl: string &#x3D;
+    &#x27;https://fathomless-eyrie-95662.herokuapp.com/api/v1/error_reports&#x27;;
+  skriptReportUrl: string &#x3D;
+    &#x27;https://fathomless-eyrie-95662.herokuapp.com/api/v1/skript_reports&#x27;;
+  videoReportUrl: string &#x3D;
+    &#x27;https://fathomless-eyrie-95662.herokuapp.com/api/v1/video_reports&#x27;;
+
+  /**
+   * Funktion ist Auslöser für die Verbindung zum Backend und holt mit einer GET Methode alle offenen Meldungen
+   * @returns Alle offenen Meldungen
+   */
+  fetchReports(): Observable&lt;ReportResponse[]&gt; {
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+    return this.http.get&lt;ReportResponse[]&gt;(this.errorReportUrl, {
+      headers: headers,
+    });
+  }
+
+  /**
+   * Funktion ist Auslöser für die Verbindung zum Backend und holt mit einer GET Methode alle abgeschlossenen Meldungen
+   * @returns Alle abgeschlossenen Meldungen
+   */
+  fetchClosedReports(): Observable&lt;ReportResponse[]&gt; {
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+
+    return this.http.get&lt;ReportResponse[]&gt;(
+      this.errorReportUrl + &#x27;?status&#x3D;abgeschlossen&#x27;,
+      {
+        headers: headers,
+      }
+    );
+  }
+
+  /**
+   * Injeziert div. Services
+   * @param http Für den Aufbau einer Verbindung mit dem Backend
+   * @param userData Enthält alle Informationen zum User
+   */
+  constructor(private http: HttpClient, private userData: UserDataService) {}
+
+  /**
+   * Verändert den aktuellen Status eines SkriptReports und speichert ihn im Backend
+   * @param id ID der Meldung
+   * @param newStatus Status der neu gesetzt werden soll
+   * @param granted_date Datum an dem der Status auf &quot;in Bearbeitung&quot; gesetzt wurde
+   * @param completed_date Datum an dem der Status auf &quot;abgeschlossen&quot; gesetzt wurde
+   * @returns Observable mit Antwort des Servers
+   */
+  changeSkriptStaus(
+    id: any,
+    newStatus: any,
+    granted_date: any,
+    completed_date: any
+  ) {
+    const url &#x3D; this.skriptReportUrl + &#x27;/&#x27; + id;
+    let patchObj: SkirptStatus &#x3D; {
+      skript_report: {
+        status: newStatus,
+        granted_date: granted_date,
+        completed_date: completed_date,
+      },
+    };
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+
+    return this.http.patch(url, patchObj, { headers: headers });
+  }
+
+  /**
+   * Verändert die aktuelle Priorität des SkriptReports und speichert sie im Backend
+   * @param id ID der Meldung
+   * @param newPriority Neue Priorität der Meldung
+   * @returns Observable mit Antwort des Backends
+   */
+  changeSkriptPriority(id: any, newPriority: any) {
+    const url &#x3D; this.skriptReportUrl + &#x27;/&#x27; + id;
+    let patchObj: SkirptPriority &#x3D; {
+      skript_report: {
+        priority: newPriority,
+      },
+    };
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+
+    return this.http.patch(url, patchObj, { headers: headers });
+  }
+
+  /**
+   * Verändert den aktuellen Status eines VideoReports und speichert ihn im Backend
+   * @param id ID der Meldung
+   * @param newStatus Status der neu gesetzt werden soll
+   * @param granted_date Datum an dem der Status auf &quot;in Bearbeitung&quot; gesetzt wurde
+   * @param completed_date Datum an dem der Status auf &quot;abgeschlossen&quot; gesetzt wurde
+   * @returns {Observable} mit Antwort des Servers
+   */
+  changeVideoStatus(
+    id: any,
+    newStatus: any,
+    granted_date: any,
+    completed_date: any
+  ) {
+    const url &#x3D; this.videoReportUrl + &#x27;/&#x27; + id;
+    let patchObj: VideoStatus &#x3D; {
+      video_report: {
+        status: newStatus,
+        granted_date: granted_date,
+        completed_date: completed_date,
+      },
+    };
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+
+    return this.http.patch(url, patchObj, { headers: headers });
+  }
+
+  /**
+   * Verändert die aktuelle Priorität des VideoReports und speichert sie im Backend
+   * @param id ID der Meldung
+   * @param newPriority Neue Priorität der Meldung
+   * @returns {Observable} mit Antwort des Backends
+   */
+  changeVideoPriority(id: any, newPriority: any) {
+    const url &#x3D; this.videoReportUrl + &#x27;/&#x27; + id;
+    let patchObj: VideoPriority &#x3D; {
+      video_report: {
+        priority: newPriority,
+      },
+    };
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+
+    return this.http.patch(url, patchObj, { headers: headers });
+  }
+
+  /**
+   * Löscht dauerhaft und unwiederruflich die Skirptmeldung
+   * @param id ID der zu löschenden Meldung
+   * @returns {Observable} mit Antwort des Backends
+   */
+  deleteSkript(id: any) {
+    const url &#x3D; this.skriptReportUrl + &#x27;/&#x27; + id;
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+    return this.http.delete(url, { headers: headers });
+  }
+
+  /**
+   * Löscht dauerhaft und unwiederruflich die Videomeldung
+   * @param id ID der zu löschenden Meldung
+   * @returns {Observable} mit Antwort des Backends
+   */
+  deleteVideo(id: any) {
+    const url &#x3D; this.videoReportUrl + &#x27;/&#x27; + id;
+    let headers &#x3D; new HttpHeaders().set(&#x27;Authorization&#x27;, this.userData.token);
+    return this.http.delete(url, { headers: headers });
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ReportService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

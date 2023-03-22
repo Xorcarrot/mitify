@@ -32,6 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { PlaceholderNoUserComponent } from './placeholder-no-user/placeholder-no-user.component';
 
+/**
+ * Modul für die AppComponent
+ * @todo entfernen von nicht benötigten imports
+ */
 @NgModule({
   declarations: [
     AppComponent,

@@ -8,9 +8,8 @@ describe('PlaceholderNoUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlaceholderNoUserComponent ]
-    })
-    .compileComponents();
+      declarations: [PlaceholderNoUserComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PlaceholderNoUserComponent);
     component = fixture.componentInstance;

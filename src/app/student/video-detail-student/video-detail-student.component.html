@@ -4,8 +4,10 @@
     <h4>Lokalisierung:</h4>
     <p>
       Videotitel: {{ report.videoTitle }}<span class="spacer"></span>Video URL:
-      {{ report.videoURL }}<span class="spacer"></span>
-      Zeitstempel Beginn: {{calcTimeToString(report.timestampStart)}}<span class="spacer"></span>Zeitstempel Ende: {{calcTimeToString(report.timestampEnd)}}
+      {{ report.videoURL }}<span class="spacer"></span> Zeitstempel Beginn:
+      {{ calcTimeToString(report.timestampStart)
+      }}<span class="spacer"></span>Zeitstempel Ende:
+      {{ calcTimeToString(report.timestampEnd) }}
     </p>
   </div>
   <div class="wrapper">
@@ -18,10 +20,22 @@
   <div class="wrapper lastWrapper">
     <h4>Historie:</h4>
     <p>
-            Erstellungsdatum: {{calcDateAndTime(report.report_date)}}<span class="spacer"></span>
-            <ng-container *ngIf="report.granted_date != 0">In Bearbeitungsdatum: {{calcDateAndTime(report.granted_date)}}</ng-container><span class="spacer"></span>
-            <ng-container *ngIf="report.completed_date != 0 && report.granted_date != 0">Fertigstellungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
-            <ng-container *ngIf="report.completed_date != 0 && report.granted_date == 0">Ablehnungsdatum: {{calcDateAndTime(report.completed_date)}}</ng-container>
-        </p>
+      Erstellungsdatum: {{ calcDateAndTime(report.report_date)
+      }}<span class="spacer"></span>
+      <ng-container *ngIf="report.granted_date != 0"
+        >In Bearbeitungsdatum:
+        {{ calcDateAndTime(report.granted_date) }}</ng-container
+      ><span class="spacer"></span>
+      <ng-container
+        *ngIf="report.completed_date != 0 && report.granted_date != 0"
+        >Fertigstellungsdatum:
+        {{ calcDateAndTime(report.completed_date) }}</ng-container
+      >
+      <ng-container
+        *ngIf="report.completed_date != 0 && report.granted_date == 0"
+        >Ablehnungsdatum:
+        {{ calcDateAndTime(report.completed_date) }}</ng-container
+      >
+    </p>
   </div>
 </div>
