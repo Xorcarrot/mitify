@@ -1,27 +1,28 @@
 # Mitify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Dieses Projekt wurde im Zuge des Faches ISEF01 erstellt. Mitify ist ein Meldungsmanagementsystem das den Studenten eine Möglichkeit bieten soll erkannte Fehler in den verschiedenen angebotenen Medien der IU, leicht zu melden. Auch soll es den Modulverantwortlichen helfen, diese gemeldeten Fehler zu lokalisieren und auszubessern. Eine genaue Beschreibung zur Verwendung der Anwendung finden Sie nach erfolgreicher Anmeldung auf der [GH-Page](https://xorcarrot.github.io/mitify/) oder kann direkt (hier)[https://drive.google.com/uc?export=download&id=1dLxBFfkwVHbElHnfHARte-xpl_ijKhBb] heruntergeladen werden.
 
-## Development server
+## Verwendete Technologie
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Das Frontend wurde mit Angular erstellt. Hierfür kam HTML-, CSS- und TS-Code zum Einsatz. Für verschiedene Komponenten wird (Materials)[https://material.angular.io/] verwendet. Eine Dokumentation kann Mithilfe von (Compodoc)[https://compodoc.app/] erstellt werden. Zum erstellen der Dokumentation muss der Befehl "compodoc -p tsconfig.doc.json -s" in den Terminal eingegeben werden und kann danach über http://127.0.0.1:8080 abgerufen werden. 
 
-## Code scaffolding
+## Backend 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Das verbundene Backend wurde von (Luca Blazevic)[https://github.com/LucaBla] und steht dort zur Verfügung. 
 
-## Build
+## Anmeldung
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Zur Zeit werden keine Anmeldedaten veröffentlicht. Sollte sich das ändern, werden sie hier eingetragen. 
 
-## Running unit tests
+## Projektbeteiligte
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Moritz Simon
+- Christian Reischl
+- Torben Schüngel
+- (Luca Blazevic)[https://github.com/LucaBla]
+- (Patrick Pußwald)[https://github.com/Xorcarrot/]
 
-## Running end-to-end tests
+## Terminalbefehle
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- ng serve --open
+- compodoc -p tsconfig.doc.json -s
